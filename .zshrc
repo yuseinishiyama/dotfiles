@@ -52,7 +52,7 @@ export LANG=ja_JP.UTF-8
 export TERM=xterm-256color
 
 #SVN 1.7 of Xcode
-alias svn='/Applications/Xcode5.app/Contents/Developer/usr/bin/svn'
+alias svn='/Applications/Xcode.app/Contents/Developer/usr/bin/svn'
 
 #Emacs
 alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs'
