@@ -29,10 +29,14 @@
 ;; 現在行を目立たせる
 (global-hl-line-mode)
 
-;; カーソルの位置が何行目かを表示する
+;; 行番号表示
 (line-number-mode t)
 
+;; 列番号表示
+(column-number-mode t)
+
 ;; 行数表示
+(setq linum-format "%2d ")
 (global-linum-mode t)
 
 ;; 対応する括弧をハイライトする。
@@ -213,3 +217,13 @@
 	("user_id" . "239840891")
 	("screen_name" . "yuseinishiyama")))
 
+;;;;;;;;;;;;;;;;;;;; Audo-Save and Backup ;;;;;;;;;;;;;;;;;;;;
+
+;; バックアップファイルの保存先を変更。
+(setq backup-directory-alist
+  (cons (cons ".*" (expand-file-name "~/.emacs.d/backup"))
+        backup-directory-alist))
+
+;; 自動保存ファイルの保存先を変更。
+(setq auto-save-file-name-transforms
+  `((".*", (expand-file-name "~/.emacs.d/backup/") t)))
