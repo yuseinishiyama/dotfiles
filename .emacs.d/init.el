@@ -227,3 +227,15 @@
 ;; 自動保存ファイルの保存先を変更。
 (setq auto-save-file-name-transforms
   `((".*", (expand-file-name "~/.emacs.d/backup/") t)))
+
+;;;;;;;;;;;;;;;;;;;; Environment ;;;;;;;;;;;;;;;;;;;;
+
+;; 実行環境の判別
+(setq darwin-p  (eq system-type 'darwin)
+      ns-p      (eq window-system 'ns)
+      carbon-p  (eq window-system 'mac)
+      linux-p   (eq system-type 'gnu/linux)
+      cygwin-p  (eq system-type 'cygwin)
+      nt-p      (eq system-type 'windows-nt)
+      meadow-p  (featurep 'meadow)
+      windows-p (or cygwin-p nt-p meadow-p))
