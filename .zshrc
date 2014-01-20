@@ -45,6 +45,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+export PATH="$HOME/Library/Haskell/bin:$PATH" 
 
 #言語設定
 export LANG=ja_JP.UTF-8
