@@ -239,3 +239,9 @@
       nt-p      (eq system-type 'windows-nt)
       meadow-p  (featurep 'meadow)
       windows-p (or cygwin-p nt-p meadow-p))
+
+;;;;;;;;;;;;;;;;;;;; realtime-markdown-viewer ;;;;;;;;;;;;;;;;;;;;
+
+(setq rtmv:lang 'ruby)
+
+(require 'realtime-markdown-viewer)
