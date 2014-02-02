@@ -42,6 +42,9 @@
 ;; 対応する括弧をハイライトする。
 (show-paren-mode t)
 
+;; タブを全てスペースに。
+(setq-default indent-tabs-mode nil)
+
 ;;;;;;;;;;;;;;;;;;;;Key;;;;;;;;;;;;;;;;;;;;
 
 ;;C-hをBackSpaceにする
