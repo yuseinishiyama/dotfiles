@@ -15,6 +15,13 @@
 ;; elisp配下をロードパスに指定。
 (add-to-load-path "elisp")
 
+;;;;;;;;;;;;;;;;;;;; auto-mode-alias ;;;;;;;;;;;;;;;;;;;;
+
+(autoload 'markdown-mode "markdown-mode" "Major mode for editing Markdown files" t)
+(add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+
 ;;;;;;;;;;;;;;;;;;;;Common;;;;;;;;;;;;;;;;;;;;
 
 ;; 時間表示
@@ -248,3 +255,4 @@
 (setq rtmv:lang 'ruby)
 
 (require 'realtime-markdown-viewer)
+
