@@ -1,6 +1,9 @@
-;;;;;;;;;;;;;;;;;;;;load-path;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;; Load Paths ;;;;;;;;;;;;;;;;;;;;
 
-;; load-pathを再帰的に追加。
+(when (< emacs-major-version 23)
+  (defvar user-emacs-directory "~/.dotfiles/.emacs.d/"))
+
+;; load-pathを再帰的に追加する関数
 (defun add-to-load-path (&rest paths)
   (let (path)
     (dolist (path paths paths)
@@ -9,20 +12,17 @@
          (if (fboundp 'normal-top-level-add-subdirs-to-load-path)
              (normal-top-level-add-subdirs-to-load-path))))))
 
-;; elpa配下をロードパスに指定。
-(add-to-load-path "elpa")
+;; 引数のディレクトリとそのサブディレクトリをload-pathに追加
+(add-to-load-path "elpa" "elisp" "conf")
 
-;; elisp配下をロードパスに指定。
-(add-to-load-path "elisp")
-
-;;;;;;;;;;;;;;;;;;;; auto-mode-alias ;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;; Auto Mode ;;;;;;;;;;;;;;;;;;;;
 
 (autoload 'markdown-mode "markdown-mode" "Major mode for editing Markdown files" t)
 (add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
-;;;;;;;;;;;;;;;;;;;;Common;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;; Common ;;;;;;;;;;;;;;;;;;;;
 
 ;; 時間表示
 (display-time)
@@ -43,8 +43,8 @@
 (column-number-mode t)
 
 ;; 行数表示
-(setq linum-format "%2d ")
-(global-linum-mode t)
+;; (setq linum-format "%2d ")
+;; (global-linum-mode t)
 
 ;; 対応する括弧をハイライトする。
 (show-paren-mode t)
@@ -52,12 +52,14 @@
 ;; タブを全てスペースに。
 (setq-default indent-tabs-mode nil)
 
-;;;;;;;;;;;;;;;;;;;;Key;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;; Key-Map ;;;;;;;;;;;;;;;;;;;;
 
-;;C-hをBackSpaceにする
+;; BackSpaceにする
 (global-set-key "\C-h" 'delete-backward-char)
+;; ウィンドウ切り替え
+(define-key global-map (kbd "C-t") 'other-window)
 
-;;;;;;;;;;;;;;;;;;;;Font;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;; Font ;;;;;;;;;;;;;;;;;;;;
 
 ;; (set-face-attribute 'default nil
 ;;             :family "Menlo" ;; font 
@@ -70,7 +72,7 @@
 ;; (setq face-font-rescale-alist
 ;;       '((".*Hiragino_Mincho_pro.*" . 1.2)))
 
-;;;;;;;;;;;;;;;;;;;;Window;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;; Window ;;;;;;;;;;;;;;;;;;;;
 
 ;; 画面分割
 (add-hook 'after-init-hook (lambda()
@@ -102,7 +104,7 @@
            (t ())
            ))
 
-;;;;;;;;;;;;;;;;;;;;Scheme;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;; Scheme Mode ;;;;;;;;;;;;;;;;;;;;
 
 (setq scheme-program-name "/usr/local/bin/gosh -i")
 (autoload 'scheme-mode "cmuscheme" "Major mode for Scheme." t)
@@ -116,7 +118,7 @@
 (define-key global-map
   "\C-cS" 'scheme-other-window)
 
-;;;;;;;;;;;;;;;;;;;;Encode;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;; Encode ;;;;;;;;;;;;;;;;;;;;
 
 (require 'ucs-normalize)
 (setq prefer-coding-system 'utf-8-hfs)
@@ -128,106 +130,21 @@
 ;;(set-terminal-coding-system 'utf-8)
 ;;(set-keyboard-coding-system 'utf-8)
 
-;;;;;;;;;;;;;;;;;;;;Shell;;;;;;;;;;;;;;;;;;;;
-
-;; ;; より下に記述した物が PATH の先頭に追加されます
-;; (dolist (dir (list
-;;               "/sbin"
-;;               "/usr/sbin"
-;;               "/bin"
-;;               "/usr/bin"
-;;               "/opt/local/bin"
-;;               "/sw/bin"
-;;               "/usr/local/bin"
-;;               (expand-file-name "~/bin")
-;;               (expand-file-name "~/.emacs.d/bin")
-;;               ))
-
-;; ;; PATH と exec-path に同じ物を追加します
-;;  (when (and (file-exists-p dir) (not (member dir exec-path)))
-;;    (setenv "PATH" (concat dir ":" (getenv "PATH")))
-;;    (setq exec-path (append (list dir) exec-path))))
-;; (setenv "MANPATH" (concat "/usr/local/man:/usr/share/man:/Developer/usr/share/man:/sw/share/man" (getenv "MANPATH")))
-
-;; ;; shell の存在を確認
-;; (defun skt:shell ()
-;;   (or (executable-find "zsh")
-;;       (executable-find "bash")
-;;       ;; (executable-find "f_zsh") ;; Emacs + Cygwin を利用する人は Zsh の代りにこれにしてください
-;;       ;; (executable-find "f_bash") ;; Emacs + Cygwin を利用する人は Bash の代りにこれにしてください
-;;       (executable-find "cmdproxy")
-;;       (error "can't find 'shell' command in PATH!!")))
-
-;; ;; shell 名の設定
-;; (setq shell-file-name (skt:shell))
-;; (setenv "SHELL" shell-file-name)
-;; (setq explicit-shell-file-name shell-file-name)
-
-;; multi-termのロード。
-;; (setq multi-term-program "/bin/zsh")
-;; (require 'multi-term)
-
-;; multi-term内でのショートカットを設定する。
-;; (when (require 'multi-term nil t)
-;;    (add-hook 'term-mode-hook
-;;          '(lambda ()
-;;             ;; C-h を term 内文字削除にする
-;;             (define-key term-raw-map (kbd "C-h") 'term-send-backspace)
-;;             ;; C-y を term 内ペーストにする
-;;             (define-key term-raw-map (kbd "C-y") 'term-paste)
-;;             )))
-
-;; ;; Emacs が保持する terminfo を利用する
-;; (setq system-uses-terminfo nil)
-
-;;;;;;;;;;;;;;;;;;;;Evernote;;;;;;;;;;;;;;;;;;;;
-
-;; (add-hook 'shell-mode-hook
-;;           (lambda ()
-;;             (set-buffer-process-coding-system 'utf-8-unix 'utf-8-unix)
-;;             ))
-
-;; (add-to-list 'load-path "~/.emacs.d/evernote-mode/")
-;;   (setq evernote-ruby-command "/usr/local/Cellar/ruby/1.9.2-p290/bin/ruby")
-;;   (require 'evernote-mode)
-;;  ;; (setq evernote-username "u-say2480.d1515@m.evernote.com")
-;;   (global-set-key "\C-cec" 'evernote-create-note)
-;;   (global-set-key "\C-ceo" 'evernote-open-note)
-;;   (global-set-key "\C-ces" 'evernote-search-notes)
-;;   (global-set-key "\C-ceS" 'evernote-do-saved-search)
-;;   (global-set-key "\C-cew" 'evernote-write-note)
-;;   (global-set-key "\C-cep" 'evernote-post-region)
-;;   (global-set-key "\C-ceb" 'evernote-browser)
-
-;;;;;;;;;;;;;;;;;;;;Package;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;; Package ;;;;;;;;;;;;;;;;;;;;
 
 (require 'package)
 (add-to-list 'package-archives
          '("marmalade" . "http://marmalade-repo.org/packages/")
          '("melpa" . "http://melpa.milkbox.net/packages/"))
 
-;;;;;;;;;;;;;;;;;;;;Auto-Complete;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;; Auto Complete ;;;;;;;;;;;;;;;;;;;;
 
-(require 'auto-complete-config)
-(ac-config-default)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/elpa/auto-complete-1.4/dict")
+(when (require 'auto-complete-config nil t)
+  (add-to-list 'ac-dictionary-directories "~/.emacs.d/elpa/auto-complete-1.4/dict")
+  (define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
+  (ac-config-default))
 
-;;;;;;;;;;;;;;;;;;;;Twitter;;;;;;;;;;;;;;;;;;;;
-
-(require 'twittering-mode)
-
-;; アイコン表示
-(setq twittering-icon-mode t)
-
-;; 認証
-(setq twittering-account-authorization 'authorized)
-(setq twittering-oauth-access-token-alist
-      '(("oauth_token" . "239840891-7daJdZEXZlufjw2Vzocju5Dk9qFG1Fa2tE1lXX5z")
-	("oauth_token_secret" . "pqJ5PnZJq2nLNpCsO0QTX6PBkePiNuTi6Nsm33aWuRpXt")
-	("user_id" . "239840891")
-	("screen_name" . "yuseinishiyama")))
-
-;;;;;;;;;;;;;;;;;;;; Audo-Save and Backup ;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;; Auto Save and Backup ;;;;;;;;;;;;;;;;;;;;
 
 ;; バックアップファイルの保存先を変更。
 (setq backup-directory-alist
@@ -250,9 +167,19 @@
       meadow-p  (featurep 'meadow)
       windows-p (or cygwin-p nt-p meadow-p))
 
-;;;;;;;;;;;;;;;;;;;; realtime-markdown-viewer ;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;; Real Time Markdown Viewer ;;;;;;;;;;;;;;;;;;;;
 
 (setq rtmv:lang 'ruby)
 
 (require 'realtime-markdown-viewer)
 
+;;;;;;;;;;;;;;;;;;;; Undo Tree ;;;;;;;;;;;;;;;;;;;;
+
+(when (require 'undo-tree nil t)
+  (global-undo-tree-mode))
+
+;;;;;;;;;;;;;;;;;;;; Divided Settings ;;;;;;;;;;;;;;;;;;;;
+
+(load "terminal")
+
+(load "local")
