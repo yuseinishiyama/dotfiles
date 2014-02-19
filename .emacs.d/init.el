@@ -15,6 +15,13 @@
 ;; 引数のディレクトリとそのサブディレクトリをload-pathに追加
 (add-to-load-path "elpa" "elisp" "conf")
 
+;;;;;;;;;;;;;;;;;;;; Auto Install ;;;;;;;;;;;;;;;;;;;;
+
+(when (require 'auto-install nil t)
+  (setq auto-install-directory "~/.dotfiles/.emacs.d/elisp/")
+  (auto-install-update-emacswiki-package-name t)
+  (auto-install-compatibility-setup))
+
 ;;;;;;;;;;;;;;;;;;;; Auto Mode ;;;;;;;;;;;;;;;;;;;;
 
 (autoload 'markdown-mode "markdown-mode" "Major mode for editing Markdown files" t)
@@ -132,15 +139,19 @@
 
 ;;;;;;;;;;;;;;;;;;;; Package ;;;;;;;;;;;;;;;;;;;;
 
-(require 'package)
-(add-to-list 'package-archives
-         '("marmalade" . "http://marmalade-repo.org/packages/")
-         '("melpa" . "http://melpa.milkbox.net/packages/"))
+(when (require 'package nil t)
+  (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+  (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
+  (add-to-list 'package-archives '("ELPA" . "http://tromey.com/elpa/"))
+  (package-initialize))
 
 ;;;;;;;;;;;;;;;;;;;; Auto Complete ;;;;;;;;;;;;;;;;;;;;
 
 (when (require 'auto-complete-config nil t)
   (add-to-list 'ac-dictionary-directories "~/.emacs.d/elpa/auto-complete-1.4/dict")
+  (global-auto-complete-mode t)
+  (define-key ac-menu-map (kbd "C-n") 'ac-next)
+  (define-key ac-menu-map (kbd "C-p") 'ac-previous)
   (define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
   (ac-config-default))
 
@@ -177,6 +188,29 @@
 
 (when (require 'undo-tree nil t)
   (global-undo-tree-mode))
+
+;;;;;;;;;;;;;;;;;;;; Undo Hist ;;;;;;;;;;;;;;;;;;;;
+
+(when (require 'undohist nil t)
+  (undohist-initialize))
+
+;;;;;;;;;;;;;;;;;;;; Ruby ;;;;;;;;;;;;;;;;;;;;
+
+(require 'ruby-electric nil t)
+
+(when (require 'ruby-block nil t)
+  (setq ruby-block-highlight-toggle t))
+
+(autoload 'run-ruby "inf-ruby"
+  "Run an inferiot Ruby process")
+(autoload 'inf-ruby-keys "inf-ruby"
+  "Set local key defs for inf-ruby in ruby-mode")
+
+(defun ruby-mode-hooks ()
+  (inf-ruby-keys)
+  (ruby-electric-mode t)
+  (ruby-block-mode t))
+(add-hook 'ruby-mode-hook 'ruby-mode-hooks)
 
 ;;;;;;;;;;;;;;;;;;;; Divided Settings ;;;;;;;;;;;;;;;;;;;;
 

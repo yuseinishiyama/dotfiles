@@ -1,6 +1,7 @@
 .DS_Store
 .emacs.d/url/
 .emacs.d/backup/
+.emacs.d/undohist/
 .emacs.d/ac-comphist.dat
 .emacs.d/auto-save-list/
 *~
