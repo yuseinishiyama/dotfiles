@@ -66,3 +66,10 @@ if which pyenv > /dev/null; then
 	export PATH=${PYENV_ROOT}/shims:${PATH}
 	eval "$(pyenv init -)";
 fi
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+# rbenv
+eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/shims:$PATH"
