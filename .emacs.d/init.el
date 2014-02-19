@@ -24,10 +24,19 @@
 
 ;;;;;;;;;;;;;;;;;;;; Auto Mode ;;;;;;;;;;;;;;;;;;;;
 
+;; markdown
 (autoload 'markdown-mode "markdown-mode" "Major mode for editing Markdown files" t)
 (add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+
+;; ruby
+(add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Rakefile$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.gemspec$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.ru$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Gemfile$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Guardfile$" . ruby-mode))
 
 ;;;;;;;;;;;;;;;;;;;; Common ;;;;;;;;;;;;;;;;;;;;
 
@@ -58,6 +67,9 @@
 
 ;; タブを全てスペースに。
 (setq-default indent-tabs-mode nil)
+
+;; タイトルバーにフルパス
+(setq frame-title-format "%f")
 
 ;;;;;;;;;;;;;;;;;;;; Key-Map ;;;;;;;;;;;;;;;;;;;;
 
@@ -196,8 +208,6 @@
 
 ;;;;;;;;;;;;;;;;;;;; Ruby ;;;;;;;;;;;;;;;;;;;;
 
-(require 'ruby-electric nil t)
-
 (when (require 'ruby-block nil t)
   (setq ruby-block-highlight-toggle t))
 
@@ -206,10 +216,12 @@
 (autoload 'inf-ruby-keys "inf-ruby"
   "Set local key defs for inf-ruby in ruby-mode")
 
+(require 'ruby-electric nil t)
+
 (defun ruby-mode-hooks ()
   (inf-ruby-keys)
-  (ruby-electric-mode t)
-  (ruby-block-mode t))
+  (ruby-block-mode t)
+  (ruby-electric-mode t))
 (add-hook 'ruby-mode-hook 'ruby-mode-hooks)
 
 ;;;;;;;;;;;;;;;;;;;; Divided Settings ;;;;;;;;;;;;;;;;;;;;

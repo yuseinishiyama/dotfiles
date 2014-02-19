@@ -473,3 +473,13 @@ enabled."
 (provide 'ruby-electric)
 
 ;;; ruby-electric.el ends here
+
+;;; For Bug Fix 
+;;; http://stackoverflow.com/questions/10326255/emacs-ruby-electric-does-not-insert-end
+
+(defun ruby-insert-end () 
+  "Insert \"end\" at point and reindent current line." 
+  (interactive) 
+  (insert "end") 
+  (ruby-indent-line t) 
+  (end-of-line))
