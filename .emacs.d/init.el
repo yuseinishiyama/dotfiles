@@ -224,7 +224,11 @@
   (ruby-electric-mode t))
 (add-hook 'ruby-mode-hook 'ruby-mode-hooks)
 
-;;;;;;;;;;;;;;;;;;;; Divided Settings ;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;; Anything ;;;;;;;;;;;;;;;;;;;;
+
+(require 'anything-config nil t)
+
+;;;;;;;;;;;;;;;;;;;; Divided ettings ;;;;;;;;;;;;;;;;;;;;
 
 (load "terminal")
 
