@@ -1,0 +1,9 @@
+[submodule "submodules/oh-my-zsh-powerline-theme"]
+	path = submodules/oh-my-zsh-powerline-theme
+	url = git@github.com:jeremyFreeAgent/oh-my-zsh-powerline-theme.git
+[submodule "submodules/powerline-fonts"]
+	path = submodules/powerline-fonts
+	url = git@github.com:Lokaltog/powerline-fonts.git
+[submodule "submodules/solarized"]
+	path = submodules/solarized
+	url = git@github.com:altercation/solarized.git
