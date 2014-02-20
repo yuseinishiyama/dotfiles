@@ -1,56 +1,22 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="gnzh"
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+ZSH_THEME="agnoster"
 
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
+COMPLETION_WAITING_DOTS="true"
 
-# Uncomment this to disable bi-weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment to change how often before auto-updates occur? (in days)
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment following line if you want to disable command autocorrection
-# DISABLE_CORRECTION="true"
-
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment following line if you want to disable marking untracked files under
-# VCS as dirty. This makes repository status check for large repositories much,
-# much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(brew emoji-clock git git-hubflow osx xcode)
+plugins=(brew git git-hubflow osx xcode bundler heroku rails rake rbenv ruby zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
-export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
-export PATH="$HOME/Library/Haskell/bin:$PATH" 
-
-#言語設定
 export LANG=ja_JP.UTF-8
 
 export TERM=xterm-256color
+
+# PATH
+export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+export PATH="$HOME/Library/Haskell/bin:$PATH" 
+export PATH="/usr/local/heroku/bin:$PATH"
 
 #SVN 1.7 of Xcode
 alias svn='/Applications/Xcode.app/Contents/Developer/usr/bin/svn'
@@ -67,9 +33,18 @@ if which pyenv > /dev/null; then
 	eval "$(pyenv init -)";
 fi
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
-
 # rbenv
 eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/shims:$PATH"
+
+# zsh-completions
+fpath=(/usr/local/share/zsh-completions $fpath)
+
+# cheat-sheet
+cheat-sheet () { zle -M "`cat ~/zsh/cheat-sheet.conf`" }
+zle -N cheat-sheet
+bindkey "^[^h" cheat-sheet
+
+git-cheat () { zle -M "`cat ~/zsh/git-cheat.conf`" }
+zle -N git-cheat
+bindkey "^[^g" git-cheat
