@@ -1,3 +1,4 @@
+
 ;;;;;;;;;;;;;;;;;;;; Load Paths ;;;;;;;;;;;;;;;;;;;;
 
 (when (< emacs-major-version 23)
@@ -13,7 +14,7 @@
              (normal-top-level-add-subdirs-to-load-path))))))
 
 ;; 引数のディレクトリとそのサブディレクトリをload-pathに追加
-(add-to-load-path "elpa" "elisp" "conf")
+(add-to-load-path "elpa" "elisp" "conf" "public_repos")
 
 ;;;;;;;;;;;;;;;;;;;; Auto Install ;;;;;;;;;;;;;;;;;;;;
 
@@ -223,6 +224,10 @@
   (ruby-block-mode t)
   (ruby-electric-mode t))
 (add-hook 'ruby-mode-hook 'ruby-mode-hooks)
+
+(require 'ido)
+(ido-mode t)
+(require 'rinari)
 
 ;;;;;;;;;;;;;;;;;;;; Anything ;;;;;;;;;;;;;;;;;;;;
 
