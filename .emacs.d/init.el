@@ -1,4 +1,3 @@
-
 ;;;;;;;;;;;;;;;;;;;; Load Paths ;;;;;;;;;;;;;;;;;;;;
 
 (when (< emacs-major-version 23)
