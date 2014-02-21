@@ -234,6 +234,10 @@
   (global-set-key (kbd "\C-x b") 'anything))
 
 
+;;;;;;;;;;;;;;;;;;;; Postgresql ;;;;;;;;;;;;;;;;;;;;
+
+export export PGDATA=/usr/local/var/postgres
+
 ;;;;;;;;;;;;;;;;;;;; Divided ettings ;;;;;;;;;;;;;;;;;;;;
 
 (load "terminal")
