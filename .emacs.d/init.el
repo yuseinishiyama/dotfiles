@@ -230,7 +230,9 @@
 
 ;;;;;;;;;;;;;;;;;;;; Anything ;;;;;;;;;;;;;;;;;;;;
 
-(require 'anything-config nil t)
+(when (require 'anything-config nil t)
+  (global-set-key (kbd "\C-x b") 'anything))
+
 
 ;;;;;;;;;;;;;;;;;;;; Divided ettings ;;;;;;;;;;;;;;;;;;;;
 
