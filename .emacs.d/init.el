@@ -224,8 +224,8 @@
   (ruby-electric-mode t))
 (add-hook 'ruby-mode-hook 'ruby-mode-hooks)
 
-(require 'ido)
-(ido-mode t)
+;; (require 'ido)
+;; (ido-mode t)
 (require 'rinari)
 
 ;;;;;;;;;;;;;;;;;;;; Anything ;;;;;;;;;;;;;;;;;;;;
