@@ -1,6 +1,10 @@
 [user]
         name = nishiyama_y
         email = nishiyama_y@mti.co.jp
+[core]
+       editor = emacs
+       quotepath = false
+       autocrlf = false
 [color]
         status = auto
         diff = auto
