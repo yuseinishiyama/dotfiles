@@ -18,14 +18,19 @@ export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
 export PATH="$HOME/Library/Haskell/bin:$PATH" 
 export PATH="/usr/local/heroku/bin:$PATH"
 
-#SVN 1.7 of Xcode
+# SVN 1.7 of Xcode
 alias svn='/Applications/Xcode.app/Contents/Developer/usr/bin/svn'
 
-#Emacs
+# Emacs
 alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs'
 
-#virtualenvwrapper
-source /usr/local/bin/virtualenvwrapper.sh
+# virtualenv
+VIRTUAL_ENV_WRAPPER=/usr/local/bin/virtualenvwrapper.sh
+if [ -e VIRTUAL_ENV_WRAPPER ]; then
+    source VIRTUAL_ENV_WRAPPER
+else
+    echo "virtualenvwrapper not found"
+fi  
 
 if which pyenv > /dev/null; then
 	export PYENV_ROOT="${HOME}/.pyenv"
