@@ -1,3 +1,4 @@
+
 ;;;;;;;;;;;;;;;;;;;; Load Paths ;;;;;;;;;;;;;;;;;;;;
 
 (when (< emacs-major-version 23)
@@ -232,11 +233,6 @@
 
 (when (require 'anything-config nil t)
   (global-set-key (kbd "\C-x b") 'anything))
-
-
-;;;;;;;;;;;;;;;;;;;; Postgresql ;;;;;;;;;;;;;;;;;;;;
-
-export export PGDATA=/usr/local/var/postgres
 
 ;;;;;;;;;;;;;;;;;;;; Divided ettings ;;;;;;;;;;;;;;;;;;;;
 

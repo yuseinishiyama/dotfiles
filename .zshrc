@@ -13,6 +13,8 @@ export LANG=ja_JP.UTF-8
 
 export TERM=xterm-256color
 
+export PGDATA=/usr/local/var/postgres
+
 # PATH
 export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
 export PATH="$HOME/Library/Haskell/bin:$PATH" 
@@ -26,8 +28,8 @@ alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs'
 
 # virtualenv
 VIRTUAL_ENV_WRAPPER=/usr/local/bin/virtualenvwrapper.sh
-if [ -e VIRTUAL_ENV_WRAPPER ]; then
-    source VIRTUAL_ENV_WRAPPER
+if [ -e $VIRTUAL_ENV_WRAPPER ]; then
+    source $VIRTUAL_ENV_WRAPPER
 else
     echo "virtualenvwrapper not found"
 fi  
