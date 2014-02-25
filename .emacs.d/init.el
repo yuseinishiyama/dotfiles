@@ -214,15 +214,14 @@
 (when (require 'ruby-block nil t)
   (setq ruby-block-highlight-toggle t))
 
-(autoload 'run-ruby "inf-ruby"
-  "Run an inferiot Ruby process")
-(autoload 'inf-ruby-keys "inf-ruby"
-  "Set local key defs for inf-ruby in ruby-mode")
+(autoload 'inf-ruby "inf-ruby" "Run an inferior Ruby process" t)
+(autoload 'inf-ruby-setup-keybindings "inf-ruby" "" t)
+(eval-after-load 'ruby-mode
+  '(add-hook 'ruby-mode-hook 'inf-ruby-setup-keybindings))
 
 (require 'ruby-electric nil t)
 
 (defun ruby-mode-hooks ()
-  (inf-ruby-keys)
   (ruby-block-mode t)
   (ruby-electric-mode t))
 (add-hook 'ruby-mode-hook 'ruby-mode-hooks)
