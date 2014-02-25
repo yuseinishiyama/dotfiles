@@ -16,7 +16,7 @@ export TERM=xterm-256color
 export PGDATA=/usr/local/var/postgres
 
 # PATH
-export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
 export PATH="$HOME/Library/Haskell/bin:$PATH" 
 export PATH="/usr/local/heroku/bin:$PATH"
 
@@ -27,9 +27,11 @@ alias svn='/Applications/Xcode.app/Contents/Developer/usr/bin/svn'
 alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs'
 
 # virtualenv
-VIRTUAL_ENV_WRAPPER=/usr/local/bin/virtualenvwrapper.sh
-if [ -e $VIRTUAL_ENV_WRAPPER ]; then
-    source $VIRTUAL_ENV_WRAPPER
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python2.7
+_VIRTUALENVWRAPPER=/usr/local/bin/virtualenvwrapper.sh
+if [ -e $_VIRTUALENVWRAPPER ]; then
+    source $_VIRTUALENVWRAPPER
 else
     echo "virtualenvwrapper not found"
 fi  
@@ -41,8 +43,8 @@ if which pyenv > /dev/null; then
 fi
 
 # rbenv
-eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/shims:$PATH"
+eval "$(rbenv init -)"
 
 # zsh-completions
 fpath=(/usr/local/share/zsh-completions $fpath)
