@@ -16,7 +16,7 @@ export TERM=xterm-256color
 export PGDATA=/usr/local/var/postgres
 
 # PATH
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
+export PATH=/usr/local/bin:/usr/sbin:/sbin:/usr/bin:/bin:$PATH
 export PATH="$HOME/Library/Haskell/bin:$PATH" 
 export PATH="/usr/local/heroku/bin:$PATH"
 
@@ -43,8 +43,7 @@ if which pyenv > /dev/null; then
 fi
 
 # rbenv
-export PATH="$HOME/.rbenv/shims:$PATH"
-eval "$(rbenv init -)"
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # zsh-completions
 fpath=(/usr/local/share/zsh-completions $fpath)
