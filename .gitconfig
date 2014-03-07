@@ -12,10 +12,12 @@
 	interactive = auto
 	grep = auto
 [alias]
+        a   = add
 	s   = status
 	st  = status
 	sh  = show
 	c   = commit
+        cm  = commit -m
 	co  = checkout
 	br  = branch
 	log-graph = log --graph --date=short --pretty=format:'%Cgreen%h %cd %Cblue%cn %Creset%s'
