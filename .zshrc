@@ -17,7 +17,7 @@ export PGDATA=/usr/local/var/postgres
 
 # PATH
 export PATH=/usr/local/bin:/usr/sbin:/sbin:/usr/bin:/bin:$PATH
-export PATH="$HOME/Library/Haskell/bin:$PATH" 
+export PATH="$HOME/Library/Haskell/bin:$PATH"
 export PATH="/usr/local/heroku/bin:$PATH"
 
 # SVN 1.7 of Xcode
@@ -56,3 +56,7 @@ bindkey "^[^h" cheat-sheet
 git-cheat () { zle -M "`cat ~/zsh/git-cheat.conf`" }
 zle -N git-cheat
 bindkey "^[^g" git-cheat
+
+# load local settings
+_ZSH_LOCAL_SETTING="$HOME/.dotfiles/.zshrc.local"
+[ -f $_ZSH_LOCAL_SETTING ] && source $_ZSH_LOCAL_SETTING
