@@ -24,6 +24,8 @@ export PATH="/usr/local/heroku/bin:$PATH"
 alias svn='/Applications/Xcode.app/Contents/Developer/usr/bin/svn'
 
 # Emacs
+export ALTERNATE_EDITOR=""
+export EDITOR=emacsclient
 alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs'
 
 # virtualenv

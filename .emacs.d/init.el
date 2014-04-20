@@ -1,4 +1,3 @@
-
 ;;;;;;;;;;;;;;;;;;;; Load Paths ;;;;;;;;;;;;;;;;;;;;
 
 (when (< emacs-major-version 23)
@@ -22,22 +21,6 @@
   (setq auto-install-directory "~/.dotfiles/.emacs.d/elisp/")
   (auto-install-update-emacswiki-package-name t)
   (auto-install-compatibility-setup))
-
-;;;;;;;;;;;;;;;;;;;; Auto Mode ;;;;;;;;;;;;;;;;;;;;
-
-;; markdown
-(autoload 'markdown-mode "markdown-mode" "Major mode for editing Markdown files" t)
-(add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
-(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
-(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
-
-;; ruby
-(add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
-(add-to-list 'auto-mode-alist '("Rakefile$" . ruby-mode))
-(add-to-list 'auto-mode-alist '("\\.gemspec$" . ruby-mode))
-(add-to-list 'auto-mode-alist '("\\.ru$" . ruby-mode))
-(add-to-list 'auto-mode-alist '("Gemfile$" . ruby-mode))
-(add-to-list 'auto-mode-alist '("Guardfile$" . ruby-mode))
 
 ;;;;;;;;;;;;;;;;;;;; Common ;;;;;;;;;;;;;;;;;;;;
 
@@ -76,23 +59,32 @@
 
 ;; BackSpaceにする
 (global-set-key "\C-h" 'delete-backward-char)
+
 ;; ウィンドウ切り替え
 (define-key global-map (kbd "C-t") 'other-window)
+
 ;; 折り返しトグルコマンド
 (define-key global-map (kbd "C-c l") 'toggle-truncate-lines)
 
+;; 改行時にインデント
+(global-set-key (kbd "C-m") 'newline-and-indent)
+
 ;;;;;;;;;;;;;;;;;;;; Font ;;;;;;;;;;;;;;;;;;;;
 
-;; (set-face-attribute 'default nil
-;;             :family "Menlo" ;; font 
-;;            :height 140)    ;; font size
+;; 英語
+(set-face-attribute 'default nil
+                    :family "Source Code Pro for Powerline" ;; font 
+                    :height 140)
 
-;; (set-fontset-font
-;;  nil 'japanese-jisx0208
-;;  (font-spec :family "Hiragino Mincho Pro")) ;; font
+;; 日本語
+(set-fontset-font
+ nil 'japanese-jisx0208
+ (font-spec :family "Hiragino Mincho Pro"))
 
-;; (setq face-font-rescale-alist
-;;       '((".*Hiragino_Mincho_pro.*" . 1.2)))
+;; フォントの横幅
+(setq face-font-rescale-alist
+      '((".*Menlo.*" . 1.0)
+        (".*Hiragino_Mincho_pro.*" . 1.2)))
 
 ;;;;;;;;;;;;;;;;;;;; Window ;;;;;;;;;;;;;;;;;;;;
 
@@ -102,55 +94,42 @@
     (setq w2 (split-window-vertically (floor (* 0.7 (window-height)))))
     (select-window w2)
 ;;    (multi-term)
-;;    (setq w3 (split-window-vertically (floor (* 0.2 (window-height)))))
+;;    (setq w3 (split-window-vertically (foor (* 0.2 (window-height)))))
     (run-scheme scheme-program-name)
     (select-window w)))
 
-;; ツールバーを表示しないようにする（Official Emacs の場合は 0）
+;; ツールバーを表示しないようにする（Oficial Emacs の場合は 0）
 (tool-bar-mode 0)
 
 ;; 透明化
 (add-to-list 'default-frame-alist '(alpha . (0.85 0.85)))
 
 ;; 色
-(custom-set-faces
- '(default ((t
-             (:background "navy" :foreground "white");;"#55FF55")
-             ))))
- '(cursor ((((class color)
-             (background dark))
-            (:background "black"));;"#00AA00"))
-           (((class color)
-             (background light))
-            (:background "black"));"#999999"))
-           (t ())
-           ))
+(when (require 'color-theme nil t)
+  (color-theme-initialize)
+  (color-theme-matrix))
 
-;;;;;;;;;;;;;;;;;;;; Scheme Mode ;;;;;;;;;;;;;;;;;;;;
-
-(setq scheme-program-name "/usr/local/bin/gosh -i")
-(autoload 'scheme-mode "cmuscheme" "Major mode for Scheme." t)
-(autoload 'run-scheme "cmuscheme" "Run an inferior Scheme process." t)
-(defun scheme-other-window ()
-  "Run scheme on other window"
-  (interactive)
-  (switch-to-buffer-other-window
-   (get-buffer-create "*scheme*"))
-  (run-scheme scheme-program-name))
-(define-key global-map
-  "\C-cS" 'scheme-other-window)
+;; フェイス設定例
+;; (custom-set-faces
+;;  '(default ((t
+;;              (:background "navy" :foreground "white");;"#55FF55")
+;;              ))))
+;;  '(cursor ((((class color)
+;;              (background dark))
+;;             (:background "black"));;"#00AA00"))
+;;            (((class color)
+;;              (background light))
+;;             (:background "black"));"#999999"))
+;;            (t ())
+;;            ))
 
 ;;;;;;;;;;;;;;;;;;;; Encode ;;;;;;;;;;;;;;;;;;;;
 
 (require 'ucs-normalize)
 (setq prefer-coding-system 'utf-8-hfs)
-;(set-language-environment "Japanese") 
+;;(set-language-environment "Japanese") 
 (set-language-environment 'utf-8) ;Japaneseだとmulti-termで日本語が入力できなかったため。
 (setq locale-coding-system 'utf-8) ;;設定しないとシェルが文字化けする。
-;;(set-default-coding-systems 'utf-8)
-;;(set-buffer-file-coding-system 'utf-8)
-;;(set-terminal-coding-system 'utf-8)
-;;(set-keyboard-coding-system 'utf-8)
 
 ;;;;;;;;;;;;;;;;;;;; Package ;;;;;;;;;;;;;;;;;;;;
 
@@ -193,12 +172,6 @@
       meadow-p  (featurep 'meadow)
       windows-p (or cygwin-p nt-p meadow-p))
 
-;;;;;;;;;;;;;;;;;;;; Real Time Markdown Viewer ;;;;;;;;;;;;;;;;;;;;
-
-(setq rtmv:lang 'ruby)
-
-(require 'realtime-markdown-viewer)
-
 ;;;;;;;;;;;;;;;;;;;; Undo Tree ;;;;;;;;;;;;;;;;;;;;
 
 (when (require 'undo-tree nil t)
@@ -209,7 +182,20 @@
 (when (require 'undohist nil t)
   (undohist-initialize))
 
+;;;;;;;;;;;;;;;;;;;; Anything ;;;;;;;;;;;;;;;;;;;;
+
+(when (require 'anything-config nil t)
+  (global-set-key (kbd "\C-x b") 'anything))
+
 ;;;;;;;;;;;;;;;;;;;; Ruby ;;;;;;;;;;;;;;;;;;;;
+
+;; Ruby
+(add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Rakefile$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.gemspec$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.ru$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Gemfile$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Guardfile$" . ruby-mode))
 
 (when (require 'ruby-block nil t)
   (setq ruby-block-highlight-toggle t))
@@ -230,12 +216,38 @@
 ;; (ido-mode t)
 (require 'rinari)
 
-;;;;;;;;;;;;;;;;;;;; Anything ;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;; Haskell ;;;;;;;;;;;;;;;;;;;;
 
-(when (require 'anything-config nil t)
-  (global-set-key (kbd "\C-x b") 'anything))
+(add-to-list 'auto-mode-alist '("\\.hs$" . haskell-mode))
+(add-to-list 'auto-mode-alist '("\\.lhs$" . literate-haskell-mode))
+(add-to-list 'auto-mode-alist '("\\.cabal\\'" . haskell-cabal-mode))
 
-;;;;;;;;;;;;;;;;;;;; Divided ettings ;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;; Scheme ;;;;;;;;;;;;;;;;;;;;
+
+(setq scheme-program-name "/usr/local/bin/gosh -i")
+(autoload 'scheme-mode "cmuscheme" "Major mode for Scheme." t)
+(autoload 'run-scheme "cmuscheme" "Run an inferior Scheme process." t)
+(defun scheme-other-window ()
+  "Run scheme on other window"
+  (interactive)
+  (switch-to-buffer-other-window
+   (get-buffer-create "*scheme*"))
+  (run-scheme scheme-program-name))
+(define-key global-map
+  "\C-cS" 'scheme-other-window)
+
+;;;;;;;;;;;;;;;;;;;; Markdown ;;;;;;;;;;;;;;;;;;;;
+
+(autoload 'markdown-mode "markdown-mode" "Major mode for editing Markdown files" t)
+(add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+
+(setq rtmv:lang 'ruby)
+
+(require 'realtime-markdown-viewer)
+
+;;;;;;;;;;;;;;;;;;;; Divided Settings ;;;;;;;;;;;;;;;;;;;;
 
 (load "terminal")
 
