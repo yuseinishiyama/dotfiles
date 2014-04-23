@@ -2,7 +2,7 @@
         name = nishiyama_y
         email = nishiyama_y@mti.co.jp
 [core]
-       editor = emacs
+       editor = "emacs -Q -nw"
        quotepath = false
        autocrlf = false
 [color]
