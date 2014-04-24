@@ -102,12 +102,21 @@
 (tool-bar-mode 0)
 
 ;; 透明化
-(add-to-list 'default-frame-alist '(alpha . (0.85 0.85)))
+(add-to-list 'default-frame-alist '(alpha . (0.9 0.9)))
+
+;; Zenburn
+;; (load-theme 'zenburn t)
+
+;; Solarized
+;; (when (require 'color-theme)
+;;   (color-theme-initialize)
+;;   ;; color-theme-solorized.el
+;;   (when (require 'color-theme-solarized)))
 
 ;; 色
 (when (require 'color-theme nil t)
-  (color-theme-initialize)
-  (color-theme-matrix))
+(color-theme-initialize)
+(color-theme-dark-laptop))
 
 ;; フェイス設定例
 ;; (custom-set-faces
@@ -122,6 +131,10 @@
 ;;             (:background "black"));"#999999"))
 ;;            (t ())
 ;;            ))
+
+;; Powerline
+(require 'powerline)
+(powerline-default-theme)
 
 ;;;;;;;;;;;;;;;;;;;; Encode ;;;;;;;;;;;;;;;;;;;;
 
@@ -138,16 +151,6 @@
   (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
   (add-to-list 'package-archives '("ELPA" . "http://tromey.com/elpa/"))
   (package-initialize))
-
-;;;;;;;;;;;;;;;;;;;; Auto Complete ;;;;;;;;;;;;;;;;;;;;
-
-(when (require 'auto-complete-config nil t)
-  (add-to-list 'ac-dictionary-directories "~/.emacs.d/elpa/auto-complete-1.4/dict")
-  (global-auto-complete-mode t)
-  (define-key ac-menu-map (kbd "C-n") 'ac-next)
-  (define-key ac-menu-map (kbd "C-p") 'ac-previous)
-  (define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
-  (ac-config-default))
 
 ;;;;;;;;;;;;;;;;;;;; Auto Save and Backup ;;;;;;;;;;;;;;;;;;;;
 
@@ -172,6 +175,16 @@
       meadow-p  (featurep 'meadow)
       windows-p (or cygwin-p nt-p meadow-p))
 
+;;;;;;;;;;;;;;;;;;;; Auto Complete ;;;;;;;;;;;;;;;;;;;;
+
+(when (require 'auto-complete-config nil t)
+  (add-to-list 'ac-dictionary-directories "~/.emacs.d/elpa/auto-complete-1.4/dict")
+  (global-auto-complete-mode t)
+  (define-key ac-menu-map (kbd "C-n") 'ac-next)
+  (define-key ac-menu-map (kbd "C-p") 'ac-previous)
+  (define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
+  (ac-config-default))
+
 ;;;;;;;;;;;;;;;;;;;; Undo Tree ;;;;;;;;;;;;;;;;;;;;
 
 (when (require 'undo-tree nil t)
@@ -186,6 +199,11 @@
 
 (when (require 'anything-config nil t)
   (global-set-key (kbd "\C-x b") 'anything))
+
+;;;;;;;;;;;;;;;;;;;; Smooth Scroll ;;;;;;;;;;;;;;;;;;;;
+
+(require 'smooth-scroll)
+(smooth-scroll-mode t)
 
 ;;;;;;;;;;;;;;;;;;;; Ruby ;;;;;;;;;;;;;;;;;;;;
 
@@ -221,6 +239,11 @@
 (add-to-list 'auto-mode-alist '("\\.hs$" . haskell-mode))
 (add-to-list 'auto-mode-alist '("\\.lhs$" . literate-haskell-mode))
 (add-to-list 'auto-mode-alist '("\\.cabal\\'" . haskell-cabal-mode))
+
+(add-hook 'haskell-mode-hook 'haskell-indentation-mode)
+
+(autoload 'ghc-init "ghc" nil t)
+(add-hook 'haskell-mode-hook (lambda() (ghc-init)))
 
 ;;;;;;;;;;;;;;;;;;;; Scheme ;;;;;;;;;;;;;;;;;;;;
 
