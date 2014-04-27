@@ -1,0 +1,53 @@
+;; リポジトリを設定。
+(source "gnu" "http://elpa.gnu.org/packages/")
+(source "melpa" "http://melpa.milkbox.net/packages/")
+(source "marmalade" "http://marmalade-repo.org/packages/")
+(source "org" "http://orgmode.org/elpa/")
+
+;; 追加するパッケージの登録。
+
+;; Setup
+(depends-on "cask")
+(depends-on "pallet")
+(depends-on "init-loader")
+
+;; Undo
+(depends-on "undo-tree")
+(depends-on "undohist")
+
+;; Auto-Complete
+(depends-on "auto-complete")
+(depends-on "fuzzy")
+(depends-on "popup")
+
+;; Powerline
+(depends-on "powerline")
+
+;; Sticky
+(depends-on "sticky")
+
+;; Smooth-Scroll
+(depends-on "smooth-scroll")
+
+;; Helm
+(depends-on "helm")
+(depends-on "helm-gtags")
+(depends-on "helm-descbinds")
+(depends-on "helm-ag")
+
+;; Color-Theme
+(depends-on "color-theme")
+
+;; Haskell
+(depends-on "haskell-mode")
+(depends-on "ghc")
+
+;; Ruby
+(depends-on "ruby-block")
+(depends-on "ruby-electric")
+(depends-on "inf-ruby")
+(depends-on "rinari" :git "https://github.com/eschulte/rinari")
+
+;; Markdown
+(depends-on "markdown-mode")
+;; (depends-on "realtime-markdown-viewer")
