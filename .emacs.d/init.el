@@ -19,8 +19,22 @@
 
 (when (require 'auto-install nil t)
   (setq auto-install-directory "~/.dotfiles/.emacs.d/elisp/")
-  (auto-install-update-emacswiki-package-name t)
+  (ignore-errors 
+    (auto-install-update-emacswiki-package-name t))
   (auto-install-compatibility-setup))
+
+;;;;;;;;;;;;;;;;;;;; Emacs Client ;;;;;;;;;;;;;;;;;;;;
+
+;; サーバーの起動
+(when (require 'server nil t)
+  (unless (server-running-p)
+    (server-start)))
+
+;; 終了せずに休止状態に
+(global-set-key (kbd "C-x C-c") 'ns-do-hide-emacs)
+
+;; M-x exitで終了
+(defalias 'exit 'save-buffers-kill-emacs)
 
 ;;;;;;;;;;;;;;;;;;;; Common ;;;;;;;;;;;;;;;;;;;;
 
@@ -54,6 +68,12 @@
 
 ;; タイトルバーにフルパス
 (setq frame-title-format "%f")
+
+;; キーストロークをエコーエリアに早く表示する。
+(setq echo-keystrokes 0.1)
+
+;; GCを減らす
+(setq gc-cons-threshold (* 10 gc-cons-threshold))
 
 ;;;;;;;;;;;;;;;;;;;; Key-Map ;;;;;;;;;;;;;;;;;;;;
 
@@ -202,8 +222,13 @@
 
 ;;;;;;;;;;;;;;;;;;;; Smooth Scroll ;;;;;;;;;;;;;;;;;;;;
 
-(require 'smooth-scroll)
-(smooth-scroll-mode t)
+(when (require 'smooth-scroll nil t)
+  (smooth-scroll-mode t))
+
+;;;;;;;;;;;;;;;;;;;; Sticky ;;;;;;;;;;;;;;;;;;;;
+
+(when (require 'sticky nil t)
+  (use-sticky-key ";" sticky-alist:en))
 
 ;;;;;;;;;;;;;;;;;;;; Ruby ;;;;;;;;;;;;;;;;;;;;
 
