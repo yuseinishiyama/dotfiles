@@ -1,0 +1,7 @@
+(when (require 'auto-complete-config nil t)
+  (add-to-list 'ac-dictionary-directories (concat user-emacs-directory "ac-dict"))
+  (global-auto-complete-mode t)
+  (define-key ac-menu-map (kbd "C-n") 'ac-next)
+  (define-key ac-menu-map (kbd "C-p") 'ac-previous)
+  (define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
+  (ac-config-default))
