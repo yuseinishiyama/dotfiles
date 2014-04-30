@@ -38,6 +38,9 @@
 ;; Color-Theme
 (depends-on "color-theme")
 
+;; Smartparens
+(depends-on "smartparens")
+
 ;; Haskell
 (depends-on "haskell-mode")
 (depends-on "ghc")
