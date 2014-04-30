@@ -10,3 +10,6 @@
 [submodule ".emacs.d/public_repos/rinari"]
         path = .emacs.d/public_repos/rinari
         url = git@github.com:eschulte/rinari.git
+[submodule "submodules/iTerm-2-Color-Themes"]
+	path = submodules/iTerm-2-Color-Themes
+	url = https://github.com/baskerville/iTerm-2-Color-Themes
