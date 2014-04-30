@@ -1,4 +1,5 @@
 .DS_Store
+.cask
 .emacs.d/url/
 .emacs.d/backup/
 .emacs.d/undohist/
