@@ -44,6 +44,15 @@
 ;; Popwin
 (depends-on "popwin")
 
+;; Anzu
+(depends-on "anzu")
+
+;; rainbow-delimiters
+(depends-on "rainbow-delimiters")
+
+;; Common Lisp
+(depends-on "slime")
+
 ;; Haskell
 (depends-on "haskell-mode")
 (depends-on "ghc")
