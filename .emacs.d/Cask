@@ -41,6 +41,9 @@
 ;; Smartparens
 (depends-on "smartparens")
 
+;; Popwin
+(depends-on "popwin")
+
 ;; Haskell
 (depends-on "haskell-mode")
 (depends-on "ghc")
