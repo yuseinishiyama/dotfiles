@@ -47,7 +47,7 @@
 ;; Anzu
 (depends-on "anzu")
 
-;; rainbow-delimiters
+;; Rainbow-delimiters
 (depends-on "rainbow-delimiters")
 
 ;; Common Lisp
