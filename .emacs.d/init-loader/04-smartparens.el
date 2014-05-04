@@ -1,2 +1,2 @@
-(package-initialize)
-(smartparens-global-mode t)
+(when (require 'smartparens-config nil t)
+  (smartparens-global-mode t))
