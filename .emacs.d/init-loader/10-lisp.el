@@ -1,7 +1,12 @@
 ;; Common Lisp
 (when (require 'slime-autoloads nil t)
+  ;; clispをデフォルトの処理系に。
   (setq inferior-lisp-program "/usr/local/bin/clisp")
   (setq slime-contribs '(slime-fancy)))
+
+(when (require 'ac-slime-autoloads nil t)
+  (add-hook 'slime-mode-hook 'set-up-slime-ac)
+  (add-hook 'slime-repl-mode-hook 'set-up-slime-ac))
 
 ;; Scheme
 (setq scheme-program-name "/usr/local/bin/gosh -i")
