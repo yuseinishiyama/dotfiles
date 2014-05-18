@@ -50,6 +50,9 @@
 ;; Rainbow-delimiters
 (depends-on "rainbow-delimiters")
 
+;; Flycheck
+(depends-on "flycheck")
+
 ;; Common Lisp
 (depends-on "slime")
 (depends-on "ac-slime")
