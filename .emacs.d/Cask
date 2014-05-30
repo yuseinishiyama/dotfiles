@@ -53,6 +53,11 @@
 ;; Flycheck
 (depends-on "flycheck")
 
+;; Multiple Cursors
+(depends-on "multiple-cursors")
+(depends-on "expand-region")
+(depends-on "smartrep")
+
 ;; Common Lisp
 (depends-on "slime")
 (depends-on "ac-slime")
