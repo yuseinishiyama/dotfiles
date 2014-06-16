@@ -63,7 +63,11 @@ fi
 ########################################
 # rbenv
 ########################################
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+if which rbenv > /dev/null; then
+    eval "$(rbenv init -)"
+else
+    echo "rbenv not found"
+fi
 
 
 ########################################
@@ -88,4 +92,39 @@ bindkey "^[^g" git-cheat
 # Load local settings
 ########################################
 _ZSH_LOCAL_SETTING="$HOME/.dotfiles/.zshrc.local"
-[ -f $_ZSH_LOCAL_SETTING ] && source $_ZSH_LOCAL_SETTING
+if [ -f $_ZSH_LOCAL_SETTING ]; then
+    source $_ZSH_LOCAL_SETTING
+else
+    echo ".zshrc.local not found."
+fi
+
+
+########################################
+# Notify after command finished
+########################################
+## zsh integration: any command that takes longer than 3 seconds
+## https://gist.github.com/syui/7112389/raw/growl.zsh
+## http://qiita.com/kazuph/items/3bfdfce6b7d02b43bf4d
+
+alias pong='perl -nle '\''print "display notification \"$_\" with title \"Terminal\""'\'' | osascript'
+ 
+preexec() {
+  zsh_notify_cmd=$1
+  zsh_notify_time=`date +%s`
+}
+ 
+precmd() {
+  if (( $? == 0 )); then
+    # message
+    zsh_notify_status=done\!\!
+  else
+    zsh_notify_status=fail
+  fi
+  if [[ "${zsh_notify_cmd}" != "" ]]; then
+    # time
+    if (( `date +%s` - ${zsh_notify_time} > 3 )); then
+      echo ${zsh_notify_cmd} ${zsh_notify_status}  | pong
+    fi
+  fi
+  zsh_notify_cmd=
+}
