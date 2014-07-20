@@ -37,6 +37,7 @@
 
 ;; Color-Theme
 (depends-on "color-theme")
+(depends-on "replace-colorthemes" :git "git@github.com:emacs-jp/replace-colorthemes.git")
 
 ;; Smartparens
 (depends-on "smartparens")
