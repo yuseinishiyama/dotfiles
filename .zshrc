@@ -8,7 +8,7 @@ plugins=(brew git git-hubflow osx xcode bundler heroku rails rake rbenv ruby zsh
 source $ZSH/oh-my-zsh.sh
 export LANG=ja_JP.UTF-8
 export TERM=xterm-256color
-
+alias la='ls -a'
 
 ########################################
 # Postgre
@@ -89,16 +89,6 @@ bindkey "^[^g" git-cheat
 
 
 ########################################
-# Load local settings
-########################################
-_ZSH_LOCAL_SETTING="$HOME/.dotfiles/.zshrc.local"
-if [ -f $_ZSH_LOCAL_SETTING ]; then
-    source $_ZSH_LOCAL_SETTING
-else
-    echo ".zshrc.local not found."
-fi
-
-########################################
 # peco
 ########################################
 
@@ -166,3 +156,14 @@ precmd() {
   fi
   zsh_notify_cmd=
 }
+
+########################################
+# Load local settings
+########################################
+_ZSH_LOCAL_SETTING="$HOME/.dotfiles/.zshrc.local"
+if [ -f $_ZSH_LOCAL_SETTING ]; then
+    source $_ZSH_LOCAL_SETTING
+else
+    echo ".zshrc.local not found."
+fi
+
