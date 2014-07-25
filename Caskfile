@@ -1,0 +1,23 @@
+install caskroom/cask/brew-cask
+tap caskroom/versions
+
+# Add '|| true' for fear of installation failure.
+
+cask install alfred || true
+cask install appcleaner || true
+cask install clipmenu || true
+cask install dash || true
+cask install dropbox || true
+cask install evernote || true
+cask install flux || true
+cask install gimp || true
+cask install google-chrome || true
+
+# needs password
+cask install karabiner || true
+
+cask install keepassx || true
+cask install skype || true
+cask install spectacle || true
+cask install teamviz || true
+cask install yorufukurou || true
