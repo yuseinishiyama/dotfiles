@@ -15,8 +15,8 @@ brew_setup() {
     echo "Setup homebrew..."
     # Install homebrew
     ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
-    brew bundle Brewfile
-    brew bundle Caskfile
+    brew bundle $HOME/.dotfiles/Brewfile
+    brew bundle $HOME/.dotfiles/Caskfile
     brew cask alfred link
 }
 
