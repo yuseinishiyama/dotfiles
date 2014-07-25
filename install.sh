@@ -6,7 +6,7 @@
 if [ ! -d "$HOME/.dotfiles" ]; then
     echo "Installing dotfiles..."
     git clone https://github.com/yuseinishiyama/dotfiles.git "$HOME/.dotfiles"
-    source bootstrap.sh
+    source $HOME/.dotfiles/bootstrap.sh
 else
     echo "dotfiles are already installed."
 fi
