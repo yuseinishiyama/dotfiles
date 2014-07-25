@@ -1,0 +1,18 @@
+* Requirements
+** Download 'Command Line Tools for Xcode'
+* sh -c "`curl -fsSL https://raw.github.com/yuseinishiyama/dotfiles/master/install.sh`"
+** clone repo
+** bootstrap.sh
+*** Create symlinks.
+*** Install homebrew.
+*** brew bundle Brewfile & Caskfile
+*** brew cask alfred link
+*** Set zsh as default shell.
+*** TODO Settings for Mac.
+*** TODO Settings for Emacs.
+*** TODO Launch iTerm
+** Manual?
+* Settings for iTerm
+* Settings for ssh
+* Import Keepass database.
+
