@@ -19,11 +19,18 @@ brew_setup() {
     brew bundle $HOME/.dotfiles/Caskfile
     brew cask alfred link # TODO: 失敗する
 }
-# TODO: oh-my-zsh
+
+zsh_setup() {
+    # Install oh-my-zsh
+    # !!! oh-my-zsh makes zsh default shell automatically. !!!
+    curl -L http://install.ohmyz.sh | sh
+}
+
 symlink
 brew_setup
-chsh -s `which zsh` # Set zsh as default shell.
+zsh_setup
+
 echo "finish!"
 
-# TODO: Settings for mac
+# TODO: Settings for OS X
 
