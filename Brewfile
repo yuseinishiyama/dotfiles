@@ -1,8 +1,3 @@
-# homebrew/dupes
-# homebrew/science
-# homebrew/versions
-# peco/peco
-
 # Make sure we're using the latest homebrew
 update
 
@@ -39,6 +34,7 @@ install zsh-completions
 # misc
 ########################################
 install tree
+tap peco/peco
 install peco
 
 # Remove outdated versions from the cellar.
