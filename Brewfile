@@ -1,8 +1,8 @@
 # Make sure we're using the latest homebrew
-update
+update || true
 
 # Upgrade any already-installed formular
-upgrade
+upgrade || true
 
 ########################################
 # Python
@@ -23,6 +23,7 @@ install ruby-build
 ########################################
 install emacs
 install cask
+install ispell
 
 ########################################
 # zsh
