@@ -10,6 +10,7 @@ cask install appcleaner || true
 cask install clipmenu || true
 cask install dash || true
 cask install dropbox || true
+cask install emacs || true
 cask install evernote || true
 cask install flux || true
 cask install gimp || true

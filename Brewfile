@@ -7,36 +7,36 @@ upgrade || true
 ########################################
 # Python
 ########################################
-install python
-install pyenv
-install pyenv-virtualenv
+install python || true
+install pyenv || true
+install pyenv-virtualenv || true
 
 ########################################
 # Ruby
 ########################################
-install ruby
-install rbenv
-install ruby-build
+install ruby || true
+install rbenv || true
+install ruby-build || true
 
 ########################################
 # Emacs
 ########################################
-install emacs
-install cask
-install ispell
+#install --cocoa emacs || true #install emacs with brew-cask
+install cask || true
+install ispell || true
 
 ########################################
 # zsh
 ########################################
-install zsh
-install zsh-completions
+install zsh || true
+install zsh-completions || true
 
 ########################################
 # misc
 ########################################
-install tree
-tap peco/peco
-install peco
+install tree || true
+tap peco/peco || true
+install peco || true
 
 # Remove outdated versions from the cellar.
 cleanup
