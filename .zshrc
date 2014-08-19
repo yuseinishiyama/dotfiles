@@ -33,9 +33,9 @@ alias svn='/Applications/Xcode.app/Contents/Developer/usr/bin/svn'
 ########################################
 # Emacs
 ########################################
-alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs'
+alias emacs='~/Applications/Emacs.app/Contents/MacOS/Emacs'
 function emacsclient () {
-    /Applications/Emacs.app/../bin/emacsclient -n $1 --alternate-editor /Applications/Emacs.app/Contents/MacOS/Emacs &
+    ~/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n $1 --alternate-editor /Applications/Emacs.app/Contents/MacOS/Emacs &
 }
 alias e='emacsclient'
 export EDITOR=emacsclient
