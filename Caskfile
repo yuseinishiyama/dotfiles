@@ -15,6 +15,7 @@ cask install flux || true
 cask install gimp || true
 cask install google-chrome || true
 cask install google-japanese-ime || true
+cask install iterm2 || true
 
 # needs password
 cask install karabiner || true
