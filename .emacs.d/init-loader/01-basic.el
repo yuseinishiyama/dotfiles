@@ -56,14 +56,14 @@
 ;;;;;;;;;;;;;;;;;;;; Windown ;;;;;;;;;;;;;;;;;;;;
 
 ;; 画面分割
-(add-hook 'after-init-hook (lambda()
-    (setq w (selected-window))
-    (setq w2 (split-window-vertically (floor (* 0.7 (window-height)))))
-    (select-window w2)
-;;    (multi-term)
-;;    (setq w3 (split-window-vertically (foor (* 0.2 (window-height)))))
-    (run-scheme scheme-program-name)
-    (select-window w)))
+;; (add-hook 'after-init-hook (lambda()
+;;     (setq w (selected-window))
+;;     (setq w2 (split-window-vertically (floor (* 0.7 (window-height)))))
+;;     (select-window w2)
+;; ;;    (multi-term)
+;; ;;    (setq w3 (split-window-vertically (foor (* 0.2 (window-height)))))
+;;     (run-scheme scheme-program-name)
+;;     (select-window w)))
 
 ;;;;;;;;;;;;;;;;;;;; Encode ;;;;;;;;;;;;;;;;;;;;
 
