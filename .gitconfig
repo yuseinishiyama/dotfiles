@@ -1,7 +1,8 @@
 [include]
-        path = .gitconfig.local
+       path = .gitconfig.local
 [core]
-       editor = emacsclient
+#       editor = emacsclient
+       editor = ~/Applications/Emacs.app/Contents/MacOS/bin/emacsclient
        quotepath = false
        autocrlf = false
 [color]
@@ -34,3 +35,4 @@
         dm = diff master
         dc = diff --cached
         d1 = diff HEAD~
+
