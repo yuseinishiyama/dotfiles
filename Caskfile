@@ -25,4 +25,4 @@ cask install spectacle || true
 cask install teamviz || true
 cask install yorufukurou || true
 
-celanup
+cleanup
