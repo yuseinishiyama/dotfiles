@@ -1,6 +1,5 @@
-[user]
-        name = yuseinishiyama
-        email = allegllet.scherzand@gmail.com
+[include]
+        path = .gitconfig.local
 [core]
        editor = emacsclient
        quotepath = false
