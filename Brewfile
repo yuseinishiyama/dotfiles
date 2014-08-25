@@ -37,6 +37,7 @@ install zsh-completions || true
 install tree || true
 tap peco/peco || true
 install peco || true
+install autossh || true
 
 # Remove outdated versions from the cellar.
 cleanup
