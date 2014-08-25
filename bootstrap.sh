@@ -3,7 +3,7 @@
 # create symlinks
 symlink() {
     echo "Create symlinks..."
-    DOT_FILES=( .emacs.d .zshrc .bash_profile .gitconfig .tmux.conf .peco)
+    DOT_FILES=( .emacs.d .zshrc .bash_profile .gitconfig .gitconfig.local .tmux.conf .peco)
 
     for file in ${DOT_FILES[@]}
     do
