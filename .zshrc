@@ -25,6 +25,11 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 
 ########################################
+# Git
+########################################
+eval "$(hub alias -s)"
+
+########################################
 # SVN
 ########################################
 alias svn='/Applications/Xcode.app/Contents/Developer/usr/bin/svn'
