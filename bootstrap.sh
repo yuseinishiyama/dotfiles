@@ -49,11 +49,27 @@ zsh_install() {
 }
 
 mac_configure() {
-    exit 1
+    echo "Configure settings for Mac OS X."
+    $HOME/.dotfiles/osx/defaults.sh -i
+    ITERM_PLIST="$HOME/Library/Preferences/com.googlecode.iterm2.plist"
+    if [ -e $ITERM_PLIST ]; then
+        rm $ITERM_PLIST
+    fi
+    ln -s $HOME/.dotfiles/osx/com.googlecode.iterm2.plist $ITERM_PLIST
 }
 
 CMDNAME=`basename $0`
-USAGE="Usage: $CMDNAME [command ...]"
+USAGE="Usage: $CMDNAME [install | brew | cask | link | mac]"
+help() {
+    echo $USAGE
+    echo ""
+    echo "Commands are:"
+    echo "  install    Setup all configurations"
+    echo "  brew       Install via Brewfile"
+    echo "  cask       Install via Caskfile"
+    echo "  link       Create symlinks for dotfiles"
+    echo "  mac        Configure defaults and iTerm2."
+}
 
 while [ $# -gt 0 ]
 do
@@ -81,8 +97,14 @@ do
             break
             ;;
         mac)
-            echo 'mac'
-            break;;
+            mac_configure
+            break
+            ;;
+        -h)
+            help
+            exit 0
+            break
+            ;;
         *)
             echo "$USAGE" 1>&2
             exit 1
@@ -91,4 +113,3 @@ do
 done
 
 echo "finish!"
-
