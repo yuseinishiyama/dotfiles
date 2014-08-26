@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 DOT_FILES=( .emacs.d .zshrc .bash_profile .gitconfig .gitconfig.local .tmux.conf .peco )
 

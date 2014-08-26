@@ -1,3 +1,5 @@
+#!/bin/sh
+
 CMD=`basename $0`
 
 _set() {

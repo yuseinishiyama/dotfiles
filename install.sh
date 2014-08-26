@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # How to get started.
 # sh -c "`curl -fsSL https://raw.github.com/yuseinishiyama/dotfiles/master/install.sh`"
