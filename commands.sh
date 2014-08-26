@@ -71,28 +71,29 @@ help() {
     echo "  mac        Configure defaults and iTerm2."
 }
 
+if [ $# -eq 0 ]; then
+    echo "$USAGE" 1>&2
+    exit 1
+fi
+
 while [ $# -gt 0 ]
 do
     case $1 in
         install)
-            echo 'install'
             link
             brew_install
             zsh_install
             break
             ;;
         brew)
-            echo 'brew'
             brew_update
             break
             ;;
         cask)
-            echo 'cask'
             brew_update_cask
             break
             ;;
         link)
-            echo 'link'
             link
             break
             ;;
@@ -111,5 +112,3 @@ do
     esac
     shift
 done
-
-echo "finish!"
