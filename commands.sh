@@ -83,28 +83,22 @@ do
             link
             brew_install
             zsh_install
-            break
             ;;
         brew)
             brew_update
-            break
             ;;
         cask)
             brew_update_cask
-            break
             ;;
         link)
             link
-            break
             ;;
         mac)
             mac_configure
-            break
             ;;
         -h)
             help
             exit 0
-            break
             ;;
         *)
             echo "$USAGE" 1>&2
