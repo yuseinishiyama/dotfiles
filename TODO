@@ -1,0 +1,22 @@
+* oh-my-zsh
+* TODO (.oh-my-zshインストール時に.dotfiles内の.zshrcが退避されてしまった)
+* iterm
+** TODO powerline fontのインストール自動化
+** TODO color theme 'solarized'のインストール自動化
+** TODO itermの起動(もしくはターミナルの再起動を促す)
+* emacs
+** TODO .emacs.d内でcaskの実行
+* Mac設定
+** TODO 隠しファイルの設定を追加
+** TODO Karabinerの設定
+** TODO トラックパッドの設定
+** TODO f.luxの設定
+* git
+** TODO .dotfile内でローカルのgitのusernameとemail(git configコマンドの実行？)
+* alfred
+** brew cask alfred linkが動作しない
+*** TODO alferdの設定からsearch scopeに/opt/homebrew-cask/Caskroomを追加
+* misc
+** TODO 不要なsubmoduleの削除
+** README
+*** Requirements(Commnad Line Tools等)
