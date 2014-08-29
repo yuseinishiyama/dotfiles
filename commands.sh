@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DOT_FILES=( .emacs.d .zshrc .bash_profile .gitconfig .gitconfig.local .tmux.conf .peco )
+DOT_FILES=( .emacs.d .zshrc .bash_profile .gitconfig .gitconfig.local .gitignore.global .tmux.conf .peco )
 
 link() {
     unlink
@@ -15,7 +15,7 @@ unlink() {
     echo "Remove symlinks..."
     for file in ${DOT_FILES[@]}
     do
-        if [ -e $file ]; then
+        if [ -e $HOME/$file ]; then
             # If symlinks are already exist, remove them first.
             # http://stackoverflow.com/questions/9104337/create-a-symbolic-link-of-directory-in-ubuntu
             rm $HOME/$file

@@ -4,6 +4,7 @@
        editor = ~/Applications/Emacs.app/Contents/MacOS/bin/emacsclient
        quotepath = false
        autocrlf = false
+       excludesfile = ~/.gitignore.global
 [merge]
         tool = ediff
 [mergetool.ediff]
