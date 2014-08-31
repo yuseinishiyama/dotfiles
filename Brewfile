@@ -39,6 +39,7 @@ tap peco/peco || true
 install peco || true
 install autossh || true
 install hub || true
+install postgresql || true
 
 # Remove outdated versions from the cellar.
 cleanup
