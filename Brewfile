@@ -39,7 +39,8 @@ tap peco/peco || true
 install peco || true
 install autossh || true
 install hub || true
-install postgresql || true
+install postgresql || true      # for 'pg'
+install imagemagick || true     # for 'rmagick'
 
 # Remove outdated versions from the cellar.
 cleanup
