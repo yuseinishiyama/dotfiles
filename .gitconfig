@@ -47,7 +47,7 @@
         me = config user.name
         mee = config user.email
         resync = "!sh -c 'branch=`git rev-parse --abbrev-ref HEAD` && git co master && git pull upstream master && git reset upstream/master --hard && git co $branch && git rebase master'"
-        fetch-pulls = fetch origin +refs/pull/*:refs/remotes/pull/*
+        fetch-pulls = fetch upstream +refs/pull/*:refs/remotes/pull/*
         # commit
 	c  = commit
         cm = commit -m
