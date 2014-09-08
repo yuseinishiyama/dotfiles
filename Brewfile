@@ -42,6 +42,7 @@ install hub || true
 install postgresql || true      # for 'pg'
 install imagemagick || true     # for 'rmagick'
 install graphviz || true
+install libimobiledevice || true
 
 # Remove outdated versions from the cellar.
 cleanup
