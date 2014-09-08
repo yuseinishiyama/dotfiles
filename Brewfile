@@ -41,6 +41,7 @@ install autossh || true
 install hub || true
 install postgresql || true      # for 'pg'
 install imagemagick || true     # for 'rmagick'
+install graphviz || true
 
 # Remove outdated versions from the cellar.
 cleanup
