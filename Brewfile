@@ -43,6 +43,7 @@ install postgresql || true      # for 'pg'
 install imagemagick || true     # for 'rmagick'
 install graphviz || true
 install libimobiledevice || true
+install class-dump || true
 
 # Remove outdated versions from the cellar.
 cleanup
