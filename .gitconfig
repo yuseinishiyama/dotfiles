@@ -41,6 +41,7 @@
 	br = branch
         ba = branch -a
         bn = rev-parse --abbrev-ref HEAD
+        cleanup = !git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d
         pr = pull --rebase
         me = config user.name
         mee = config user.email
