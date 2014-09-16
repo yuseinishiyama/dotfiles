@@ -24,6 +24,7 @@ cask install karabiner || true
 
 cask install keepassx || true
 cask install skype || true
+cask install slack || true
 cask install spectacle || true
 cask install teamviz || true
 cask install yorufukurou || true
