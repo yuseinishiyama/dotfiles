@@ -44,6 +44,7 @@ install imagemagick || true     # for 'rmagick'
 install graphviz || true
 install libimobiledevice || true
 install class-dump || true
+install doxygen || true
 
 # Remove outdated versions from the cellar.
 cleanup
