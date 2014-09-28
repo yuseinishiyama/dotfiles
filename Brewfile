@@ -45,6 +45,7 @@ install graphviz || true
 install libimobiledevice || true
 install class-dump || true
 install doxygen || true
+install xctool || true
 
 # Remove outdated versions from the cellar.
 cleanup
