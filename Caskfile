@@ -7,6 +7,7 @@ install brew-cask || true
 cask alfred link
 cask install alfred || true
 cask install appcleaner || true
+cask install bettertouchtool || true
 cask install clipmenu || true
 cask install dash || true
 cask install dropbox || true
