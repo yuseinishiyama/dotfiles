@@ -8,11 +8,6 @@
 (when (require 'ruby-block nil t)
   (setq ruby-block-highlight-toggle t))
 
-(autoload 'inf-ruby "inf-ruby" "Run an inferior Ruby process" t)
-(autoload 'inf-ruby-setup-keybindings "inf-ruby" "" t)
-(eval-after-load 'ruby-mode
-  '(add-hook 'ruby-mode-hook 'inf-ruby-setup-keybindings))
-
 (require 'ruby-electric nil t)
 
 (defun ruby-mode-hooks ()
@@ -22,4 +17,9 @@
 
 ;; (require 'ido)
 ;; (ido-mode t)
-(require 'rinari)
+;; (require 'rinari)
+(when (require 'projectile)
+  (projectile-global-mode))
+
+(when (require 'projectile-rails)
+  (add-hook 'projectile-mode-hook 'projectile-rails-on))

@@ -1,10 +1,10 @@
-;; リポジトリを設定。
+;; Setup repositories
 (source "gnu" "http://elpa.gnu.org/packages/")
 (source "melpa" "http://melpa.milkbox.net/packages/")
 (source "marmalade" "http://marmalade-repo.org/packages/")
 (source "org" "http://orgmode.org/elpa/")
 
-;; 追加するパッケージの登録。
+;; Install packages
 
 ;; Setup
 (depends-on "cask")
@@ -73,8 +73,9 @@
 ;; Ruby
 (depends-on "ruby-block")
 (depends-on "ruby-electric")
-(depends-on "inf-ruby")
-(depends-on "rinari")
+;;(depends-on "inf-ruby")
+;;(depends-on "rinari")
+(depends-on "projectile-rails")
 
 ;; Markdown
 (depends-on "markdown-mode")
