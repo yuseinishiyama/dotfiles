@@ -18,7 +18,7 @@ _set() {
     #7.Finderにフルパス
     defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
     #8.Dockのアニメーション禁止
-    defaults write com.apple.dock no-bouncing -bool true
+    #defaults write com.apple.dock no-bouncing -bool true
     #9.シングルアプリケーションモード
     #defaults write com.apple.dock single-app -bool true
 }
@@ -39,7 +39,7 @@ _unset() {
     #7
     defaults delete com.apple.dock mouse-over-hilite-stack
     #8
-    defaults delete com.apple.dock no-bouncing
+    #defaults delete com.apple.dock no-bouncing
     #9
     #defaults delete com.apple.dock single-app
 }
