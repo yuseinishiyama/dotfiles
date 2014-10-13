@@ -1,51 +1,53 @@
+#!/bin/sh
+
 # Make sure we're using the latest homebrew
-update || true
+brew update
 
 # Upgrade any already-installed formular
-upgrade || true
+brew upgrade
 
 ########################################
 # Python
 ########################################
-install python || true
-install pyenv || true
-install pyenv-virtualenv || true
+brew install python
+brew install pyenv
+brew install pyenv-virtualenv
 
 ########################################
 # Ruby
 ########################################
-install ruby || true
-install rbenv || true
-install ruby-build || true
+brew install ruby
+brew install rbenv
+brew install ruby-build
 
 ########################################
 # Emacs
 ########################################
 #install --cocoa emacs || true #install emacs with brew-cask
-install cask || true
-install ispell || true
+brew install cask
+brew install ispell
 
 ########################################
 # zsh
 ########################################
-install zsh || true
-install zsh-completions || true
+brew install zsh
+brew install zsh-completions
 
 ########################################
 # misc
 ########################################
-install tree || true
-tap peco/peco || true
-install peco || true
-install autossh || true
-install hub || true
-install postgresql || true      # for 'pg'
-install imagemagick || true     # for 'rmagick'
-install graphviz || true
-install libimobiledevice || true
-install class-dump || true
-install doxygen || true
-install xctool || true
+brew install tree
+brew tap peco/peco
+brew install peco
+brew install autossh
+brew install hub
+brew install postgresql          # for 'pg'
+brew install imagemagick         # for 'rmagick'
+brew install graphviz
+brew install libimobiledevice
+brew install class-dump
+brew install doxygen
+brew install xctool
 
 # Remove outdated versions from the cellar.
-cleanup
+brew cleanup
