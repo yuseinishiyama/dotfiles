@@ -1,1 +1,0 @@
-("~/.dotfiles/" "~/workspace/cookpad/api/global/")
