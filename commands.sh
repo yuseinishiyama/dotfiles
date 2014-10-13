@@ -31,14 +31,13 @@ brew_install() {
 }
 
 brew_update() {
-    echo "Update homebrew..."
-    brew bundle $HOME/.dotfiles/Brewfile
+    echo "Update homebrew.."
+    $HOME/.dotfiles/brewfile.sh
 }
 
 brew_update_cask() {
     echo "Update homebrew-cask..."
-    brew bundle $HOME/.dotfiles/Caskfile
-    brew cask alfred link # TODO: 失敗する
+    $HOME/.dotfiles/caskfile.sh
 }
  
 zsh_install() {
