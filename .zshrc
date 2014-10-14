@@ -19,6 +19,8 @@ export PGDATA=/usr/local/var/postgres
 ########################################
 # PATH
 ########################################
+export GEM_HOME=$HOME/gems
+export PATH=$GEM_HOME/bin:$PATH
 export PATH=/usr/local/bin:/usr/sbin:/sbin:/usr/bin:/bin:$PATH
 export PATH="$HOME/Library/Haskell/bin:$PATH"
 export PATH="/usr/local/heroku/bin:$PATH"
