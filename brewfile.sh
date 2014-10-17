@@ -46,6 +46,7 @@ brew install imagemagick         # for 'rmagick'
 brew install graphviz
 brew install libimobiledevice
 brew install class-dump
+brew install objc-codegenutils
 brew install doxygen
 brew install xctool
 
