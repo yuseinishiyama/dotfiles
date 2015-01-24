@@ -54,6 +54,7 @@
         cm = commit -m
         cam = commit -a -m
         came = commit -a --amend
+        empty = commit --allow-empty -m
         # log
         so = remote show origin
         su = remote show upstream
