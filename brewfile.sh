@@ -49,6 +49,7 @@ brew install class-dump
 brew install objc-codegenutils
 brew install doxygen
 brew install xctool
+brew install jq
 
 # Remove outdated versions from the cellar.
 brew cleanup
