@@ -19,6 +19,7 @@ brew cask install google-japanese-ime
 brew cask install ifunbox
 brew cask install ibrowse
 brew cask install iterm2
+brew cask install sequel-pro
 
 # needs password
 brew cask install karabiner
