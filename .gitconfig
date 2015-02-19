@@ -56,6 +56,7 @@
         came = commit -a --amend
         empty = commit --allow-empty -m
         # log
+        np = !git --no-pager
         so = remote show origin
         su = remote show upstream
         wc = whatchanged
