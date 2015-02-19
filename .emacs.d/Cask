@@ -80,3 +80,6 @@
 ;; Markdown
 (depends-on "markdown-mode")
 ;; (depends-on "realtime-markdown-viewer")
+
+;; Git
+(depends-on "magit")
