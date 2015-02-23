@@ -5,6 +5,7 @@ brew tap caskroom/versions
 brew install brew-cask
 
 brew cask install alfred
+brew cask install atom
 brew cask install appcleaner
 brew cask install bettertouchtool
 brew cask install clipmenu
