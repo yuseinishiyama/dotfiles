@@ -50,6 +50,7 @@ brew install objc-codegenutils
 brew install doxygen
 brew install xctool
 brew install jq
+brew install gnu-sed
 
 # Remove outdated versions from the cellar.
 brew cleanup
