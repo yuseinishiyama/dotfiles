@@ -9,7 +9,7 @@ source $ZSH/oh-my-zsh.sh
 export LANG=ja_JP.UTF-8
 export TERM=xterm-256color
 alias la='ls -a'
-alias sed='gnu-sed'
+alias sed='gsed'
 
 ########################################
 # Postgre
