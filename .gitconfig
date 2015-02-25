@@ -41,13 +41,15 @@
 	br = branch
         ba = branch -a
         bn = rev-parse --abbrev-ref HEAD
-        cleanup = !git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d
         pr = pull --rebase
         me = config user.name
         mee = config user.email
+        # utils
+        cleanup = !git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d
         resync = "!sh -c 'branch=`git rev-parse --abbrev-ref HEAD` && git co master && git pull upstream master && git reset upstream/master --hard && git push origin master && git co $branch'"
         resyncm = !git resync && git merge master
         resyncr = !git resync && git rebase master
+        sed =  "!f () { git grep -l $1 | xargs sed -i '' s/$1/$2/g; }; f"
         fetch-pulls = fetch upstream +refs/pull/*:refs/remotes/pull/*
         # commit
 	c  = commit
