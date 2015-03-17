@@ -99,6 +99,11 @@ bindkey "^[^g" git-cheat
 # peco
 ########################################
 
+function git-changed-files() {
+    git status --short | peco | awk '{print $2}'
+}
+alias -g F='$(git-changed-files)'
+
 # peco-select-history
 function peco-select-history() {
     local tac
