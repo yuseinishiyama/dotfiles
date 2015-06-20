@@ -28,7 +28,7 @@
 	interactive = auto
 	grep = auto
 [push]
-        default = simple
+        default = current
 [branch]
         autosetuprebase = always
 [alias]
