@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DOT_FILES=( .emacs.d .zshrc .bash_profile .gitconfig .gitconfig.local .gitignore.global .tmux.conf .peco )
+DOT_FILES=( .emacs.d .zshrc .bash_profile .gitconfig .gitconfig.local .gitignore.global .tmux.conf .peco .atom )
 
 link() {
     unlink

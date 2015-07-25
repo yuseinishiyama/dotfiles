@@ -1,0 +1,30 @@
+"*":
+  editor:
+    invisibles: {}
+    softWrap: true
+    softWrapAtPreferredLineLength: true
+    showInvisibles: true
+  core:
+    themes: [
+      "flatland-dark-ui"
+      "monokai"
+    ]
+    disabledPackages: [
+      "show-ideographic-space"
+    ]
+  "exception-reporting":
+    userId: "7abc32c3-438e-e8fb-d06f-29ca6a247ef7"
+  welcome:
+    showOnStartup: false
+  "save-session":
+    dataSaveFolder: "/Users/yusei-nishiyama/.atom/packages/save-session/projects"
+    project: "/Users/yusei-nishiyama/workspace/private/SwiftBook"
+    windowX: 0
+    windowY: 23
+    windowWidth: 1440
+    windowHeight: 873
+    fullScreen: false
+  "japanese-wrap":
+    characterWidth: {}
+  "tree-view": {}
+  "show-ideographic-space": {}
