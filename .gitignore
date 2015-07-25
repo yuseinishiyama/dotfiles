@@ -1,5 +1,8 @@
 .DS_Store
+
 .cask
+
+# Emacs
 .emacs.d/url/
 .emacs.d/backup/
 .emacs.d/undohist/
@@ -9,3 +12,11 @@
 *~
 local.el
 *.local
+
+# Atom
+.atom/.apm/
+.atom/.node-gyp/
+.atom/compile-cache/
+.atom/npm-debug.log
+.atom/packages/
+.atom/storage/
