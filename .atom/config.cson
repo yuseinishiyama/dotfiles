@@ -28,3 +28,5 @@
     characterWidth: {}
   "tree-view": {}
   "show-ideographic-space": {}
+  autosave:
+    enabled: true
