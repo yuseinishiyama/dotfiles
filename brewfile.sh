@@ -51,6 +51,7 @@ brew install doxygen
 brew install xctool
 brew install jq
 brew install gnu-sed
+brew install cloc
 
 # Remove outdated versions from the cellar.
 brew cleanup
