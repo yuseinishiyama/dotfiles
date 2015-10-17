@@ -4,6 +4,7 @@
     softWrap: true
     softWrapAtPreferredLineLength: true
     showInvisibles: true
+    preferredLineLength: 72
   core:
     themes: [
       "flatland-dark-ui"
@@ -30,3 +31,6 @@
   "show-ideographic-space": {}
   autosave:
     enabled: true
+  "markdown-preview":
+    useGitHubStyle: true
+    liveUpdate: false
