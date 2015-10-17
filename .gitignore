@@ -20,3 +20,4 @@ local.el
 .atom/npm-debug.log
 .atom/packages/
 .atom/storage/
+.atom/blob-store

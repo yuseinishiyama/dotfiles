@@ -1,16 +1,19 @@
 "*":
   editor:
     invisibles: {}
+    showInvisibles: true
+    preferredLineLength: 72
+    showIndentGuide: true
     softWrap: true
     softWrapAtPreferredLineLength: true
-    showInvisibles: true
   core:
     themes: [
       "flatland-dark-ui"
       "monokai"
     ]
     disabledPackages: [
-      "show-ideographic-space"
+      "japanese-wrap"
+      "wrap-style"
     ]
   "exception-reporting":
     userId: "7abc32c3-438e-e8fb-d06f-29ca6a247ef7"
@@ -30,3 +33,8 @@
   "show-ideographic-space": {}
   autosave:
     enabled: true
+  "markdown-preview":
+    useGitHubStyle: true
+    liveUpdate: false
+  "git-diff":
+    showIconsInEditorGutter: true
