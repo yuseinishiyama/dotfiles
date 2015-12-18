@@ -11,6 +11,7 @@
       "monokai"
     ]
     disabledPackages: [
+      "japanese-wrap"
       "show-ideographic-space"
     ]
   "exception-reporting":
