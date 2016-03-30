@@ -1,11 +1,7 @@
 "*":
-  editor:
-    invisibles: {}
-    showInvisibles: true
-    preferredLineLength: 72
-    showIndentGuide: true
-    softWrap: true
-    softWrapAtPreferredLineLength: true
+  "autocomplete-plus": {}
+  autosave:
+    enabled: true
   core:
     disabledPackages: [
       "japanese-wrap"
@@ -23,6 +19,8 @@
     softWrapAtPreferredLineLength: true
   "exception-reporting":
     userId: "7abc32c3-438e-e8fb-d06f-29ca6a247ef7"
+  "git-diff":
+    showIconsInEditorGutter: true
   "japanese-wrap":
     characterWidth: {}
   "markdown-preview":
@@ -37,13 +35,23 @@
     windowX: 0
     windowY: 23
   "show-ideographic-space": {}
-  autosave:
-    enabled: true
-  "markdown-preview":
-    useGitHubStyle: true
-    liveUpdate: false
-  "git-diff":
-    showIconsInEditorGutter: true
   "tree-view": {}
   welcome:
     showOnStartup: false
+  whitespace:
+    ensureSingleTrailingNewline: false
+".html.ruby.text":
+  editor:
+    preferredLineLength: 72
+".js.rails.source source.jquery.js":
+  editor:
+    preferredLineLength: 72
+".rails.rjs.ruby.source":
+  editor:
+    preferredLineLength: 72
+".rails.ruby.source":
+  editor:
+    preferredLineLength: 72
+".ruby.source.sql":
+  editor:
+    preferredLineLength: 72
