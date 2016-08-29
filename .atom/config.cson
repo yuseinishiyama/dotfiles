@@ -8,7 +8,7 @@
       "wrap-style"
     ]
     themes: [
-      "flatland-dark-ui"
+      "genesis-ui"
       "monokai"
     ]
   editor:
@@ -16,7 +16,6 @@
     preferredLineLength: 72
     showInvisibles: true
     softWrap: true
-    softWrapAtPreferredLineLength: true
   "exception-reporting":
     userId: "7abc32c3-438e-e8fb-d06f-29ca6a247ef7"
   "git-diff":

@@ -23,3 +23,17 @@ atom-text-editor {
 atom-text-editor::shadow .cursor {
 
 }
+
+atom-text-editor::shadow .highlight {
+  &.find-result .region,
+  &.current-result .region,
+  &.current-result ~ .highlight.selection .region {
+    z-index: -1;
+  }
+
+  &.find-result .region,
+  &.current-result .region,
+  &.current-result ~ .highlight.selection .region {
+    background: orange;
+  }
+}
