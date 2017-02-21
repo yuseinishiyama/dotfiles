@@ -1,7 +1,7 @@
 [include]
        path = .gitconfig.local
 [core]
-       editor = ~/Applications/Emacs.app/Contents/MacOS/bin/emacsclient
+       editor = /Applications/Emacs.app/Contents/MacOS/bin/emacsclient
        quotepath = false
        autocrlf = false
        excludesfile = ~/.gitignore.global
