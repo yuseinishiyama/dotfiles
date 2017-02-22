@@ -10,6 +10,7 @@ export LANG=ja_JP.UTF-8
 export TERM=xterm-256color
 alias la='ls -a'
 alias sed='gsed'
+alias b='bundle exec'
 
 ########################################
 # Postgre
