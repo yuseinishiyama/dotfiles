@@ -53,7 +53,7 @@ if [ -e $_VIRTUALENVWRAPPER ]; then
     source $_VIRTUALENVWRAPPER
 else
     echo "virtualenvwrapper not found"
-fi  
+fi
 
 if which pyenv > /dev/null; then
 	export PYENV_ROOT="${HOME}/.pyenv"
@@ -93,6 +93,8 @@ bindkey "^[^g" git-cheat
 ########################################
 # peco
 ########################################
+
+alias -g B='`git branch -a | peco --prompt "GIT BRANCH>" | head -n 1 | sed -e "s/^\*\s*//g"`'
 
 function git-changed-files() {
     git status --short | peco | awk '{print $2}'
@@ -142,12 +144,12 @@ bindkey '^x^f' peco-cdr
 ## http://qiita.com/kazuph/items/3bfdfce6b7d02b43bf4d
 
 alias pong='perl -nle '\''print "display notification \"$_\" with title \"Terminal\""'\'' | osascript'
- 
+
 preexec() {
   zsh_notify_cmd=$1
   zsh_notify_time=`date +%s`
 }
- 
+
 precmd() {
   if (( $? == 0 )); then
     # message
