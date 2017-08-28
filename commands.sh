@@ -1,13 +1,16 @@
 #!/bin/sh
 
 DOT_FILES=( .emacs.d .zshrc .bash_profile .gitconfig .gitconfig.local .gitignore.global .tmux.conf .peco .atom )
+SCRIPT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 link() {
+    # http://stackoverflow.com/questions/9104337/create-a-symbolic-link-of-directory-in-ubuntu
     unlink
+
     echo "Create symlinks..."
     for file in ${DOT_FILES[@]}
     do
-        ln -s $HOME/.dotfiles/$file $HOME/$file
+        ln -s $SCRIPT_PATH/$file $HOME/$file
     done
 }
 
@@ -15,9 +18,7 @@ unlink() {
     echo "Remove symlinks..."
     for file in ${DOT_FILES[@]}
     do
-        if [ -e $HOME/$file ]; then
-            # If symlinks are already exist, remove them first.
-            # http://stackoverflow.com/questions/9104337/create-a-symbolic-link-of-directory-in-ubuntu
+        if [ -e $HOME/$file -o -h $HOME/$file ]; then
             rm $HOME/$file
         fi
     done
@@ -32,12 +33,12 @@ brew_install() {
 
 brew_update() {
     echo "Update homebrew.."
-    $HOME/.dotfiles/brewfile.sh
+    $SCRIPT_PATH/brewfile.sh
 }
 
 brew_update_cask() {
     echo "Update homebrew-cask..."
-    $HOME/.dotfiles/caskfile.sh
+    $SCRIPT_PATH/caskfile.sh
 }
  
 zsh_install() {
@@ -49,12 +50,12 @@ zsh_install() {
 
 mac_configure() {
     echo "Configure settings for Mac OS X."
-    $HOME/.dotfiles/osx/defaults.sh -i
+    $SCRIPT_PATH/defaults.sh -i
     ITERM_PLIST="$HOME/Library/Preferences/com.googlecode.iterm2.plist"
     if [ -e $ITERM_PLIST ]; then
         rm $ITERM_PLIST
     fi
-    ln -s $HOME/.dotfiles/osx/com.googlecode.iterm2.plist $ITERM_PLIST
+    ln -s $SCRIPT_PATH/osx/com.googlecode.iterm2.plist $ITERM_PLIST
 }
 
 CMDNAME=`basename $0`

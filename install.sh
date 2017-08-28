@@ -6,7 +6,8 @@
 if [ ! -d "$HOME/.dotfiles" ]; then
     echo "Installing dotfiles..."
     git clone https://github.com/yuseinishiyama/dotfiles.git "$HOME/.dotfiles"
-    $HOME/.dotfiles/commands.sh install
+    cd $HOME/.dotfiles
+    ./commands.sh install
 else
     echo "dotfiles are already installed."
 fi
