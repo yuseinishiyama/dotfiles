@@ -98,9 +98,14 @@ bindkey "^[^g" git-cheat
 alias -g B='`git branch -a | peco --prompt "GIT BRANCH>" | head -n 1 | sed -e "s/^\*\s*//g"`'
 
 function git-changed-files() {
+    #git status --short | peco | awk -vFPAT='([^ ]+)|("[^"]+")' '{print $2}'
     git status --short | peco | awk '{print $2}'
 }
 alias -g F='$(git-changed-files)'
+
+alias repo='cd $(ghq list -p | peco)'
+
+alias repo-open='gh-open $(ghq list -p | peco)'
 
 # peco-select-history
 function peco-select-history() {
