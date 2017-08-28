@@ -17,13 +17,14 @@ alias b='bundle exec'
 ########################################
 export PGDATA=/usr/local/var/postgres
 
-
 ########################################
 # PATH
 ########################################
 export PATH=/usr/local/bin:/usr/sbin:/sbin:/usr/bin:/bin:$PATH
 export PATH="$HOME/Library/Haskell/bin:$PATH"
 export PATH="/usr/local/heroku/bin:$PATH"
+export GOPATH="$HOME/.go"
+export PATH=$GOPATH/bin:$PATH
 
 ########################################
 # SVN
