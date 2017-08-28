@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DOT_FILES=( .emacs.d .zshrc .bash_profile .gitconfig .gitconfig.local .gitignore.global .tmux.conf .peco .atom )
+DOT_FILES=( .emacs.d .zshrc .zshrc.local .bash_profile .gitconfig .gitconfig.local .gitignore.global .tmux.conf .peco .atom )
 SCRIPT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 link() {

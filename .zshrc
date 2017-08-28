@@ -175,7 +175,7 @@ precmd() {
 ########################################
 # Load local settings
 ########################################
-_ZSH_LOCAL_SETTING="$HOME/.dotfiles/.zshrc.local"
+_ZSH_LOCAL_SETTING="$HOME/.zshrc.local"
 if [ -f $_ZSH_LOCAL_SETTING ]; then
     source $_ZSH_LOCAL_SETTING
 else
