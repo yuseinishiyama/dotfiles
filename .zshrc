@@ -23,6 +23,7 @@ export PGDATA=/usr/local/var/postgres
 export PATH=/usr/local/bin:/usr/sbin:/sbin:/usr/bin:/bin:$PATH
 export PATH="$HOME/Library/Haskell/bin:$PATH"
 export PATH="/usr/local/heroku/bin:$PATH"
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 export GOPATH="$HOME/.go"
 export PATH=$GOPATH/bin:$PATH
 
