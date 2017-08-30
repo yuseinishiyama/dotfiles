@@ -8,7 +8,7 @@
 (package-initialize)
 
 (when (< emacs-major-version 23)
-  (defvar user-emacs-directory "~/.dotfiles/.emacs.d/"))
+  (defvar user-emacs-directory "~/.emacs.d/"))
 
 ;; load-pathを再帰的に追加する関数
 (defun add-to-load-path (&rest paths)
