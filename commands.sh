@@ -1,25 +1,36 @@
 #!/bin/sh
 
-DOT_FILES=( .emacs.d .zshrc .zshrc.local .bash_profile .gitconfig .gitconfig.local .gitignore.global .tmux.conf .peco .atom )
 SCRIPT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+DOT_FILES_PATH=$SCRIPT_PATH/dotfiles
+
+DOT_FILE_NAMES=()
+for file in $DOT_FILES_PATH/.*
+do
+    filename=`basename $file`
+
+    if [ $filename != "." ] && [ $filename != ".." ] && [ $filename != ".DS_Store" ]; then
+        DOT_FILE_NAMES+=($filename)
+    fi
+done
 
 link() {
-    # http://stackoverflow.com/questions/9104337/create-a-symbolic-link-of-directory-in-ubuntu
-    unlink
+    echo "Creating symlinks..."
 
-    echo "Create symlinks..."
-    for file in ${DOT_FILES[@]}
+    for filename in ${DOT_FILE_NAMES[@]}
     do
-        ln -s $SCRIPT_PATH/$file $HOME/$file
+        ln -s -v $DOT_FILES_PATH/$filename $HOME/$filename
     done
 }
 
 unlink() {
-    echo "Remove symlinks..."
-    for file in ${DOT_FILES[@]}
+    echo "Removing symlinks..."
+
+    for filename in ${DOT_FILE_NAMES[@]}
     do
-        if [ -e $HOME/$file -o -h $HOME/$file ]; then
-            rm $HOME/$file
+        dotfile=$HOME/$filename
+
+        if [ -e $dotfile ] && [ -h $dotfile ]; then
+            rm -v $dotfile
         fi
     done
 }
@@ -91,6 +102,7 @@ do
             brew_update_cask
             ;;
         link)
+            unlink
             link
             ;;
         mac)
