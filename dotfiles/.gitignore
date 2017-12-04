@@ -12,12 +12,3 @@
 *~
 local.el
 *.local
-
-# Atom
-.atom/.apm/
-.atom/.node-gyp/
-.atom/compile-cache/
-.atom/npm-debug.log
-.atom/packages/
-.atom/storage/
-.atom/blob-store
