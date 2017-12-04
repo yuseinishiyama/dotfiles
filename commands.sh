@@ -2,6 +2,7 @@
 
 SCRIPT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 DOT_FILES_PATH=$SCRIPT_PATH/dotfiles
+BREW_PATH=$SCRIPT_PATH/brew
 
 DOT_FILE_NAMES=()
 for file in $DOT_FILES_PATH/.*
@@ -13,7 +14,7 @@ do
     fi
 done
 
-link() {
+link_dotfiles() {
     echo "Creating symlinks..."
 
     for filename in ${DOT_FILE_NAMES[@]}
@@ -22,7 +23,7 @@ link() {
     done
 }
 
-unlink() {
+unlink_dotfiles() {
     echo "Removing symlinks..."
 
     for filename in ${DOT_FILE_NAMES[@]}
@@ -35,21 +36,21 @@ unlink() {
     done
 }
 
+install_dev_tools() {
+    echo "Installing Xcode CLI tools..."
+    xcode-select --install
+}
+
+update_dotfiles() {
+    unlink_dotfiles
+    link_dotfiles
+}
+
 brew_install() {
     echo "Install homebrew..."
     ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
     brew_update
     brew_update_cask
-}
-
-brew_update() {
-    echo "Update homebrew.."
-    $SCRIPT_PATH/brewfile.sh
-}
-
-brew_update_cask() {
-    echo "Update homebrew-cask..."
-    $SCRIPT_PATH/caskfile.sh
 }
  
 zsh_install() {
@@ -57,6 +58,11 @@ zsh_install() {
     # !!! oh-my-zsh makes zsh default shell automatically. !!!
     echo "Install zsh..."
     curl -L http://install.ohmyz.sh | sh
+}
+
+update_brew() {
+    echo "Updating homebrew.."
+    brew bundle -v --file=$BREW_PATH/Brewfile
 }
 
 mac_configure() {
@@ -76,9 +82,8 @@ help() {
     echo ""
     echo "Commands are:"
     echo "  install    Setup all configurations"
-    echo "  brew       Install via Brewfile"
-    echo "  cask       Install via Caskfile"
-    echo "  link       Create symlinks for dotfiles"
+    echo "  brew       Install Homebrew packages"
+    echo "  dotfile    Create symlinks for dotfiles"
     echo "  mac        Configure defaults and iTerm2."
 }
 
@@ -91,19 +96,16 @@ while [ $# -gt 0 ]
 do
     case $1 in
         install)
-            link
-            brew_install
+            install_dev_tools
+            update_dotfiles
+            brew_update
             zsh_install
             ;;
         brew)
-            brew_update
+            update_brew
             ;;
-        cask)
-            brew_update_cask
-            ;;
-        link)
-            unlink
-            link
+        dotfile)
+            update_dotfiles
             ;;
         mac)
             mac_configure
