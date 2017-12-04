@@ -37,28 +37,22 @@ unlink_dotfiles() {
     done
 }
 
-install_dev_tools() {
-    echo "Installing Xcode CLI tools..."
-    xcode-select --install
-}
-
 update_dotfiles() {
     unlink_dotfiles
     link_dotfiles
 }
 
-brew_install() {
-    echo "Install homebrew..."
-    ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
-    brew_update
-    brew_update_cask
+install_dev_tools() {
+    echo "Installing Xcode CLI tools..."
+    xcode-select --install
+
+    echo "Installing homebrew..."
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 }
  
-zsh_install() {
-    # Install oh-my-zsh
-    # !!! oh-my-zsh makes zsh default shell automatically. !!!
-    echo "Install zsh..."
-    curl -L http://install.ohmyz.sh | sh
+install_ohmyz {
+    echo "Installing zsh..."
+    sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 }
 
 update_brew() {
@@ -107,8 +101,8 @@ do
         install)
             install_dev_tools
             update_dotfiles
-            brew_update
-            zsh_install
+            update_brew
+            install_ohmyz
             apply_settings
             ;;
         brew)

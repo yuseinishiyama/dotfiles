@@ -1,13 +1,12 @@
 #!/bin/sh
 
-# How to get started.
-# sh -c "`curl -fsSL https://raw.github.com/yuseinishiyama/dotfiles/master/install.sh`"
-
 if [ ! -d "$HOME/.dotfiles" ]; then
-    echo "Installing dotfiles..."
-    git clone https://github.com/yuseinishiyama/dotfiles.git "$HOME/.dotfiles"
-    cd $HOME/.dotfiles
-    ./commands.sh install
+    echo "Installing..."
+
+    install_dir=$HOME/.dotfiles
+    git clone https://github.com/yuseinishiyama/dotfiles.git $install_dir
+    cd $install_dir
+    ./bin/run install
 else
     echo "dotfiles are already installed."
 fi
