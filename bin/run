@@ -29,11 +29,13 @@ do
     case $1 in
         i)
             install_dev_tools
-            update_dotfiles
+            install_fonts
 
+            update_dotfiles
             update_brew
-            install_ohmyz
             apply_defaults
+
+            install_ohmyz
             ;;
         b)
             update_brew
