@@ -1,3 +1,6 @@
 [submodule "submodules/solarized"]
 	path = submodules/solarized
-	url = https://github.com/altercation/solarized.git
+	url = git@github.com:altercation/solarized.git
+[submodule ".emacs.d/public_repos/rinari"]
+        path = .emacs.d/public_repos/rinari
+        url = git@github.com:eschulte/rinari.git
