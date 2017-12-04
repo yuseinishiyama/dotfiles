@@ -3,12 +3,14 @@
 .cask
 
 # Emacs
-.emacs.d/url/
-.emacs.d/backup/
-.emacs.d/undohist/
-.emacs.d/ac-comphist.dat
-.emacs.d/auto-save-list/
-.emacs.d/projectile-bookmarks.eld
+dotfiles/.emacs.d/url/
+dotfiles/.emacs.d/backup/
+dotfiles/.emacs.d/undohist/
+dotfiles/.emacs.d/ac-comphist.dat
+dotfiles/.emacs.d/auto-save-list/
+dotfiles/.emacs.d/projectile-bookmarks.eld
+
 *~
 local.el
-*.local
+
+**/*.local
