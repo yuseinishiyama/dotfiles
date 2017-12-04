@@ -1,0 +1,48 @@
+#!/bin/sh
+
+SCRIPT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+DOT_FILES_PATH=$SCRIPT_PATH/../dotfiles
+
+DOT_FILE_NAMES=()
+for file in $DOT_FILES_PATH/.*
+do
+    filename=`basename $file`
+
+    black_list=("." ".." ".DS_Store")
+    for black_list_name in ${black_list[@]}
+    do
+        if [ $black_list_name == $filename ]; then
+            continue 2
+        fi
+    done
+
+    DOT_FILE_NAMES+=($filename)
+done
+
+link_dotfiles() {
+    echo "Creating symlinks..."
+
+    for filename in ${DOT_FILE_NAMES[@]}
+    do
+        ln -s -v $DOT_FILES_PATH/$filename $HOME/$filename
+    done
+}
+
+unlink_dotfiles() {
+    echo "Removing symlinks..."
+
+    for filename in ${DOT_FILE_NAMES[@]}
+    do
+        dotfile=$HOME/$filename
+
+        if [ -e $dotfile ] && [ -h $dotfile ]; then
+            rm -v $dotfile
+        fi
+    done
+}
+
+update_dotfiles() {
+    unlink_dotfiles
+    link_dotfiles
+}
+export -f update_dotfiles

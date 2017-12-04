@@ -1,0 +1,23 @@
+#!/bin/sh
+
+SCRIPT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+SETTINGS_PATH=$SCRIPT_PATH/../settings
+
+apply_defaults() {
+    echo "Applying defaults..."
+
+    $SETTINGS_PATH/defaults
+}
+export -f apply_defaults
+
+link_preferences() {
+    preference_path=$HOME/Library/Preferences
+    iterm_plist_name="com.googlecode.iterm2.plist"
+
+    source=$SETTINGS_PATH/$iterm_plist_name
+    symlink=$preference_path/$iterm_plist_name
+    if [ -e $symlink ]; then
+        rm -v $symlink
+    fi
+    ln -s -v $source $symlink
+}

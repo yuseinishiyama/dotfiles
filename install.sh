@@ -6,7 +6,7 @@ if [ ! -d "$HOME/.dotfiles" ]; then
     install_dir=$HOME/.dotfiles
     git clone https://github.com/yuseinishiyama/dotfiles.git $install_dir
     cd $install_dir
-    ./bin/run install
+    ./bin/run i
 else
-    echo "dotfiles are already installed."
+    echo "dotfiles are already installed"
 fi

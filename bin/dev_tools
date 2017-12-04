@@ -1,0 +1,16 @@
+#!/bin/sh
+
+install_dev_tools() {
+    echo "Installing Xcode CLI tools..."
+    xcode-select --install
+
+    echo "Installing homebrew..."
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+}
+export -f install_dev_tools
+
+install_ohmyz() {
+    echo "Installing zsh..."
+    sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+}
+export -f install_dev_tools

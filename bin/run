@@ -1,93 +1,22 @@
 #!/bin/sh
 
 SCRIPT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-DOT_FILES_PATH=$SCRIPT_PATH/dotfiles
-BREW_PATH=$SCRIPT_PATH/brew
-SETTINGS_PATH=$SCRIPT_PATH/settings
 
-DOT_FILE_NAMES=()
-for file in $DOT_FILES_PATH/.*
-do
-    filename=`basename $file`
-
-    if [ $filename != "." ] && [ $filename != ".." ] && [ $filename != ".DS_Store" ]; then
-        DOT_FILE_NAMES+=($filename)
-    fi
-done
-
-link_dotfiles() {
-    echo "Creating symlinks..."
-
-    for filename in ${DOT_FILE_NAMES[@]}
-    do
-        ln -s -v $DOT_FILES_PATH/$filename $HOME/$filename
-    done
-}
-
-unlink_dotfiles() {
-    echo "Removing symlinks..."
-
-    for filename in ${DOT_FILE_NAMES[@]}
-    do
-        dotfile=$HOME/$filename
-
-        if [ -e $dotfile ] && [ -h $dotfile ]; then
-            rm -v $dotfile
-        fi
-    done
-}
-
-update_dotfiles() {
-    unlink_dotfiles
-    link_dotfiles
-}
-
-install_dev_tools() {
-    echo "Installing Xcode CLI tools..."
-    xcode-select --install
-
-    echo "Installing homebrew..."
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-}
- 
-install_ohmyz {
-    echo "Installing zsh..."
-    sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-}
-
-update_brew() {
-    echo "Updating homebrew.."
-    brew bundle -v --file=$BREW_PATH/Brewfile
-}
-
-apply_defaults() {
-    echo "Applying defaults..."
-
-    $SETTINGS_PATH/defaults
-}
-
-link_preferences() {
-    preference_path=$HOME/Library/Preferences
-    iterm_plist_name="com.googlecode.iterm2.plist"
-
-    source=$SETTINGS_PATH/$iterm_plist_name
-    symlink=$preference_path/$iterm_plist_name
-    if [ -e $symlink ]; then
-        rm -v $symlink
-    fi
-    ln -s -v $source $symlink
-}
+source $SCRIPT_PATH/brew
+source $SCRIPT_PATH/dev_tools
+source $SCRIPT_PATH/dotfiles
+source $SCRIPT_PATH/settings
 
 CMDNAME=`basename $0`
-USAGE="Usage: $CMDNAME [install | brew | cask | link | settings]"
+USAGE="Usage: $CMDNAME [i | b | d | s]"
 help() {
     echo $USAGE
     echo ""
-    echo "Commands are:"
-    echo "  install    Setup all configurations"
-    echo "  brew       Install Homebrew packages"
-    echo "  dotfile    Create symlinks for dotfiles"
-    echo "  settings   Apply defaults settings"
+    echo "Options:"
+    echo "  i:  Setup all configurations"
+    echo "  b:  Install Homebrew packages"
+    echo "  d:  Create symlinks for dotfiles"
+    echo "  s:  Apply defaults settings"
 }
 
 if [ $# -eq 0 ]; then
@@ -98,22 +27,22 @@ fi
 while [ $# -gt 0 ]
 do
     case $1 in
-        install)
+        i)
             install_dev_tools
             update_dotfiles
+
             update_brew
             install_ohmyz
-            apply_settings
+            apply_defaults
             ;;
-        brew)
+        b)
             update_brew
             ;;
-        dotfile)
+        d)
             update_dotfiles
             ;;
-        settings)
+        s)
             apply_defaults
-            link_preferences
             ;;
         -h)
             help

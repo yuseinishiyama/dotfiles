@@ -1,0 +1,15 @@
+#!/bin/sh
+
+CRIPT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+BREW_PATH=$SCRIPT_PATH/../brew
+
+update_brew() {
+    echo "Updating homebrew.."
+
+    for brewfile in $BREW_PATH/*
+    do
+        brew bundle -v --file=$BREW_PATH/brewfile
+    done
+}
+export -f update_brew
