@@ -1,0 +1,15 @@
+#!/bin/sh
+
+defaults write com.apple.finder CreateDesktop -bool FALSE; killall Finder
+
+defaults write -g NSNavPanelExpandedStateForSaveMode -boolean true
+
+defaults write -g PMPrintingExpandedStateForPrint -boolean true
+
+defaults write com.apple.screencapture location ~/Pictures/ScreenCaptures
+
+defaults write com.apple.dock use-new-list-stack -boolean true; killall Dock
+
+defaults write com.apple.dock mouse-over-hilite-stack -bool true
+
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool true

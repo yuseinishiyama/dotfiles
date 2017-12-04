@@ -3,6 +3,7 @@
 SCRIPT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 DOT_FILES_PATH=$SCRIPT_PATH/dotfiles
 BREW_PATH=$SCRIPT_PATH/brew
+SETTINGS_PATH=$SCRIPT_PATH/settings
 
 DOT_FILE_NAMES=()
 for file in $DOT_FILES_PATH/.*
@@ -65,18 +66,26 @@ update_brew() {
     brew bundle -v --file=$BREW_PATH/Brewfile
 }
 
-mac_configure() {
-    echo "Configure settings for Mac OS X."
-    $SCRIPT_PATH/defaults.sh -i
-    ITERM_PLIST="$HOME/Library/Preferences/com.googlecode.iterm2.plist"
-    if [ -e $ITERM_PLIST ]; then
-        rm $ITERM_PLIST
+apply_defaults() {
+    echo "Applying defaults..."
+
+    $SETTINGS_PATH/defaults
+}
+
+link_preferences() {
+    preference_path=$HOME/Library/Preferences
+    iterm_plist_name="com.googlecode.iterm2.plist"
+
+    source=$SETTINGS_PATH/$iterm_plist_name
+    symlink=$preference_path/$iterm_plist_name
+    if [ -e $symlink ]; then
+        rm -v $symlink
     fi
-    ln -s $SCRIPT_PATH/osx/com.googlecode.iterm2.plist $ITERM_PLIST
+    ln -s -v $source $symlink
 }
 
 CMDNAME=`basename $0`
-USAGE="Usage: $CMDNAME [install | brew | cask | link | mac]"
+USAGE="Usage: $CMDNAME [install | brew | cask | link | settings]"
 help() {
     echo $USAGE
     echo ""
@@ -84,7 +93,7 @@ help() {
     echo "  install    Setup all configurations"
     echo "  brew       Install Homebrew packages"
     echo "  dotfile    Create symlinks for dotfiles"
-    echo "  mac        Configure defaults and iTerm2."
+    echo "  settings   Apply defaults settings"
 }
 
 if [ $# -eq 0 ]; then
@@ -100,6 +109,7 @@ do
             update_dotfiles
             brew_update
             zsh_install
+            apply_settings
             ;;
         brew)
             update_brew
@@ -107,8 +117,9 @@ do
         dotfile)
             update_dotfiles
             ;;
-        mac)
-            mac_configure
+        settings)
+            apply_defaults
+            link_preferences
             ;;
         -h)
             help
