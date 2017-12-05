@@ -179,12 +179,7 @@ precmd() {
 _ZSH_LOCAL_SETTING="$HOME/.zshrc.local"
 if [ -f $_ZSH_LOCAL_SETTING ]; then
     source $_ZSH_LOCAL_SETTING
-else
-    echo ".zshrc.local not found."
 fi
 
-prompt_context() {
-  if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-    prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
-  fi
-}
+# Do not display user and machine name
+prompt_context() {}
