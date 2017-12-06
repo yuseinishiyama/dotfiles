@@ -35,8 +35,8 @@ unlink_dotfiles() {
     do
         dotfile=$HOME/$filename
 
-        if [ -e $dotfile ] && [ -h $dotfile ]; then
-            rm -v $dotfile
+        if [ -e $dotfile ]; then
+            rm -rf -v $dotfile
         fi
     done
 }
