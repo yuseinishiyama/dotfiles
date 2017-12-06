@@ -34,7 +34,7 @@ do
             update_dotfiles
             update_brew
             apply_defaults
-            apply_iterms_settings
+            apply_iterm_settings
 
             install_ohmyz
             ;;
@@ -46,6 +46,7 @@ do
             ;;
         s)
             apply_defaults
+            apply_iterm_settings
             apply_vscode_settings
             ;;
         -h)
