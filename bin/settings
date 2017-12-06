@@ -10,18 +10,6 @@ apply_defaults() {
 }
 export -f apply_defaults
 
-link_preferences() {
-    preference_path=$HOME/Library/Preferences
-    iterm_plist_name="com.googlecode.iterm2.plist"
-
-    source=$SETTINGS_PATH/$iterm_plist_name
-    symlink=$preference_path/$iterm_plist_name
-    if [ -e $symlink ]; then
-        rm -v $symlink
-    fi
-    ln -s -v $source $symlink
-}
-
 apply_vscode_settings() {
     settings=~/Library/Application\ Support/Code/User/settings.json
     if [ -e "$settings" ]; then
@@ -30,3 +18,10 @@ apply_vscode_settings() {
     ln -s -v $SETTINGS_PATH/vscode/settings.json "$settings"
 }
 export -f apply_vscode_settings
+
+apply_iterm_settings() {
+    defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$SETTINGS_PATH/iterm"
+
+    defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+}
+export -f apply_iterm_settings

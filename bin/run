@@ -34,6 +34,7 @@ do
             update_dotfiles
             update_brew
             apply_defaults
+            apply_iterms_settings
 
             install_ohmyz
             ;;
