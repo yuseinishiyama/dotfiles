@@ -45,6 +45,7 @@ do
             ;;
         s)
             apply_defaults
+            apply_vscode_settings
             ;;
         -h)
             help

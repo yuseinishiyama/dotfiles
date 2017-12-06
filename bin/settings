@@ -21,3 +21,12 @@ link_preferences() {
     fi
     ln -s -v $source $symlink
 }
+
+apply_vscode_settings() {
+    settings=~/Library/Application\ Support/Code/User/settings.json
+    if [ -e "$settings" ]; then
+        rm -v "$settings"
+    fi
+    ln -s -v $SETTINGS_PATH/vscode/settings.json "$settings"
+}
+export -f apply_vscode_settings
