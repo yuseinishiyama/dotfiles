@@ -18,6 +18,8 @@ defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 
 defaults write com.apple.finder AppleShowAllFiles -bool true
 
+defaults write com.apple.dt.Xcode ShowBuildOperationDuration -bool YES
+
 killall Finder
 
 killall Dock
