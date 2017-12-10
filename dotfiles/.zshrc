@@ -27,7 +27,9 @@ alias emacs='/Applications/Emacs.app/Contents/MacOS/Emacs'
 function emacsclient () {
     /Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n $1 --alternate-editor /Applications/Emacs.app/Contents/MacOS/Emacs &
 }
-alias e='emacsclient'
+
+# VSCode
+alias e='code'
 
 # Python
 if which pyenv > /dev/null; then
