@@ -1,9 +1,6 @@
 #!/bin/sh
 
 install_dev_tools() {
-    echo "Installing Xcode CLI tools..."
-    xcode-select --install
-
     echo "Installing Homebrew..."
     which -s brew
     if [[ $? != 0 ]] ; then
