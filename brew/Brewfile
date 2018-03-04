@@ -2,6 +2,7 @@ tap "caskroom/cask"
 tap "caskroom/drivers"
 
 brew "autossh"
+brew "awscli"
 brew "cask"
 brew "cloc"
 brew "go"
