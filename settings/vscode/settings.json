@@ -17,5 +17,7 @@
     },
     "[plaintext]": {
         
-    }
+    },
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false
 }
