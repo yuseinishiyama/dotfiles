@@ -1,5 +1,7 @@
 .DS_Store
 
+update-notifier-npm.json
+
 # Emacs
 dotfiles/.emacs.d/.cask
 dotfiles/.emacs.d/ac-comphist.dat
@@ -8,7 +10,6 @@ dotfiles/.emacs.d/backup/
 dotfiles/.emacs.d/projectile-bookmarks.eld
 dotfiles/.emacs.d/undohist/
 dotfiles/.emacs.d/url/
-
 
 *~
 local.el
