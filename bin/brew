@@ -7,6 +7,7 @@ BREW_PATH=$SCRIPT_PATH/../brew
 update_brew() {
     echo "Updating homebrew.."
 
+    brew update
     for brewfile in $BREW_PATH/*
     do
         brew bundle -v --file=$brewfile
