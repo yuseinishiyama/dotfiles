@@ -2,7 +2,7 @@
     "files.autoSave": "afterDelay",
     "editor.renderWhitespace": "boundary",
     "editor.cursorStyle": "block",
-    "workbench.colorTheme": "Solarized Light",
+    "workbench.colorTheme": "Abyss",
     "window.zoomLevel": 0,
     "gitlens.advanced.messages": {
         "suppressCommitHasNoPreviousCommitWarning": false,
