@@ -49,3 +49,5 @@ cask "spectacle"
 cask "timing"
 cask "trailer"
 cask "visual-studio-code"
+
+mas "MindNode 5", id: 1289197285
