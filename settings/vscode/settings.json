@@ -20,5 +20,8 @@
     },
     "explorer.confirmDragAndDrop": false,
     "explorer.confirmDelete": false,
-    "gitlens.keymap": "alternate"
+    "gitlens.keymap": "alternate",
+    "files.associations": {
+        "*Fastfile": "ruby",
+    }
 }
