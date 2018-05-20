@@ -5,14 +5,7 @@
     "workbench.colorTheme": "Abyss",
     "window.zoomLevel": 0,
     "gitlens.advanced.messages": {
-        "suppressCommitHasNoPreviousCommitWarning": false,
-        "suppressCommitNotFoundWarning": false,
-        "suppressFileNotUnderSourceControlWarning": false,
-        "suppressGitVersionWarning": false,
-        "suppressLineUncommittedWarning": false,
-        "suppressNoRepositoryWarning": false,
-        "suppressResultsExplorerNotice": false,
-        "suppressUpdateNotice": false,
+        "suppressShowKeyBindingsNotice": true,
         "suppressWelcomeNotice": true
     },
     "[plaintext]": {
@@ -23,5 +16,6 @@
     "gitlens.keymap": "alternate",
     "files.associations": {
         "*Fastfile": "ruby",
-    }
+    },
+    "gitlens.historyExplorer.enabled": true
 }
