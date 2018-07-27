@@ -16,6 +16,7 @@
     "gitlens.keymap": "alternate",
     "files.associations": {
         "*Fastfile": "ruby",
+        "Dangerfile": "ruby",
     },
     "gitlens.historyExplorer.enabled": true
 }
