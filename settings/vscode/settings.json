@@ -18,5 +18,6 @@
         "*Fastfile": "ruby",
         "Dangerfile": "ruby",
     },
-    "gitlens.historyExplorer.enabled": true
+    "gitlens.historyExplorer.enabled": true,
+    "editor.renderControlCharacters": true
 }
