@@ -4,7 +4,7 @@ ZSH_THEME="agnoster"
 COMPLETION_WAITING_DOTS="true"
 plugins=(brew git git-hubflow osx xcode bundler rails rake rbenv ruby zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
-export LANG=ja_JP.UTF-8
+export LANG=en_US.UTF-8
 export TERM=xterm-256color
 alias la='ls -a'
 alias b='bundle exec'
