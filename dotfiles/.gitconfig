@@ -60,6 +60,10 @@
 [difftool "default-difftool"]
         cmd = code --wait --diff $LOCAL $REMOTE
 
+[ghq]
+        root = ~/.ghq
+        root = ~/.go/src
+
 [include]
         path = .gitconfig.local
 
