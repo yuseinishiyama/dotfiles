@@ -1,28 +1,3 @@
-[include]
-        path = .gitconfig.local
-[core]
-        editor = code --wait
-        quotepath = false
-        autocrlf = false
-        excludesfile = ~/.gitignore.global
-[diff]
-        tool = default-difftool
-[difftool "default-difftool"]
-        cmd = code --wait --diff $LOCAL $REMOTE
-[merge]
-        tool = vscode
-[mergetool "vscode"]
-        cmd = code --wait $MERGED
-[color]
-        status = auto
-        diff = auto
-        branch = auto
-        interactive = auto
-        grep = auto
-[push]
-        default = current
-[branch]
-        autosetuprebase = always
 [alias]
         a  = add
         st = status
@@ -63,3 +38,36 @@
         d1 = diff HEAD~
         d2 = diff HEAD~~
         al = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
+[branch]
+        autosetuprebase = always
+
+[color]
+        status = auto
+        diff = auto
+        branch = auto
+        interactive = auto
+        grep = auto
+
+[core]
+        editor = code --wait
+        quotepath = false
+        autocrlf = false
+        excludesfile = ~/.gitignore.global
+
+[diff]
+        tool = default-difftool
+
+[difftool "default-difftool"]
+        cmd = code --wait --diff $LOCAL $REMOTE
+
+[include]
+        path = .gitconfig.local
+
+[merge]
+        tool = vscode
+
+[mergetool "vscode"]
+        cmd = code --wait $MERGED
+
+[push]
+        default = current
