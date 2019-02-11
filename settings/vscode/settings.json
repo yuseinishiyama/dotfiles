@@ -2,7 +2,7 @@
     "files.autoSave": "afterDelay",
     "editor.renderWhitespace": "boundary",
     "editor.cursorStyle": "block",
-    "workbench.colorTheme": "Abyss",
+    "workbench.colorTheme": "Kimbie Dark",
     "window.zoomLevel": 0,
     "gitlens.advanced.messages": {
         "suppressShowKeyBindingsNotice": true,
@@ -21,5 +21,6 @@
     "gitlens.historyExplorer.enabled": true,
     "gitlens.views.fileHistory.enabled": true,
     "gitlens.views.lineHistory.enabled": true,
-    "editor.renderControlCharacters": true
+    "editor.renderControlCharacters": true,
+    "terminal.integrated.fontFamily": "Source Code Pro for Powerline"
 }
