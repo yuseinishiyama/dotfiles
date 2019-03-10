@@ -30,5 +30,9 @@
     "markdown-pdf.margin.top": "0.5cm",
     "markdown-pdf.margin.left": "0.5cm",
     "markdown-pdf.margin.right": "0.5cm",
-    "markdown-pdf.margin.bottom": "0.5cm"
+    "markdown-pdf.margin.bottom": "0.5cm",
+    "ruby.intellisense": "rubyLocate",
+    "ruby.codeCompletion": "rcodetools",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
 }
