@@ -74,8 +74,6 @@
 				<true/>
 				<key>key</key>
 				<string>D32F215B-D3C4-4FEC-8B54-EFA7F777DF16</string>
-				<key>name</key>
-				<string>Macintosh HD</string>
 			</dict>
 		</array>
 		<key>FanControl_Sets</key>
@@ -219,14 +217,13 @@
 		<integer>0</integer>
 		<key>Time_CalendarsDisabled</key>
 		<array>
-			<string>1424C442-BD42-4764-900B-BF0D9F19FF74</string>
-			<string>1DB9991A-14B5-409E-ADCD-B57E10998493</string>
-			<string>F8911537-B7FF-4B89-8C8C-AA0C19D5F204</string>
-			<string>D8976838-2119-46CB-BA74-35D1BFCF8421</string>
-			<string>50065281-197C-41DF-BBAB-B4E3AF23FFD4</string>
-			<string>53410ACB-E3C7-440C-876E-68DA38876107</string>
-			<string>BD5CA45C-3273-446B-A940-A49491C575E1</string>
-			<string>72C15ADB-ECC1-46A2-B2C3-3B4B52CC1FB3</string>
+			<string>918E7787-239E-4F31-8AD5-80C812D1761A</string>
+			<string>112A0C77-0FE4-4386-975A-29C74EDB8466</string>
+			<string>C49610FB-DF14-4718-B773-D58FE544093E</string>
+			<string>7686C8B5-02D1-44EA-B718-0A2C67416F37</string>
+			<string>A6894D46-59CD-431D-A687-A2A29CB1DEC6</string>
+			<string>DC4ADE0D-C040-4E42-B7B2-476CB97DAB55</string>
+			<string>45AAAA4F-001B-4273-BB01-2E55EF61FF68</string>
 		</array>
 		<key>Time_Cities</key>
 		<array>
@@ -361,7 +358,7 @@
 		<key>Zarya-TLE</key>
 		<dict>
 			<key>time</key>
-			<real>1552914968.685205</real>
+			<real>1553120592.5169601</real>
 			<key>tle</key>
 			<string>ISS (ZARYA)             
 1 25544U 98067A   19024.69130787  .00000289  00000-0  11946-4 0  9991
