@@ -1,5 +1,4 @@
 tap "caskroom/cask"
-tap "caskroom/drivers"
 
 brew "autossh"
 brew "awscli"
