@@ -1,7 +1,3 @@
 .DS_Store
-
-# Local imports
 **/*.local
-
-update-notifier-npm.json
-hub
+configstore
