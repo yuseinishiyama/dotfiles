@@ -1,7 +1,7 @@
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="agnoster"
 COMPLETION_WAITING_DOTS="true"
-plugins=(brew git git-hubflow osx xcode bundler rails rake rbenv ruby zsh-syntax-highlighting)
+plugins=(git git-hubflow osx xcode bundler rake rbenv ruby)
 fpath=(/usr/local/share/zsh-completions $fpath)
 source $ZSH/oh-my-zsh.sh
 export LANG=en_US.UTF-8
