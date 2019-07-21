@@ -4,6 +4,17 @@ CRIPT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 BREW_PATH=$SCRIPT_PATH/../brew
 
+install_brew() {
+    echo "Installing Homebrew..."
+    which -s brew
+    if [[ $? != 0 ]] ; then
+        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    else
+        echo "Homebrew is already installed"
+    fi
+}
+export -f install_brew
+
 update_brew() {
     echo "Updating homebrew.."
 

@@ -1,16 +1,5 @@
 #!/bin/sh
 
-install_dev_tools() {
-    echo "Installing Homebrew..."
-    which -s brew
-    if [[ $? != 0 ]] ; then
-        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    else
-        echo "Homebrew is already installed"
-    fi
-}
-export -f install_dev_tools
-
 install_ohmyz() {
     echo "Installing zsh..."
     sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
