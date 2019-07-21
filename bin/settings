@@ -3,25 +3,29 @@
 SCRIPT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 SETTINGS_PATH=$SCRIPT_PATH/../settings
 
-apply_defaults() {
+apply_configurations() {
+    defaults
+    vscode
+    iterm
+}
+export -f apply_configurations
+
+defaults() {
     echo "Applying defaults..."
 
     $SETTINGS_PATH/defaults
 }
-export -f apply_defaults
 
-apply_vscode_settings() {
+vscode() {
     settings=~/Library/Application\ Support/Code/User/settings.json
     if [ -e "$settings" ]; then
         rm -v "$settings"
     fi
     ln -s -v $SETTINGS_PATH/vscode/settings.json "$settings"
 }
-export -f apply_vscode_settings
 
-apply_iterm_settings() {
+iterm() {
     defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$SETTINGS_PATH/iterm"
 
     defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 }
-export -f apply_iterm_settings

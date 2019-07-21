@@ -33,8 +33,7 @@ do
 
             update_dotfiles
             update_brew
-            apply_defaults
-            apply_iterm_settings
+            apply_configurations
 
             install bundler
             install_ohmyz
@@ -46,9 +45,7 @@ do
             update_dotfiles
             ;;
         s)
-            apply_defaults
-            apply_iterm_settings
-            apply_vscode_settings
+            apply_configurations
             ;;
         -h)
             help
