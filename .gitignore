@@ -1,3 +1,4 @@
 .DS_Store
 **/*.local
 configstore
+automatic_backups
