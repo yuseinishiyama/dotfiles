@@ -29,12 +29,10 @@ do
     case $1 in
         i)
             install_brew
-            install_fonts
-
-            update_dotfiles
             update_brew
+            update_dotfiles
             apply_configurations
-
+            install_fonts # iTerm uses Powerline font
             install bundler
             install_ohmyz
             ;;
