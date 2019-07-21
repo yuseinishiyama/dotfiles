@@ -2,6 +2,8 @@
 
 SCRIPT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 DOT_FILES_PATH=$SCRIPT_PATH/../dotfiles
+SETTINGS_PATH=$SCRIPT_PATH/../settings
+VSCODE_SETTINGS_PATH=~/Library/Application\ Support/Code/User/settings.json
 
 DOT_FILE_NAMES=()
 for file in $DOT_FILES_PATH/.*
@@ -20,8 +22,6 @@ do
 done
 
 link_dotfiles() {
-    echo "Creating symlinks..."
-
     for filename in ${DOT_FILE_NAMES[@]}
     do
         ln -s -v $DOT_FILES_PATH/$filename $HOME/$filename
@@ -29,8 +29,6 @@ link_dotfiles() {
 }
 
 unlink_dotfiles() {
-    echo "Removing symlinks..."
-
     for filename in ${DOT_FILE_NAMES[@]}
     do
         dotfile=$HOME/$filename
@@ -41,8 +39,23 @@ unlink_dotfiles() {
     done
 }
 
-update_dotfiles() {
-    unlink_dotfiles
-    link_dotfiles
+link_vscode_settings() {
+    ln -s -v $SETTINGS_PATH/vscode/settings.json "$VSCODE_SETTINGS_PATH"
 }
-export -f update_dotfiles
+
+unlink_vscode_settings() {
+    if [ -e "$VSCODE_SETTINGS_PATH" ]; then
+        rm -rf -v "$VSCODE_SETTINGS_PATH"
+    fi
+}
+
+update_links() {
+    echo "Removing symlinks..."
+    unlink_dotfiles
+    unlink_vscode_settings
+
+    echo "Creating symlinks..."
+    link_dotfiles
+    link_vscode_settings
+}
+export -f update_links

@@ -4,19 +4,20 @@ SCRIPT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 source $SCRIPT_PATH/brew
 source $SCRIPT_PATH/dev_tools
-source $SCRIPT_PATH/dotfiles
+source $SCRIPT_PATH/link
 source $SCRIPT_PATH/settings
 
 CMDNAME=`basename $0`
-USAGE="Usage: $CMDNAME [i | b | d | s]"
+USAGE="Usage: $CMDNAME [ brew | export | install | import | link ]"
 help() {
     echo $USAGE
     echo ""
     echo "Options:"
-    echo "  i:  Setup all configurations"
-    echo "  b:  Install Homebrew packages"
-    echo "  d:  Create symlinks for dotfiles"
-    echo "  s:  Apply defaults settings"
+    echo "  brew:     Install/Update Homebrew packages"
+    echo "  export:   Export settings"
+    echo "  install:  Install necessary softwares and apply configurations"
+    echo "  import:   Import settings"
+    echo "  link:     Create/Update symlinks"
 }
 
 if [ $# -eq 0 ]; then
@@ -27,23 +28,26 @@ fi
 while [ $# -gt 0 ]
 do
     case $1 in
-        i)
+        brew)
+            update_brew
+            ;;
+        export)
+            export_settings
+            ;;
+        install)
             install_brew
             update_brew
-            update_dotfiles
-            apply_configurations
+            update_links
+            import_settings
             install_fonts # iTerm uses Powerline font
             install bundler
             install_ohmyz
             ;;
-        b)
-            update_brew
+        import)
+            import_settings
             ;;
-        d)
-            update_dotfiles
-            ;;
-        s)
-            apply_configurations
+        link)
+            update_links
             ;;
         -h)
             help

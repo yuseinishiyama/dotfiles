@@ -1,7 +1,6 @@
 #!/bin/sh
 
-CRIPT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-
+SCRIPT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 BREW_PATH=$SCRIPT_PATH/../brew
 
 install_brew() {

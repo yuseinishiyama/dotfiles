@@ -1,5 +1,7 @@
 #!/bin/sh
 
+SCRIPT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
 defaults write com.apple.finder CreateDesktop -bool FALSE
 
 defaults write -g NSNavPanelExpandedStateForSaveMode -boolean true
@@ -19,6 +21,10 @@ defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 defaults write com.apple.finder AppleShowAllFiles -bool true
 
 defaults write com.apple.dt.Xcode ShowBuildOperationDuration -bool YES
+
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$SCRIPT_PATH/iterm"
+
+defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 
 killall Finder
 
