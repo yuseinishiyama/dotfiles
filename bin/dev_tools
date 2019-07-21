@@ -1,7 +1,6 @@
 #!/bin/sh
 
 install_ohmyz() {
-    echo "Installing zsh..."
     sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 }
 export -f install_ohmyz

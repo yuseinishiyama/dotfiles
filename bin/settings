@@ -17,6 +17,8 @@ defaults() {
 }
 
 vscode() {
+    echo "Applying vscode settings..."
+
     settings=~/Library/Application\ Support/Code/User/settings.json
     if [ -e "$settings" ]; then
         rm -v "$settings"
@@ -25,6 +27,8 @@ vscode() {
 }
 
 iterm() {
+    echo "Applying iterm settings"
+
     defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$SETTINGS_PATH/iterm"
 
     defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
