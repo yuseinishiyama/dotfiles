@@ -1,12 +1,11 @@
 ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="agnoster"
 COMPLETION_WAITING_DOTS="true"
 plugins=(git git-hubflow osx xcode bundler rake rbenv ruby)
 fpath=(/usr/local/share/zsh-completions $fpath)
 source $ZSH/oh-my-zsh.sh
 export LANG=en_US.UTF-8
 export TERM=xterm-256color
-prompt_context() {}
+PROMPT='$ '
 
 # PATH
 export PATH=$PATH:/bin:/usr/bin:/usr/local/bin
