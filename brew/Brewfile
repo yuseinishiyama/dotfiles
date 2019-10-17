@@ -1,5 +1,6 @@
 tap "caskroom/cask"
 
+# General commands
 brew "autossh"
 brew "awscli"
 brew "cask"
@@ -15,17 +16,13 @@ brew "ispell"
 brew "jq"
 brew "mas"
 brew "node"
-brew "pyenv"
-brew "python"
 brew "peco"
-brew "ruby-build"
-brew "rbenv"
-brew "ruby"
 brew "tree"
 brew "watch"
 brew "zsh"
 brew "zsh-completions"
 
+# General apps
 cask "1password"
 cask "alfred"
 cask "appcleaner"
@@ -58,3 +55,12 @@ cask "timing"
 cask "visual-studio-code"
 
 mas "MindNode 5", id: 1289197285
+
+# Python
+brew "pyenv"
+brew "python"
+
+# Ruby
+brew "ruby-build"
+brew "rbenv"
+brew "ruby"
