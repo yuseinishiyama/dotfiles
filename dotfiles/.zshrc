@@ -115,3 +115,34 @@ _ZSH_LOCAL_SETTING="$HOME/.zshrc.local"
 if [ -f $_ZSH_LOCAL_SETTING ]; then
     source $_ZSH_LOCAL_SETTING
 fi
+
+function slack_status() {
+  local url="https://slack.com/api/users.profile.set?token="$SLACK_TOKEN"&profile="
+  local status_text
+  local status_emoji
+
+  if [ $# -eq 0 ]; then
+    # Clear status
+    status_text=""
+    status_emoji=""
+  else
+    status_text="$1"
+    status_emoji="$2"
+  fi
+
+  # TODO: expiration
+  curl --silent \
+    --data-urlencode "profile={\"status_text\":\"${status_text}\",\"status_emoji\":\"${status_emoji}\"}" \
+    ${url} > /dev/null
+}
+
+function focus() {
+  open "focus://focus"
+  slack_status "Slack is closed but mobile notifs still may come through. Come to my desk if it's urgent." :tomato:
+}
+
+function unfocus() {
+  open "focus://unfocus"
+  slack_status
+  open /Applications/Slack.app
+}
