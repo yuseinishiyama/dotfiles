@@ -149,7 +149,7 @@ function slack_presence() {
 
 function focus() {
   open "focus://focus"
-  slack_status "Slack is closed but mobile notifs still may come through. Come to my desk if it's urgent." :tomato:
+  slack_status "Focusing. Slack is closed but I'm available in the office. Mobile notifs still may come through." :tomato:
   slack_presence false
 }
 
