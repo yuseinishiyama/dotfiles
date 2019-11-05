@@ -1,0 +1,32 @@
+#!/bin/sh
+
+SCRIPT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+source $SCRIPT_PATH/.env
+
+slack_status() {
+  url="https://slack.com/api/users.profile.set?token="$SLACK_TOKEN"&profile="
+
+  if [ $# -eq 0 ]; then
+    status_text=""
+    status_emoji=""
+  else
+    status_text="$1"
+    status_emoji="$2"
+  fi
+
+  # TODO: expiration
+  curl --data-urlencode "profile={\"status_text\":\"${status_text}\",\"status_emoji\":\"${status_emoji}\"}" \
+    --silent ${url} > /dev/null
+}
+export -f slack_status
+
+slack_presence() {
+  if $1; then
+    presence="auto"
+  else
+    presence="away"
+  fi
+
+  curl --silent "https://slack.com/api/users.setPresence?token=$SLACK_TOKEN&presence=${presence}" > /dev/null
+}
+export -f slack_presence
