@@ -122,7 +122,6 @@ function slack_status() {
   local status_emoji
 
   if [ $# -eq 0 ]; then
-    # Clear status
     status_text=""
     status_emoji=""
   else
@@ -136,13 +135,27 @@ function slack_status() {
     ${url} > /dev/null
 }
 
+function slack_presence() {
+  local presence
+  if $1; then
+    presence="auto"
+  else
+    presence="away"
+  fi
+
+  curl --silent "https://slack.com/api/users.setPresence?token=$SLACK_TOKEN&presence=${presence}" \
+    > /dev/null
+}
+
 function focus() {
   open "focus://focus"
   slack_status "Slack is closed but mobile notifs still may come through. Come to my desk if it's urgent." :tomato:
+  slack_presence false
 }
 
 function unfocus() {
   open "focus://unfocus"
   slack_status
+  slack_presence true
   open /Applications/Slack.app
 }
