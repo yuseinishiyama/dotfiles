@@ -3,3 +3,4 @@
 **/*.local
 configstore
 automatic_backups
+gcloud
