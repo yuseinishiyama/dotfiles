@@ -17,7 +17,7 @@ update_brew() {
     brew update
     for brewfile in $BREW_PATH/*
     do
-        brew bundle -v --file=$brewfile
+        brew bundle --no-lock -v --file=$brewfile
     done
 }
 export -f update_brew
