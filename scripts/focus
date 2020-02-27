@@ -3,5 +3,5 @@
 SCRIPT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 source $SCRIPT_PATH/slack_helper
 
-slack_status "Focusing. Slack is closed but I'm available in the office. Mobile notifs may still come through." :tomato:
+slack_status "Focusing. Slack is closed. Please find me physically." :tomato:
 slack_presence false
