@@ -4,6 +4,8 @@
 <dict>
 	<key>AppleAntiAliasingThreshold</key>
 	<integer>1</integer>
+	<key>ApplePressAndHoldEnabled</key>
+	<false/>
 	<key>AppleScrollAnimationEnabled</key>
 	<integer>0</integer>
 	<key>AppleSmoothFixedFontsSizeThreshold</key>
@@ -72,9 +74,9 @@
 	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
 	<string>972 949 616 174 0 0 2560 1440 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
-	<string>640 686 400 129 0 0 1680 1027 </string>
+	<string>1080 983 400 129 0 0 2560 1440 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>970 786 620 392 0 0 2560 1440 </string>
+	<string>530 476 620 392 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 0 2560 1440 0 0 2560 1417 </string>
 	<key>New Bookmarks</key>
@@ -1688,9 +1690,9 @@
 				<key>advanced configuration</key>
 				<dict>
 					<key>algorithm</key>
-					<integer>1</integer>
+					<integer>0</integer>
 					<key>font</key>
-					<string>.SFNSText 18</string>
+					<string>.AppleSystemUIFont 12</string>
 					<key>separator color 2</key>
 					<dict>
 						<key>Alpha Component</key>
@@ -1741,9 +1743,9 @@
 							<key>layout advanced configuration dictionary value</key>
 							<dict>
 								<key>algorithm</key>
-								<integer>1</integer>
+								<integer>0</integer>
 								<key>font</key>
-								<string>.SFNSText 18</string>
+								<string>.AppleSystemUIFont 12</string>
 								<key>separator color 2</key>
 								<dict>
 									<key>Alpha Component</key>
@@ -1794,9 +1796,9 @@
 							<key>layout advanced configuration dictionary value</key>
 							<dict>
 								<key>algorithm</key>
-								<integer>1</integer>
+								<integer>0</integer>
 								<key>font</key>
-								<string>.SFNSText 18</string>
+								<string>.AppleSystemUIFont 12</string>
 								<key>separator color 2</key>
 								<dict>
 									<key>Alpha Component</key>
@@ -1847,18 +1849,22 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
-		<string>3.3.2</string>
-		<string>3.2.9</string>
+		<string>3.3.6</string>
+		<string>3.3.8</string>
 		<string>3.3.1</string>
-		<string>3.3.4</string>
 		<string>3.3.3</string>
+		<string>3.3.5</string>
+		<string>3.3.7</string>
+		<string>3.2.9</string>
+		<string>3.3.2</string>
+		<string>3.3.4</string>
 	</array>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
 		<string>{{0, 0}, {2560, 1440}}</string>
 		<key>topLeft</key>
-		<string>{277, 713}</string>
+		<string>{502, 662}</string>
 	</dict>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
@@ -1867,7 +1873,7 @@
 	<key>NoSyncLastTipTime</key>
 	<real>585656025.80789995</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>11</integer>
+	<integer>66</integer>
 	<key>NoSyncNeverAskAboutSettingAlternateMouseScroll</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
@@ -2367,11 +2373,11 @@
 		<array>
 			<dict>
 				<key>isTerminal</key>
-				<false/>
+				<true/>
 				<key>name</key>
 				<string>currentSession</string>
 				<key>nonterminalContext</key>
-				<integer>1</integer>
+				<integer>0</integer>
 			</dict>
 			<dict>
 				<key>isTerminal</key>
@@ -2391,9 +2397,25 @@
 			</dict>
 			<dict>
 				<key>isTerminal</key>
+				<false/>
+				<key>name</key>
+				<string>title</string>
+				<key>nonterminalContext</key>
+				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
 				<string>tmuxWindowTitle</string>
+				<key>nonterminalContext</key>
+				<integer>0</integer>
+			</dict>
+			<dict>
+				<key>isTerminal</key>
+				<true/>
+				<key>name</key>
+				<string>title</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -2543,17 +2565,17 @@
 			</dict>
 			<dict>
 				<key>isTerminal</key>
-				<true/>
+				<false/>
 				<key>name</key>
-				<string>tmuxWindow</string>
+				<string>currentSession</string>
 				<key>nonterminalContext</key>
-				<integer>0</integer>
+				<integer>1</integer>
 			</dict>
 			<dict>
 				<key>isTerminal</key>
 				<true/>
 				<key>name</key>
-				<string>currentSession</string>
+				<string>tmuxWindow</string>
 				<key>nonterminalContext</key>
 				<integer>0</integer>
 			</dict>
@@ -2586,10 +2608,6 @@
 			</dict>
 		</array>
 	</dict>
-	<key>NoSyncSearchHistory</key>
-	<array>
-		<string>env</string>
-	</array>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>584896285.38553202</real>
 	<key>NoSyncTipsDisabled</key>
@@ -2659,7 +2677,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-10-07T15:56:35Z</date>
+	<date>2020-02-11T09:25:29Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
@@ -2681,7 +2699,7 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.3.4</string>
+	<string>3.3.8</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
