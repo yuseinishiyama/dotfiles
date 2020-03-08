@@ -61,8 +61,8 @@
         cmd = code --wait --diff $LOCAL $REMOTE
 
 [ghq]
-        root = ~/.ghq
         root = ~/.go/src
+        root = ~/.ghq
 
 [include]
         path = .gitconfig.local
