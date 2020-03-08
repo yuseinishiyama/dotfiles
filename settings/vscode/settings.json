@@ -34,5 +34,6 @@
     "ruby.intellisense": "rubyLocate",
     "ruby.codeCompletion": "rcodetools",
     "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "editor.tabSize": 2
 }
