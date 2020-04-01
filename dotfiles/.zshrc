@@ -51,7 +51,7 @@ alias -g F='$(git-changed-files)'
 
 ## History
 function peco-select-history() {
-    BUFFER=$(history -n 1 | peco)
+    BUFFER=$(history -n 1 | tail -r | peco)
     CURSOR=$#BUFFER
 }
 zle -N peco-select-history
