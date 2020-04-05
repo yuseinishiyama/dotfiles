@@ -6,14 +6,10 @@ brew "autossh"
 brew "awscli"
 brew "cask"
 brew "cloc"
-brew "dep"
-brew "emacs"
-brew "go"
 brew "ghq"
 brew "hub"
 brew "hugo"
 brew "imagemagick"
-brew "ispell"
 brew "jq"
 brew "mas"
 brew "node"
@@ -22,9 +18,6 @@ brew "peco"
 brew "terraform"
 brew "tree"
 brew "watch"
-brew "zsh"
-brew "zsh-completions"
-brew "zsh-syntax-highlighting"
 
 # General apps
 cask "1password"
@@ -61,6 +54,11 @@ cask "visual-studio-code"
 
 mas "MindNode 5", id: 1289197285
 
+# Zsh
+brew "zsh"
+brew "zsh-completions"
+brew "zsh-syntax-highlighting"
+
 # Python
 brew "pyenv"
 brew "python"
@@ -74,3 +72,7 @@ brew "ruby"
 brew "sbt"
 cask "adoptopenjdk8"
 cask "intellij-idea-ce"
+
+# Go
+brew "go"
+brew "dep"
