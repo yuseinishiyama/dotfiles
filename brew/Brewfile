@@ -24,6 +24,7 @@ brew "tree"
 brew "watch"
 brew "zsh"
 brew "zsh-completions"
+brew "zsh-syntax-highlighting"
 
 # General apps
 cask "1password"
