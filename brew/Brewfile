@@ -16,6 +16,7 @@ brew "node"
 brew "pdsh"
 brew "peco"
 brew "terraform"
+brew "tmux"
 brew "tree"
 brew "watch"
 
