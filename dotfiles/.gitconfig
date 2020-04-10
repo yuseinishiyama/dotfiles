@@ -68,6 +68,9 @@
 [mergetool "vscode"]
         cmd = code --wait $MERGED
 
+[fetch]
+	prune = true
+
 [push]
         default = current
 
