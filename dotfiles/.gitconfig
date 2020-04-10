@@ -27,7 +27,7 @@
         sh = show
         sm = submodule
         so = remote show origin
-        st = status
+        st = status -s
         wc = whatchanged
 
         # fork
