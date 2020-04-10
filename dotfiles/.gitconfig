@@ -1,58 +1,57 @@
 [alias]
         a  = add
-        st = status
-        sh = show
-        sm = submodule
-        ft = fetch
-        co = checkout
-        br = branch
+        al = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
         ba = branch -a
         bn = rev-parse --abbrev-ref HEAD
-        pr = pull --rebase
+        br = branch
+        c  = commit
+        cam = commit -a -m
+        came = commit -a --amend
+        cleanup = !git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d
+        cm = commit -m
+        co = checkout
+        d1 = diff HEAD~
+        d2 = diff HEAD~~
+        dc = diff --cached
+        di = diff
+        dm = diff master
+        empty = commit --allow-empty -m
+        ft = fetch
+        lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+        lp = log -p
         me = config user.name
         mee = config user.email
-        # utils
-        cleanup = !git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d
+        np = !git --no-pager
+        pr = pull --rebase
+        sed =  "!f () { git grep -l $1 | xargs sed -i '' s/$1/$2/g; }; f"
+        sh = show
+        sm = submodule
+        so = remote show origin
+        st = status
+        wc = whatchanged
+
+        # fork
+        fetch-pulls = fetch upstream +refs/pull/*:refs/remotes/pull/*
         resync = "!sh -c 'branch=`git rev-parse --abbrev-ref HEAD` && git co master && git pull upstream master && git reset upstream/master --hard && git push origin master && git co $branch'"
         resyncm = !git resync && git merge master
         resyncr = !git resync && git rebase master
-        sed =  "!f () { git grep -l $1 | xargs sed -i '' s/$1/$2/g; }; f"
-        fetch-pulls = fetch upstream +refs/pull/*:refs/remotes/pull/*
-        # commit
-        c  = commit
-        cm = commit -m
-        cam = commit -a -m
-        came = commit -a --amend
-        empty = commit --allow-empty -m
-        # log
-        np = !git --no-pager
-        so = remote show origin
         su = remote show upstream
-        wc = whatchanged
-        lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
-        lp = log -p
-        # diff
-        di = diff
-        dm = diff master
-        dc = diff --cached
-        d1 = diff HEAD~
-        d2 = diff HEAD~~
-        al = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
+
 [branch]
         autosetuprebase = always
 
 [color]
-        status = auto
-        diff = auto
         branch = auto
-        interactive = auto
+        diff = auto
         grep = auto
+        interactive = auto
+        status = auto
 
 [core]
-        editor = code --wait
-        quotepath = false
         autocrlf = false
+        editor = code --wait
         excludesfile = ~/.gitignore.global
+        quotepath = false
 
 [diff]
         tool = default-difftool
