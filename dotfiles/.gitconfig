@@ -37,9 +37,6 @@
         resyncr = !git resync && git rebase master
         su = remote show upstream
 
-[branch]
-        autosetuprebase = always
-
 [color]
         branch = auto
         diff = auto
@@ -51,7 +48,6 @@
         autocrlf = false
         editor = code --wait
         excludesfile = ~/.gitignore.global
-        quotepath = false
 
 [diff]
         tool = default-difftool
@@ -74,3 +70,6 @@
 
 [push]
         default = current
+
+[pull]
+	rebase = true
