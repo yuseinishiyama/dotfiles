@@ -12,7 +12,9 @@ install_commandline_tools() {
 export -f install_commandline_tools
 
 install_ohmyz() {
-    sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    curl -Lo install_ohmyz.sh https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+    sh install_ohmyz.sh --keep-zshrc --unattended
+    rm install_ohmyz.sh
 }
 export -f install_ohmyz
 
