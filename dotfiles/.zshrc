@@ -88,24 +88,22 @@ bindkey '^x^f' peco-cdr
 # Notify when command finishes
 ## https://gist.github.com/syui/7112389/raw/growl.zsh
 ## http://qiita.com/kazuph/items/3bfdfce6b7d02b43bf4d
-alias pong='perl -nle '\''print "display notification \"$_\" with title \"Terminal\""'\'' | osascript'
+alias pong='perl -nle '\''print "display notification \"$_\" with title \"Shell\""'\'' | osascript'
 
 preexec() {
-  zsh_notify_cmd=$1
+  zsh_notify_cmd=`echo $1 | head -1 | awk '{ print $1 }'`
   zsh_notify_time=`date +%s`
 }
 
 precmd() {
-  if (( $? == 0 )); then
-    # message
-    zsh_notify_status=done\!\!
+  if [ $? -eq 0 ]; then
+    zsh_notify_status=done
   else
     zsh_notify_status=fail
   fi
   if [[ "${zsh_notify_cmd}" != "" ]]; then
-    # time
     if (( `date +%s` - ${zsh_notify_time} > 3 )); then
-      echo ${zsh_notify_cmd} ${zsh_notify_status}  | pong
+      echo ${zsh_notify_cmd} ${zsh_notify_status} | pong
     fi
   fi
   zsh_notify_cmd=
