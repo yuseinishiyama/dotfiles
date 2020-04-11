@@ -6,7 +6,7 @@ source $ZSH/oh-my-zsh.sh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export LANG=en_US.UTF-8
 export TERM=xterm-256color
-PROMPT='%B%F{10}>>>%f%b '
+PROMPT='%B%(?.$fg[green].$fg[red])>>>%b%f '
 
 # PATH
 export PATH=$PATH:/bin:/usr/bin:/usr/local/bin
