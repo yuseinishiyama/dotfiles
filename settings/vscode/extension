@@ -3,6 +3,8 @@ eamodio.gitlens
 endorfina.roseate
 jebbs.plantuml
 kumar-harsh.graphql-for-vscode
+ms-azuretools.vscode-docker
+ms-python.python
 ms-vscode.Go
 msjsdiag.vscode-react-native
 rebornix.ruby
@@ -13,4 +15,5 @@ vscjava.vscode-java-dependency
 vscjava.vscode-java-pack
 vscjava.vscode-java-test
 vscjava.vscode-maven
+wingrunr21.vscode-ruby
 yzane.markdown-pdf
