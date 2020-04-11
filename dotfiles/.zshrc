@@ -21,6 +21,16 @@ alias la='ls -a'
 alias b='bundle exec'
 alias e='code'
 
+# tmux
+function ssh-then-tmux() {
+  title=$2
+  if [[ -z $title ]] ; then
+    title='default'
+  fi
+  ssh -t "$1" "tmux -CC new -A -s yusei-${title}"
+}
+alias tsh='ssh-then-tmux'
+
 # Python
 if which pyenv > /dev/null; then
 	export PYENV_ROOT="${HOME}/.pyenv"
