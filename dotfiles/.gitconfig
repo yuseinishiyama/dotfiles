@@ -22,7 +22,7 @@
         me = config user.name
         mee = config user.email
         np = !git --no-pager
-        pr = pull --rebase
+        p = pull
         sed =  "!f () { git grep -l $1 | xargs sed -i '' s/$1/$2/g; }; f"
         sh = show
         sm = submodule
