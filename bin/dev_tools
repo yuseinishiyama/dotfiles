@@ -25,8 +25,3 @@ install_fonts() {
     rm -rf fonts
 }
 export -f install_fonts
-
-install_bundler() {
-    gem install bundler
-}
-export -f install_bundler

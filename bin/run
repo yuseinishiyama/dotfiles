@@ -31,7 +31,6 @@ do
             update_links
             import_settings
             install_fonts
-            install_bundler
             install_ohmyz
             ;;
         export)
