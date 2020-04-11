@@ -8,16 +8,13 @@ source $SCRIPT_PATH/link
 source $SCRIPT_PATH/settings
 
 CMDNAME=`basename $0`
-USAGE="Usage: $CMDNAME [ brew | export | install | import | link ]"
+USAGE="Usage: $CMDNAME [ import | export ]"
 help() {
     echo $USAGE
     echo ""
     echo "Options:"
-    echo "  brew:     Install/Update Homebrew packages"
-    echo "  export:   Export settings"
-    echo "  install:  Install necessary softwares and apply configurations"
     echo "  import:   Import settings"
-    echo "  link:     Create/Update symlinks"
+    echo "  export:   Export settings"
 }
 
 if [ $# -eq 0 ]; then
@@ -28,26 +25,17 @@ fi
 while [ $# -gt 0 ]
 do
     case $1 in
-        brew)
-            update_brew
-            ;;
-        export)
-            export_settings
-            ;;
-        install)
+        import)
             install_brew
             update_brew
             update_links
             import_settings
-            install_fonts # iTerm uses Powerline font
-            install bundler
+            install_fonts
+            install_bundler
             install_ohmyz
             ;;
-        import)
-            import_settings
-            ;;
-        link)
-            update_links
+        export)
+            export_settings
             ;;
         -h)
             help

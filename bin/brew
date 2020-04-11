@@ -6,7 +6,7 @@ BREW_PATH=$SCRIPT_PATH/../brew
 install_brew() {
     which -s brew
     if [[ $? != 0 ]] ; then
-        /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
     else
         echo "Homebrew is already installed"
     fi

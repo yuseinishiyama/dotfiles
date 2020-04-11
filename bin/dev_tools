@@ -5,6 +5,7 @@ install_ohmyz() {
 }
 export -f install_ohmyz
 
+# iTerm uses Powerline font
 install_fonts() {
     git clone https://github.com/powerline/fonts.git --depth=1
     cd fonts
