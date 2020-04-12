@@ -1,11 +1,11 @@
 #!/bin/sh
 
 SCRIPT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-
-source $SCRIPT_PATH/brew
-source $SCRIPT_PATH/dev_tools
-source $SCRIPT_PATH/link
-source $SCRIPT_PATH/settings
+LIBRARY_PATH=$SCRIPT_PATH/../lib
+source $LIBRARY_PATH/brew
+source $LIBRARY_PATH/dev_tools
+source $LIBRARY_PATH/link
+source $LIBRARY_PATH/settings
 
 CMDNAME=`basename $0`
 USAGE="Usage: $CMDNAME [ import | export ]"
