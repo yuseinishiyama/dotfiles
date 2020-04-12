@@ -1,20 +1,23 @@
-ZSH=$HOME/.oh-my-zsh
-COMPLETION_WAITING_DOTS="true"
+# Initialize
+export ZSH=$HOME/.oh-my-zsh
 plugins=(git osx xcode bundler rake rbenv ruby)
 fpath=(/usr/local/share/zsh-completions $fpath)
 source $ZSH/oh-my-zsh.sh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# Environment variables
 export LANG=en_US.UTF-8
 export TERM=xterm-256color
-PROMPT='%B%(?.$fg[green].$fg[red])>>>%b%f '
+PROMPT='%B%(?.%F{green}.%F{red})>>>%b%f '
 
-# PATH
+## Path
+export GOPATH="$HOME/.go"
 export PATH=$PATH:/bin:/usr/bin:/usr/local/bin
 export PATH=$PATH:/sbin:/usr/sbin:/usr/local/sbin
-export PATH="$PATH:$HOME/Library/Haskell/bin"
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$HOME/Library/Haskell/bin
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
-export GOPATH="$HOME/.go"
-export PATH=$GOPATH/bin:$PATH
+export PATH=$PATH:$HOME/.ghq/github.com/yuseinishiyama/dotfiles/bin
 
 # Aliases
 alias la='ls -a'
