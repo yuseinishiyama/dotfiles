@@ -1,7 +1,7 @@
 #!/bin/sh
 
 SCRIPT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-source $SCRIPT_PATH/.env
+source $SCRIPT_PATH/../.env
 
 slack_status() {
   url="https://slack.com/api/users.profile.set?token="$SLACK_TOKEN"&profile="
