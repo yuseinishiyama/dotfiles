@@ -22,7 +22,7 @@ export PATH=$PATH:$HOME/.ghq/github.com/yuseinishiyama/dotfiles/bin
 # Aliases
 alias la='ls -a'
 alias b='bundle exec'
-alias e='code'
+alias e='code -n'
 
 # tmux
 function ssh-then-tmux() {
