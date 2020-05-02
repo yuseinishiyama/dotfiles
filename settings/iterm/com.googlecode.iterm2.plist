@@ -107,6 +107,8 @@
 	<string>530 476 620 392 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 0 1920 1058 0 0 1920 1057 </string>
+	<key>NSWindow Frame iTerm Window 1</key>
+	<string>164 0 1674 1025 0 0 1680 1027 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -2011,12 +2013,19 @@
 	</array>
 	<key>NoSyncAutoBurialReveal</key>
 	<true/>
+	<key>NoSyncFrame_SessionsPreferences</key>
+	<dict>
+		<key>screenFrame</key>
+		<string>{{0, 0}, {1920, 1080}}</string>
+		<key>topLeft</key>
+		<string>{657, 922}</string>
+	</dict>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1920, 1080}}</string>
 		<key>topLeft</key>
-		<string>{396, 912}</string>
+		<string>{413, 590}</string>
 	</dict>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
@@ -2025,7 +2034,7 @@
 	<key>NoSyncLastTipTime</key>
 	<real>585656025.80789995</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>112</integer>
+	<integer>119</integer>
 	<key>NoSyncNeverAskAboutSettingAlternateMouseScroll</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
@@ -2033,7 +2042,9 @@
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
 	<integer>0</integer>
 	<key>NoSyncNewTabFromTmuxOpensTmux</key>
-	<false/>
+	<true/>
+	<key>NoSyncNewTabFromTmuxOpensTmux_selection</key>
+	<integer>1</integer>
 	<key>NoSyncNewWindowFromTmuxOpensTmux</key>
 	<false/>
 	<key>NoSyncNewWindowOrTabFromTmuxOpensTmux</key>
@@ -2854,6 +2865,10 @@
 			</dict>
 		</array>
 	</dict>
+	<key>NoSyncSuppressBroadcastInputWarning</key>
+	<true/>
+	<key>NoSyncSuppressBroadcastInputWarning_selection</key>
+	<integer>0</integer>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>584896285.38553202</real>
 	<key>NoSyncTipsDisabled</key>
@@ -2872,7 +2887,7 @@
 	<key>OpenNoWindowsAtStartup</key>
 	<true/>
 	<key>OpenTmuxWindowsIn</key>
-	<integer>2</integer>
+	<integer>0</integer>
 	<key>PMPrintingExpandedStateForPrint2</key>
 	<false/>
 	<key>PerPaneBackgroundImage</key>
@@ -2929,7 +2944,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-04-11T09:59:18Z</date>
+	<date>2020-05-02T11:52:18Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateGroupIdentifier</key>
