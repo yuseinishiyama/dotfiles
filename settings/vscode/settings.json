@@ -38,5 +38,7 @@
     "editor.tabSize": 2,
     "window.newWindowDimensions": "maximized",
     "update.showReleaseNotes": false,
-    "gitlens.showWhatsNewAfterUpgrades": false
+    "gitlens.showWhatsNewAfterUpgrades": false,
+    "go.formatTool": "goimports",
+    "go.useLanguageServer": true
 }
