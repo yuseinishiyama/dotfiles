@@ -22,7 +22,6 @@ export PATH=$PATH:$HOME/.ghq/github.com/yuseinishiyama/dotfiles/bin
 # Aliases
 alias la='ls -a'
 alias b='bundle exec'
-alias e='code -n'
 
 # tmux
 function ssh-then-tmux() {
@@ -117,3 +116,14 @@ _ZSH_LOCAL_SETTING="$HOME/.zshrc.local"
 if [ -f $_ZSH_LOCAL_SETTING ]; then
     source $_ZSH_LOCAL_SETTING
 fi
+
+## Visual Studio Code
+function vscode-remote() {
+  if [[ -z "$1" ]]; then
+     echo "usage: $0 remote-host"
+     return 1
+  fi
+  code --folder-uri "vscode-remote://ssh-remote+$1/"
+}
+alias e='code -n'
+alias er='vscode-remote'
