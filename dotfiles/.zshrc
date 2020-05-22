@@ -120,8 +120,8 @@ fi
 ## Visual Studio Code
 function vscode-remote() {
   if [[ -z "$1" ]]; then
-     echo "usage: $0 remote-host"
-     return 1
+    echo "usage: $0 remote-host"
+    return 1
   fi
   code --folder-uri "vscode-remote://ssh-remote+$1/"
 }
