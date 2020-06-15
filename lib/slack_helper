@@ -16,7 +16,7 @@ slack_status() {
 
   # TODO: expiration
   curl --data-urlencode "profile={\"status_text\":\"${status_text}\",\"status_emoji\":\"${status_emoji}\"}" \
-    --silent ${url} > /dev/null
+    --silent "${url}" > /dev/null
 }
 export -f slack_status
 
