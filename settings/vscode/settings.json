@@ -40,5 +40,10 @@
     "update.showReleaseNotes": false,
     "gitlens.showWhatsNewAfterUpgrades": false,
     "go.formatTool": "goimports",
-    "go.useLanguageServer": true
+    "go.useLanguageServer": true,
+    "editor.minimap.enabled": false,
+    "breadcrumbs.enabled": true,
+    "workbench.activityBar.visible": true,
+    "workbench.statusBar.visible": true,
+    "python.languageServer": "Microsoft"
 }
