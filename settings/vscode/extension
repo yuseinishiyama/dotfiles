@@ -1,7 +1,8 @@
 bierner.markdown-preview-github-styles
 CoenraadS.bracket-pair-colorizer-2
 eamodio.gitlens
-golang.Go
+golang.go
+hashicorp.terraform
 jebbs.plantuml
 KnisterPeter.vscode-github
 ms-azuretools.vscode-docker
