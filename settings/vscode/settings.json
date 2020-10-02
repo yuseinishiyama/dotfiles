@@ -45,5 +45,9 @@
     "breadcrumbs.enabled": true,
     "workbench.activityBar.visible": true,
     "workbench.statusBar.visible": true,
-    "python.languageServer": "Microsoft"
+    "python.languageServer": "Microsoft",
+    "go.languageServerExperimentalFeatures": {
+        "diagnostics": true,
+        "documentLink": true
+    }
 }

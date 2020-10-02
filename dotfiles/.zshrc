@@ -22,6 +22,7 @@ export PATH=$PATH:$HOME/.ghq/github.com/yuseinishiyama/dotfiles/bin
 # Aliases
 alias la='ls -a'
 alias b='bundle exec'
+alias s='source $HOME/.zshrc'
 
 # tmux
 function ssh-then-tmux() {
@@ -50,25 +51,40 @@ fi
 # Peco
 
 ## Git branches
-alias -g B='`git branch -a | peco --prompt "GIT BRANCH>" | head -n 1 | sed -e "s/^\*\s*//g"`'
+function select-branch() {
+  git branch --format '%(refname:lstrip=2)' | peco
+}
+function change-branch() {
+  select-branch | xargs git checkout
+}
+alias -g B='$(select-branch)'
+zle -N change-branch
+bindkey '^x^b' change-branch
 
 ## Git repositories
-alias repo='cd $(ghq list -p | peco)'
+function select-repo() {
+  ghq list -p | peco
+}
+function change-repo() {
+  cd "$(select-repo)" || return
+}
+zle -N change-repo
+bindkey '^x^r' change-repo
 
 ## Git changed files
 function git-changed-files() {
-    #git status --short | peco | awk -vFPAT='([^ ]+)|("[^"]+")' '{print $2}'
-    git status --short | peco | awk '{print $2}'
+  #git status --short | peco | awk -vFPAT='([^ ]+)|("[^"]+")' '{print $2}'
+  git status --short | peco | awk '{print $2}'
 }
 alias -g F='$(git-changed-files)'
 
 ## History
-function peco-select-history() {
-    BUFFER=$(history -n 1 | tail -r | peco)
-    CURSOR=$#BUFFER
+function select-history() {
+  BUFFER=$(history -n 1 | tail -r | peco)
+  CURSOR=$#BUFFER
 }
-zle -N peco-select-history
-bindkey '^r' peco-select-history
+zle -N select-history
+bindkey '^x^h' select-history
 
 ## Directories
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
@@ -77,15 +93,15 @@ zstyle ':chpwd:*' recent-dirs-max 5000
 zstyle ':chpwd:*' recent-dirs-default yes
 zstyle ':completion:*' recent-dirs-insert both
 
-function peco-cdr () {
-    local selected_dir=$(cdr -l | awk '{ print $2 }' | peco)
-    if [ -n "$selected_dir" ]; then
-        BUFFER="cd ${selected_dir}"
-        zle accept-line
-    fi
+function change-dir () {
+  local selected_dir=$(cdr -l | awk '{ print $2 }' | peco)
+  if [ -n "$selected_dir" ]; then
+      BUFFER="cd ${selected_dir}"
+      zle accept-line
+  fi
 }
-zle -N peco-cdr
-bindkey '^x^f' peco-cdr
+zle -N change-dir
+bindkey '^x^f' change-dir
 
 # Notify when command finishes
 ## https://gist.github.com/syui/7112389/raw/growl.zsh
