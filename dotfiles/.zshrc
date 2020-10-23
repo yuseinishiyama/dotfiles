@@ -80,7 +80,8 @@ alias -g F='$(git-changed-files)'
 
 ## History
 function select-history() {
-  BUFFER=$(history -n 1 | tail -r | peco)
+  # Remove duplicated lines while keeping the order
+  BUFFER=$(history -n 1 | tail -r | awk '!seen[$0]++' | peco)
   CURSOR=$#BUFFER
 }
 zle -N select-history
