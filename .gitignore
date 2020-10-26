@@ -5,3 +5,4 @@ configstore
 automatic_backups
 gcloud
 yopass/
+**/gh/hosts.yml
