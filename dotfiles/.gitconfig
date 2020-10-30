@@ -4,18 +4,13 @@
         ba = branch -a
         bn = rev-parse --abbrev-ref HEAD
         br = branch
-        c  = commit
-        cam = commit -a -m
-        came = commit -a --amend
         cleanup = !git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d
-        cm = commit -m
         co = checkout
         d1 = diff HEAD~
         d2 = diff HEAD~~
         dc = diff --cached
         di = diff
         dm = diff master
-        empty = commit --allow-empty -m
         ft = fetch
         lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
         lp = log -p
@@ -38,6 +33,14 @@
         resyncm = !git resync && git merge master
         resyncr = !git resync && git rebase master
         su = remote show upstream
+
+        # commit
+        c  = commit -s
+        ca = commit -as
+        cam = commit -asm
+        came = commit -a --amend
+        cm = commit -sm
+        empty = commit --allow-empty -m
 
 [color]
         branch = auto
