@@ -49,5 +49,6 @@
     "go.languageServerExperimentalFeatures": {
         "diagnostics": true,
         "documentLink": true
-    }
+    },
+    "editor.rulers": [80]
 }
