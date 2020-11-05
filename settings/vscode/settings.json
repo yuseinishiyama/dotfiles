@@ -50,5 +50,14 @@
         "diagnostics": true,
         "documentLink": true
     },
-    "editor.rulers": [80]
+    "editor.rulers": [
+        80
+    ],
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.cursorBlinking": "smooth",
+    "editor.renderWhitespace": "all",
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "workbench.editor.highlightModifiedTabs": true,
+    "workbench.editor.tabSizing": "shrink"
 }
