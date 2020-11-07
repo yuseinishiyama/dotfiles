@@ -1,13 +1,20 @@
-# Initialize
+# initialization
 fpath+=/usr/local/share/zsh-completions
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# Environment variables
+# settings
+PROMPT='%B%(?.%F{green}.%F{red})>%b%f '
+zstyle ':completion:*:default' menu select=2 # focus selected
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # case-insensitive
+setopt share_history
+setopt histignorespace
+setopt histignorealldups
+
+# environment variables
 export LANG=en_US.UTF-8
 export TERM=xterm-256color
-PROMPT='%B%(?.%F{green}.%F{red})>%b%f '
 
-## Path
+# path
 export GOPATH="$HOME/.go"
 export PATH=$PATH:/bin:/usr/bin:/usr/local/bin
 export PATH=$PATH:/sbin:/usr/sbin:/usr/local/sbin
@@ -16,7 +23,7 @@ export PATH=$PATH:$HOME/Library/Haskell/bin
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 export PATH=$PATH:$HOME/.ghq/github.com/yuseinishiyama/dotfiles/bin
 
-# Aliases
+# aliases
 alias b='bundle exec'
 alias g='git'
 alias la='ls -Ga'
@@ -33,23 +40,23 @@ function ssh-then-tmux() {
 }
 alias tsh='ssh-then-tmux'
 
-# Python
+# python
 if which pyenv > /dev/null; then
 	export PYENV_ROOT="${HOME}/.pyenv"
 	export PATH=${PYENV_ROOT}/shims:${PATH}
 	eval "$(pyenv init -)";
 fi
 
-# Ruby
+# ruby
 if which rbenv > /dev/null; then
     eval "$(rbenv init -)"
 else
     echo "rbenv not found"
 fi
 
-# Peco
+# peco
 
-## Git branches
+## git branches
 function select-branch() {
   git branch --format '%(refname:lstrip=2)' | peco
 }
@@ -60,7 +67,7 @@ alias -g B='$(select-branch)'
 zle -N change-branch
 bindkey '^x^b' change-branch
 
-## Git repositories
+## git repositories
 function select-repo() {
   ghq list -p | peco
 }
@@ -74,14 +81,14 @@ function change-repo() {
 zle -N change-repo
 bindkey '^x^r' change-repo
 
-## Git changed files
-function git-changed-files() {
+## git dirty files
+function git-dirty-files() {
   #git status --short | peco | awk -vFPAT='([^ ]+)|("[^"]+")' '{print $2}'
   git status --short | peco | awk '{print $2}'
 }
-alias -g F='$(git-changed-files)'
+alias -g F='$(git-dirty-files)'
 
-## History
+## history
 function select-history() {
   # Remove duplicated lines while keeping the order
   BUFFER=$(history -n 1 | tail -r | awk '!seen[$0]++' | peco)
@@ -90,7 +97,7 @@ function select-history() {
 zle -N select-history
 bindkey '^x^h' select-history
 
-# Notify when command finishes
+# notify when command finishes
 ## https://gist.github.com/syui/7112389/raw/growl.zsh
 ## http://qiita.com/kazuph/items/3bfdfce6b7d02b43bf4d
 alias pong='perl -nle '\''print "display notification \"$_\" with title \"Shell\""'\'' | osascript'
@@ -114,13 +121,7 @@ precmd() {
   zsh_notify_cmd=
 }
 
-# Load local settings
-_ZSH_LOCAL_SETTING="$HOME/.zshrc.local"
-if [ -f $_ZSH_LOCAL_SETTING ]; then
-    source $_ZSH_LOCAL_SETTING
-fi
-
-## Visual Studio Code
+# vscode
 function vscode-remote() {
   if [[ -z "$1" ]]; then
     echo "usage: $0 remote-host"
@@ -130,3 +131,9 @@ function vscode-remote() {
 }
 alias e='code -n'
 alias er='vscode-remote'
+
+# local settings
+_ZSH_LOCAL_SETTING="$HOME/.zshrc.local"
+if [ -f $_ZSH_LOCAL_SETTING ]; then
+    source $_ZSH_LOCAL_SETTING
+fi
