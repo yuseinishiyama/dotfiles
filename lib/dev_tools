@@ -11,13 +11,6 @@ install_commandline_tools() {
 }
 export -f install_commandline_tools
 
-install_ohmyz() {
-    curl -Lo install_ohmyz.sh https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
-    sh install_ohmyz.sh --keep-zshrc --unattended
-    rm install_ohmyz.sh
-}
-export -f install_ohmyz
-
 # iTerm uses Powerline font
 install_fonts() {
     git clone https://github.com/powerline/fonts.git --depth=1

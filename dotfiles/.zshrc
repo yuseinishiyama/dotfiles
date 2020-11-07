@@ -1,8 +1,5 @@
 # Initialize
-export ZSH=$HOME/.oh-my-zsh
-plugins=(git osx xcode bundler rake rbenv ruby)
 fpath+=/usr/local/share/zsh-completions
-source $ZSH/oh-my-zsh.sh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Environment variables
@@ -20,8 +17,10 @@ export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/b
 export PATH=$PATH:$HOME/.ghq/github.com/yuseinishiyama/dotfiles/bin
 
 # Aliases
-alias la='ls -a'
 alias b='bundle exec'
+alias g='git'
+alias la='ls -Ga'
+alias ls='ls -G'
 alias s='source $HOME/.zshrc'
 
 # tmux
