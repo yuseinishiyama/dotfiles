@@ -1,18 +1,23 @@
-# initialization
+# plugins
 fpath+=/usr/local/share/zsh-completions
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# environment variables
+export LANG=en_US.UTF-8
+export TERM=xterm-256color
+export CLICOLOR=1
+export LSCOLORS='dxfxcxdxbxegedabagacad'
+export LS_COLORS='di=33:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43'
+export GREP_COLOR='1;33'
 
 # settings
 PROMPT='%B%(?.%F{green}.%F{red})>%b%f '
 zstyle ':completion:*:default' menu select=2 # focus selected
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # case-insensitive
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} # color suggestions
 setopt share_history
 setopt histignorespace
 setopt histignorealldups
-
-# environment variables
-export LANG=en_US.UTF-8
-export TERM=xterm-256color
 
 # path
 export GOPATH="$HOME/.go"
@@ -26,8 +31,8 @@ export PATH=$PATH:$HOME/.ghq/github.com/yuseinishiyama/dotfiles/bin
 # aliases
 alias b='bundle exec'
 alias g='git'
-alias la='ls -Ga'
-alias ls='ls -G'
+alias ls='ls'
+alias la='ls -a'
 alias s='source $HOME/.zshrc'
 
 # tmux
