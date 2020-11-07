@@ -10,13 +10,3 @@ install_commandline_tools() {
     softwareupdate -i "$PROD" --verbose;
 }
 export -f install_commandline_tools
-
-# iTerm uses Powerline font
-install_fonts() {
-    git clone https://github.com/powerline/fonts.git --depth=1
-    cd fonts
-    ./install.sh
-    cd ..
-    rm -rf fonts
-}
-export -f install_fonts
