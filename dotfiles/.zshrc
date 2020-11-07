@@ -1,14 +1,14 @@
 # Initialize
 export ZSH=$HOME/.oh-my-zsh
 plugins=(git osx xcode bundler rake rbenv ruby)
-fpath=(/usr/local/share/zsh-completions $fpath)
+fpath+=/usr/local/share/zsh-completions
 source $ZSH/oh-my-zsh.sh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Environment variables
 export LANG=en_US.UTF-8
 export TERM=xterm-256color
-PROMPT='%B%(?.%F{green}.%F{red})>>>%b%f '
+PROMPT='%B%(?.%F{green}.%F{red})>%b%f '
 
 ## Path
 export GOPATH="$HOME/.go"
@@ -66,7 +66,11 @@ function select-repo() {
   ghq list -p | peco
 }
 function change-repo() {
-  cd "$(select-repo)" || return
+  local repo=$(select-repo)
+  if [ -n "$repo" ]; then
+      BUFFER="cd $repo"
+      zle accept-line
+  fi
 }
 zle -N change-repo
 bindkey '^x^r' change-repo
