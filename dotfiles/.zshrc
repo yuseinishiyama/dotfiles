@@ -90,23 +90,6 @@ function select-history() {
 zle -N select-history
 bindkey '^x^h' select-history
 
-## Directories
-autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
-add-zsh-hook chpwd chpwd_recent_dirs
-zstyle ':chpwd:*' recent-dirs-max 5000
-zstyle ':chpwd:*' recent-dirs-default yes
-zstyle ':completion:*' recent-dirs-insert both
-
-function change-dir () {
-  local selected_dir=$(cdr -l | awk '{ print $2 }' | peco)
-  if [ -n "$selected_dir" ]; then
-      BUFFER="cd ${selected_dir}"
-      zle accept-line
-  fi
-}
-zle -N change-dir
-bindkey '^x^f' change-dir
-
 # Notify when command finishes
 ## https://gist.github.com/syui/7112389/raw/growl.zsh
 ## http://qiita.com/kazuph/items/3bfdfce6b7d02b43bf4d
