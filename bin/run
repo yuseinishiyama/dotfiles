@@ -30,8 +30,6 @@ do
             update_brew
             update_links
             import_settings
-            install_fonts
-            install_ohmyz
             ;;
         export)
             export_settings
