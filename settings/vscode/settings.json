@@ -68,5 +68,6 @@
             "viewType": "jupyter.notebook.ipynb",
             "filenamePattern": "*.ipynb"
         }
-    ]
+    ],
+    "editor.wordWrap": "on"
 }
