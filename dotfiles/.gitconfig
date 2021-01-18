@@ -20,6 +20,7 @@
         pl = pull
         pls =!git pull && git push
         ps = push
+        root = rev-parse --show-toplevel
         sed =  "!f () { git grep -l $1 | xargs sed -i '' s/$1/$2/g; }; f"
         sh = show
         sm = submodule

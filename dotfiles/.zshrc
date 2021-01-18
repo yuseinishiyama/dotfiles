@@ -30,8 +30,8 @@ export PATH=$PATH:$HOME/.ghq/github.com/yuseinishiyama/dotfiles/bin
 
 # aliases
 alias b='bundle exec'
+alias cgr='cd `git rev-parse --show-toplevel`' # change to git root
 alias g='git'
-alias ls='ls'
 alias la='ls -a'
 alias s='source $HOME/.zshrc'
 
