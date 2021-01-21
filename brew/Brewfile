@@ -21,6 +21,10 @@ brew "tmux"
 brew "tree"
 brew "watch"
 
+# GNU
+brew "grep"
+brew "gnu-sed"
+
 # General apps
 cask "1password"
 cask "alfred"
