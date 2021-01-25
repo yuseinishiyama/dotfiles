@@ -61,6 +61,7 @@ cask "rectangle"
 cask "timing"
 cask "yubico-yubikey-manager"
 cask "visual-studio-code"
+cask "zotero"
 
 mas "MindNode 5", id: 1289197285
 
