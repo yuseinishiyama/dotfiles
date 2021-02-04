@@ -82,4 +82,3 @@ cask "intellij-idea-ce"
 
 # Go
 brew "go"
-brew "dep"
