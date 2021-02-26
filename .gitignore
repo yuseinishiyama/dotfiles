@@ -3,6 +3,7 @@
 **/*.local
 configstore
 automatic_backups
-gcloud
-yopass/
-**/gh/hosts.yml
+
+.config/
+!.config/gh/config.yml
+!.config/karabiner/
