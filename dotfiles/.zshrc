@@ -22,11 +22,12 @@ setopt histignorealldups
 # path
 export GOPATH="$HOME/.go"
 export PATH=$PATH:/bin:/usr/bin:/usr/local/bin
-export PATH=$PATH:/sbin:/usr/sbin:/usr/local/sbin
-export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:$HOME/Library/Haskell/bin
-export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
-export PATH=$PATH:$HOME/.ghq/github.com/yuseinishiyama/dotfiles/bin
+PATH=$PATH:/sbin:/usr/sbin:/usr/local/sbin
+PATH=$PATH:$GOPATH/bin
+PATH=$PATH:$HOME/Library/Haskell/bin
+PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+PATH=$PATH:$HOME/.ghq/github.com/yuseinishiyama/dotfiles/bin
+PATH=$PATH:$HOME/.arkade/bin
 
 # aliases
 alias b='bundle exec'
