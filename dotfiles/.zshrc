@@ -21,13 +21,11 @@ setopt histignorealldups
 
 # path
 export GOPATH="$HOME/.go"
-export PATH=$PATH:/bin:/usr/bin:/usr/local/bin
-PATH=$PATH:/sbin:/usr/sbin:/usr/local/sbin
+PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH #prioritize coreutils
 PATH=$PATH:$GOPATH/bin
 PATH=$PATH:$HOME/Library/Haskell/bin
 PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 PATH=$PATH:$HOME/.ghq/github.com/yuseinishiyama/dotfiles/bin
-PATH="$PATH:/usr/local/opt/coreutils/libexec/gnubin" #coreutils
 
 # aliases
 alias b='bundle exec'
@@ -97,7 +95,7 @@ alias -g F='$(git-dirty-files)'
 ## history
 function select-history() {
   # Remove duplicated lines while keeping the order
-  BUFFER=$(history -n 1 | tail -r | awk '!seen[$0]++' | peco)
+  BUFFER=$(history -n 1 | tac | awk '!seen[$0]++' | peco)
   CURSOR=$#BUFFER
 }
 zle -N select-history
