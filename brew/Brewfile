@@ -17,10 +17,6 @@ brew "tmux"
 brew "tree"
 brew "watch"
 
-# k8s
-tap "alexellis/homebrew-alexellis"
-brew "arkade"
-
 # GNU
 brew "grep"
 brew "gnu-sed"
