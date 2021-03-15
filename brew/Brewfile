@@ -18,6 +18,7 @@ brew "tree"
 brew "watch"
 
 # GNU
+brew "coreutils"
 brew "grep"
 brew "gnu-sed"
 

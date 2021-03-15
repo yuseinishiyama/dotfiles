@@ -27,7 +27,7 @@ PATH=$PATH:$GOPATH/bin
 PATH=$PATH:$HOME/Library/Haskell/bin
 PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 PATH=$PATH:$HOME/.ghq/github.com/yuseinishiyama/dotfiles/bin
-PATH=$PATH:$HOME/.arkade/bin
+PATH="$PATH:/usr/local/opt/coreutils/libexec/gnubin" #coreutils
 
 # aliases
 alias b='bundle exec'
