@@ -7,9 +7,7 @@
         "suppressShowKeyBindingsNotice": true,
         "suppressWelcomeNotice": true
     },
-    "[plaintext]": {
-
-    },
+    "[plaintext]": {},
     "explorer.confirmDragAndDrop": false,
     "explorer.confirmDelete": false,
     "gitlens.keymap": "alternate",
@@ -46,6 +44,10 @@
     "workbench.activityBar.visible": true,
     "workbench.statusBar.visible": true,
     "python.languageServer": "Microsoft",
+    "python.formatting.provider": "autopep8",
+    "python.formatting.autopep8Args": [
+        "--indent-size=2"
+    ],
     "go.languageServerExperimentalFeatures": {
         "diagnostics": true,
         "documentLink": true
@@ -69,5 +71,11 @@
             "filenamePattern": "*.ipynb"
         }
     ],
-    "editor.wordWrap": "on"
+    "editor.wordWrap": "on",
+    "[python]": {
+        "editor.tabSize": 2,
+        "gitlens.codeLens.symbolScopes": [
+            "!Module"
+        ]
+    }
 }
