@@ -2,7 +2,8 @@
 fpath+=/usr/local/share/zsh-completions
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# environment variables
+# interface
+PROMPT='%B%(?.%F{green}.%F{red})>%b%f '
 export LANG=en_US.UTF-8
 export TERM=xterm-256color
 export CLICOLOR=1
@@ -10,11 +11,14 @@ export LSCOLORS='dxfxcxdxbxegedabagacad'
 export LS_COLORS='di=33:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43'
 export GREP_COLOR='1;33'
 
-# settings
-PROMPT='%B%(?.%F{green}.%F{red})>%b%f '
+# completion
 zstyle ':completion:*:default' menu select=2 # focus selected
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}' # case-insensitive
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} # color suggestions
+
+# history
+HISTSIZE=10000000
+SAVEHIST=$HISTSIZE
 setopt share_history
 setopt histignorespace
 setopt histignorealldups
