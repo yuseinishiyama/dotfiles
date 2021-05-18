@@ -36,10 +36,8 @@
         su = remote show upstream
 
         # commit
+        amend = commit --amend --no-edit
         c  = commit -s
-        ca = commit -as
-        cam = commit -asm
-        came = commit -a --amend
         cm = commit -sm
         empty = commit --allow-empty -m
 
