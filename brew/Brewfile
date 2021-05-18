@@ -84,3 +84,6 @@ cask "intellij-idea-ce"
 
 # Go
 brew "go"
+
+# Rust
+brew "rustup"
