@@ -145,3 +145,5 @@ _ZSH_LOCAL_SETTING="$HOME/.zshrc.local"
 if [ -f $_ZSH_LOCAL_SETTING ]; then
     source $_ZSH_LOCAL_SETTING
 fi
+
+[ -d "$HOME/.sc-tools" ] && source "$HOME/.sc-tools/dotfiles/env.zsh" #sc-tools-setup
