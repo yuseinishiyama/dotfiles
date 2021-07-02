@@ -65,17 +65,17 @@
     "window.openFilesInNewWindow": "on",
     "window.openFoldersInNewWindow": "on",
     "window.openWithoutArgumentsInNewWindow": "on",
-    "workbench.editorAssociations": [
-        {
-            "viewType": "jupyter.notebook.ipynb",
-            "filenamePattern": "*.ipynb"
-        }
-    ],
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
     "editor.wordWrap": "on",
     "[python]": {
         "editor.tabSize": 2,
         "gitlens.codeLens.symbolScopes": [
             "!Module"
         ]
+    },
+    "[terraform]": {
+        "editor.defaultFormatter": "hashicorp.terraform"
     }
 }
