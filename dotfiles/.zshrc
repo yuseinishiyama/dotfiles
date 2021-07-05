@@ -1,3 +1,5 @@
+EDITOR='code -w'
+
 # plugins
 fpath+=/usr/local/share/zsh-completions
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -37,6 +39,11 @@ alias cgr='cd `git rev-parse --show-toplevel`' # change to git root
 alias g='git'
 alias la='ls -a'
 alias s='source $HOME/.zshrc'
+
+# edit command in editor
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '^x^e' edit-command-line
 
 # tmux
 function ssh-then-tmux() {
