@@ -1,6 +1,5 @@
 # General commands
 brew "autossh"
-brew "awscli"
 brew "cloc"
 brew "gh"
 brew "ghq"
@@ -87,3 +86,7 @@ brew "go"
 
 # Rust
 brew "rustup"
+
+# AWS
+brew "awscli"
+cask "session-manager-plugin"
