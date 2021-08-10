@@ -38,6 +38,7 @@ alias b='bundle exec'
 alias cgr='cd `git rev-parse --show-toplevel`' # change to git root
 alias g='git'
 alias la='ls -a'
+alias pbunbreak="pbpaste | tr '\n' ' ' | pbcopy"
 alias s='source $HOME/.zshrc'
 
 # edit command in editor
