@@ -148,6 +148,15 @@ function vscode-remote() {
 alias e='code -n'
 alias er='vscode-remote'
 
+# kubernetes
+alias k=kubectl
+ks() {
+    kubectl config get-contexts -o name | peco --prompt "CONTEXT>" | \
+        xargs kubectl config use-context
+    kubectl get namespace --no-headers -o custom-columns=":metadata.name" | \
+        peco --prompt "NAMESPACE>" | xargs kubectl config set-context --current --namespace
+}
+
 # local settings
 _ZSH_LOCAL_SETTING="$HOME/.zshrc.local"
 if [ -f $_ZSH_LOCAL_SETTING ]; then
