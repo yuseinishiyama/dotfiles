@@ -15,6 +15,7 @@ brew "peco"
 brew "pv"
 brew "shellcheck"
 brew "tmux"
+brew "terraform"
 brew "tree"
 brew "watch"
 
