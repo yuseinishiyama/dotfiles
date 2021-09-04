@@ -7,7 +7,6 @@ brew "hub"
 brew "hugo"
 brew "imagemagick"
 brew "jq"
-brew "kubernetes-cli"
 brew "mas"
 brew "node"
 brew "pdsh"
@@ -92,3 +91,7 @@ brew "rustup"
 # AWS
 brew "awscli"
 cask "session-manager-plugin"
+
+# Kubernetes
+brew "kubernetes-cli"
+brew "helm"
