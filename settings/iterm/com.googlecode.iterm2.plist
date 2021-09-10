@@ -791,6 +791,8 @@
 					<integer>0</integer>
 					<key>font</key>
 					<string>SourceCodeProForPowerline-Medium 14</string>
+					<key>remove empty components</key>
+					<false/>
 				</dict>
 				<key>components</key>
 				<array>
@@ -806,7 +808,7 @@
 								<key>base: priority</key>
 								<real>5</real>
 								<key>maxwidth</key>
-								<real>+infinity</real>
+								<real>50</real>
 								<key>minwidth</key>
 								<integer>0</integer>
 								<key>path</key>
@@ -816,13 +818,13 @@
 									<key>Alpha Component</key>
 									<real>1</real>
 									<key>Blue Component</key>
-									<real>0.63</real>
+									<real>0.62999999523162842</real>
 									<key>Color Space</key>
 									<string>sRGB</string>
 									<key>Green Component</key>
-									<real>0.63</real>
+									<real>0.62999999523162842</real>
 									<key>Red Component</key>
-									<real>0.90000000000000002</real>
+									<real>0.89999997615814209</real>
 								</dict>
 							</dict>
 							<key>layout advanced configuration dictionary value</key>
@@ -833,6 +835,8 @@
 								<integer>0</integer>
 								<key>font</key>
 								<string>SourceCodeProForPowerline-Medium 14</string>
+								<key>remove empty components</key>
+								<false/>
 							</dict>
 						</dict>
 					</dict>
@@ -875,6 +879,8 @@
 								<integer>0</integer>
 								<key>font</key>
 								<string>SourceCodeProForPowerline-Medium 14</string>
+								<key>remove empty components</key>
+								<false/>
 							</dict>
 						</dict>
 					</dict>
@@ -1690,6 +1696,8 @@
 					<integer>1</integer>
 					<key>font</key>
 					<string>SourceCodeProForPowerline-Medium 14</string>
+					<key>remove empty components</key>
+					<false/>
 				</dict>
 				<key>components</key>
 				<array>
@@ -1732,6 +1740,8 @@
 								<integer>1</integer>
 								<key>font</key>
 								<string>SourceCodeProForPowerline-Medium 14</string>
+								<key>remove empty components</key>
+								<false/>
 							</dict>
 						</dict>
 					</dict>
@@ -1774,6 +1784,8 @@
 								<integer>1</integer>
 								<key>font</key>
 								<string>SourceCodeProForPowerline-Medium 14</string>
+								<key>remove empty components</key>
+								<false/>
 							</dict>
 						</dict>
 					</dict>
