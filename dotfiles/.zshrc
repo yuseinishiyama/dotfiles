@@ -1,4 +1,4 @@
-EDITOR='code -w'
+export EDITOR='code -w'
 
 # plugins
 fpath+=/usr/local/share/zsh-completions
