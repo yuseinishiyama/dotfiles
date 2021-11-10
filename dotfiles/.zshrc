@@ -87,15 +87,7 @@ bindkey '^x^b' change-branch
 function select-repo() {
   ghq list -p | peco
 }
-function change-repo() {
-  local repo=$(select-repo)
-  if [ -n "$repo" ]; then
-      BUFFER="cd $repo"
-      zle accept-line
-  fi
-}
-zle -N change-repo
-bindkey '^x^r' change-repo
+alias -g R='$(select-repo)'
 
 ## git dirty files
 function git-dirty-files() {
