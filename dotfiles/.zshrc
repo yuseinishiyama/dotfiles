@@ -76,12 +76,7 @@ fi
 function select-branch() {
   git branch --format '%(refname:lstrip=2)' | peco
 }
-function change-branch() {
-  select-branch | xargs git checkout
-}
 alias -g B='$(select-branch)'
-zle -N change-branch
-bindkey '^x^b' change-branch
 
 ## git repositories
 function select-repo() {
