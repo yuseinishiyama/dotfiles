@@ -2,11 +2,6 @@
     "files.autoSave": "afterDelay",
     "editor.cursorStyle": "block",
     "workbench.colorTheme": "Kimbie Dark",
-    "window.zoomLevel": 0,
-    "gitlens.advanced.messages": {
-        "suppressShowKeyBindingsNotice": true,
-        "suppressWelcomeNotice": true
-    },
     "[plaintext]": {},
     "explorer.confirmDragAndDrop": false,
     "explorer.confirmDelete": false,
@@ -17,7 +12,6 @@
     },
     "gitlens.historyExplorer.enabled": true,
     "gitlens.views.fileHistory.enabled": true,
-    "gitlens.views.lineHistory.enabled": true,
     "terminal.integrated.fontFamily": "Source Code Pro for Powerline",
     "editor.renderControlCharacters": true,
     "files.trimTrailingWhitespace": true,
@@ -43,14 +37,13 @@
     "breadcrumbs.enabled": true,
     "workbench.activityBar.visible": true,
     "workbench.statusBar.visible": true,
-    "python.languageServer": "Microsoft",
+    "python.languageServer": "Default",
     "python.formatting.provider": "autopep8",
     "python.formatting.autopep8Args": [
         "--indent-size=2"
     ],
     "go.languageServerExperimentalFeatures": {
         "diagnostics": true,
-        "documentLink": true
     },
     "editor.rulers": [
         80
@@ -79,5 +72,17 @@
         "editor.formatOnSave": true,
         "editor.defaultFormatter": "hashicorp.terraform"
     },
-    "files.insertFinalNewline": true
+    "files.insertFinalNewline": true,
+    "go.toolsManagement.autoUpdate": true,
+    "vs-kubernetes": {
+        "vscode-kubernetes.minikube-path.mac": "/Users/yuseinishiyama/.vs-kubernetes/tools/minikube/darwin-amd64/minikube"
+    },
+    "github.copilot.enable": {
+        "*": false,
+        "yaml": false,
+        "plaintext": false,
+        "markdown": false
+    },
+    "editor.guides.bracketPairs": true,
+    "window.zoomLevel": 2
 }
