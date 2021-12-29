@@ -40,6 +40,7 @@ alias g='git'
 alias la='ls -a'
 alias pbunbreak="pbpaste | tr '\n' ' ' | pbcopy"
 alias s='source $HOME/.zshrc'
+alias ls='ls --color=auto'
 
 # edit command in editor
 autoload -U edit-command-line
