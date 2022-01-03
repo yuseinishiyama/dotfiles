@@ -84,5 +84,6 @@
         "markdown": false
     },
     "editor.guides.bracketPairs": true,
-    "window.zoomLevel": 2
+    "window.zoomLevel": 2,
+    "python.testing.pytestEnabled": true
 }
