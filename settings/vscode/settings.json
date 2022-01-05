@@ -84,6 +84,7 @@
         "markdown": false
     },
     "editor.guides.bracketPairs": true,
-    "window.zoomLevel": 2,
-    "python.testing.pytestEnabled": true
+    "python.testing.pytestEnabled": true,
+    "window.zoomLevel": 1,
+    "terminal.integrated.scrollback": 100000
 }
