@@ -1,10 +1,9 @@
 bierner.markdown-preview-github-styles
-CoenraadS.bracket-pair-colorizer-2
+DavidAnson.vscode-markdownlint
 eamodio.gitlens
 GitHub.copilot
 golang.go
 hashicorp.terraform
-jebbs.plantuml
 ms-azuretools.vscode-docker
 ms-kubernetes-tools.vscode-kubernetes-tools
 ms-python.python
@@ -18,6 +17,7 @@ oderwat.indent-rainbow
 rebornix.ruby
 redhat.vscode-yaml
 rust-lang.rust
+streetsidesoftware.code-spell-checker
 timonwong.shellcheck
 VisualStudioExptTeam.vscodeintellicode
 wingrunr21.vscode-ruby
