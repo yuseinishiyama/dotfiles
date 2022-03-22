@@ -17,10 +17,6 @@ defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 
 defaults write com.apple.finder AppleShowAllFiles -bool true
 
-defaults write com.apple.dt.Xcode ShowBuildOperationDuration -bool YES
-
-defaults write com.apple.iphonesimulator ShowSingleTouches 1
-
 defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$SCRIPT_PATH/iterm"
 
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
