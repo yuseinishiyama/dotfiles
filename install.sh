@@ -1,16 +1,10 @@
 #!/bin/sh
 
-install_commandline_tools() {
-    touch /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress;
-    PROD=$(softwareupdate -l |
-      grep "\*.*Command Line" |
-      head -n 1 | awk -F"*" '{print $2}' |
-      sed -e 's/^ *//' |
-      tr -d '\n')
-    softwareupdate -i "$PROD" --verbose;
-}
 
-install_commandline_tools
+if ! xcode-select -p > /dev/null 2>&1; then
+  echo "Xcode CLI tools are not avaiable. Run \`xcode-select --install\` to install them"
+  exit 1
+fi
 
 git clone https://github.com/yuseinishiyama/dotfiles.git --depth=1
 
