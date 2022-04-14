@@ -21,6 +21,10 @@ defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$SCRIPT_PA
 
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 
+defaults write -g InitialKeyRepeat -int 15
+
+defaults write -g KeyRepeat -int 2
+
 killall Finder
 
 killall Dock
