@@ -1,6 +1,5 @@
 #!/bin/sh
 
-
 if ! xcode-select -p > /dev/null 2>&1; then
   echo "Xcode CLI tools are not avaiable. Run \`xcode-select --install\` to install them"
   exit 1
@@ -11,8 +10,8 @@ git clone https://github.com/yuseinishiyama/dotfiles.git --depth=1
 source dotfiles/lib/brew
 
 install_brew
-# To have brew and installed commands available in this session
-eval "$(/opt/homebrew/bin/brew shellenv)"
+# M1: To have brew and installed commands available in this session
+[ -f /opt/homebrew/bin/brew ] && eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Re-clone into designated place
 brew install ghq
