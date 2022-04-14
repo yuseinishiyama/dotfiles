@@ -1,10 +1,11 @@
 export EDITOR='code -w'
 
 [ -f /opt/homebrew/bin/brew ] && eval "$(/opt/homebrew/bin/brew shellenv)" # M1
+[ -f /usr/local/bin/brew ] && eval "$(/usr/local/bin/brew shellenv)" # Intel
 
 # plugins
-fpath+=/usr/local/share/zsh-completions
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fpath+=$HOMEBREW_PREFIX/share/zsh-completions
+source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # interface
 PROMPT='%B%(?.%F{green}.%F{red})>%b%f '
@@ -29,7 +30,7 @@ setopt histignorealldups
 
 # path
 export GOPATH="$HOME/.go"
-PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH #prioritize coreutils
+PATH=$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH #prioritize coreutils
 PATH=$PATH:$GOPATH/bin
 PATH=$PATH:$HOME/Library/Haskell/bin
 PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"

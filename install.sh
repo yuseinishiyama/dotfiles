@@ -10,8 +10,9 @@ git clone https://github.com/yuseinishiyama/dotfiles.git --depth=1
 source dotfiles/lib/brew
 
 install_brew
-# M1: To have brew and installed commands available in this session
-[ -f /opt/homebrew/bin/brew ] && eval "$(/opt/homebrew/bin/brew shellenv)"
+# Have brew and installed commands available in this session
+[ -f /opt/homebrew/bin/brew ] && eval "$(/opt/homebrew/bin/brew shellenv)" # M1
+[ -f /usr/local/bin/brew ] && eval "$(/usr/local/bin/brew shellenv)" # Intel
 
 # Re-clone into designated place
 brew install ghq
