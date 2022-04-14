@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if ! xcode-select -p > /dev/null 2>&1; then
   echo "Xcode CLI tools are not avaiable. Run \`xcode-select --install\` to install them"

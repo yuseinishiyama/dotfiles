@@ -1,7 +1,7 @@
-#!/bin/sh
+#!/bin/bash
 
 SCRIPT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-source $SCRIPT_PATH/../lib/slack_helper
+source "$SCRIPT_PATH"/../lib/slack_helper
 
 PRESENT=true
 TEXT=

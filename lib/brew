@@ -1,11 +1,10 @@
-#!/bin/sh
+#!/bin/bash
 
 SCRIPT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 BREW_PATH=$SCRIPT_PATH/../brew
 
 install_brew() {
-    which -s brew
-    if [[ $? != 0 ]] ; then
+    if ! which -s brew ; then
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
     else
         echo "Homebrew is already installed"
@@ -15,9 +14,9 @@ export -f install_brew
 
 update_brew() {
     brew update
-    for brewfile in $BREW_PATH/*
+    for brewfile in "$BREW_PATH"/*
     do
-        brew bundle --no-lock -v --file=$brewfile
+        brew bundle --no-lock -v --file="$brewfile"
     done
 }
 export -f update_brew

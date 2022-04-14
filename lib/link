@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 SCRIPT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 DOT_FILES_PATH=$SCRIPT_PATH/../dotfiles
@@ -8,39 +8,39 @@ VSCODE_SETTINGS_PATH=~/Library/Application\ Support/Code/User/settings.json
 DOT_FILE_NAMES=()
 for file in $DOT_FILES_PATH/.*
 do
-    filename=`basename $file`
+    filename=$(basename "$file")
 
     black_list=("." ".." ".DS_Store")
-    for black_list_name in ${black_list[@]}
+    for black_list_name in "${black_list[@]}"
     do
-        if [ $black_list_name == $filename ]; then
+        if [ "$black_list_name" == "$filename" ]; then
             continue 2
         fi
     done
 
-    DOT_FILE_NAMES+=($filename)
+    DOT_FILE_NAMES+=("$filename")
 done
 
 link_dotfiles() {
-    for filename in ${DOT_FILE_NAMES[@]}
+    for filename in "${DOT_FILE_NAMES[@]}"
     do
-        ln -s -v $DOT_FILES_PATH/$filename $HOME/$filename
+        ln -s -v "$DOT_FILES_PATH/$filename" "$HOME/$filename"
     done
 }
 
 unlink_dotfiles() {
-    for filename in ${DOT_FILE_NAMES[@]}
+    for filename in "${DOT_FILE_NAMES[@]}"
     do
         dotfile=$HOME/$filename
 
-        if [ -e $dotfile ]; then
-            rm -rf -v $dotfile
+        if [ -e "$dotfile" ]; then
+            rm -rf -v "$dotfile"
         fi
     done
 }
 
 link_vscode_settings() {
-    ln -s -v $SETTINGS_PATH/vscode/settings.json "$VSCODE_SETTINGS_PATH"
+    ln -s -v "$SETTINGS_PATH"/vscode/settings.json "$VSCODE_SETTINGS_PATH"
 }
 
 unlink_vscode_settings() {

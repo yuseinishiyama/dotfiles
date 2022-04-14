@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 SCRIPT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 SETTINGS_PATH=$SCRIPT_PATH/../settings
@@ -6,18 +6,18 @@ VSCODE_EXTENSION_PATH=$SETTINGS_PATH/vscode/extension
 
 import_defaults() {
     echo "Applying defaults..."
-    $SETTINGS_PATH/defaults
+    "$SETTINGS_PATH"/defaults
 }
 
 import_vscode_extensions() {
     echo "Installing VSCode extensions..."
-    if [ -e $VSCODE_EXTENSION_PATH ]; then
-        cat $VSCODE_EXTENSION_PATH | xargs -L 1 code --install-extension
+    if [ -e "$VSCODE_EXTENSION_PATH" ]; then
+        cat "$VSCODE_EXTENSION_PATH" | xargs -L 1 code --install-extension
     fi
 }
 
 export_vscode_extensions() {
-    code --list-extensions > $VSCODE_EXTENSION_PATH
+    code --list-extensions > "$VSCODE_EXTENSION_PATH"
 }
 
 export_settings() {
