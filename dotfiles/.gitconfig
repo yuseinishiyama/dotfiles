@@ -1,3 +1,8 @@
+[user]
+	name = Yusei Nishiyama
+	email = me@yuseinishiyama.com
+	username = yuseinishiyama
+
 [alias]
         a  = add
         al = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
