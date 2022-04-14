@@ -16,7 +16,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Re-clone into designated place
 brew install ghq
-GHQ_ROOT=~/.ghq ghq get https://github.com/yuseinishiyama/dotfiles.git
+ghq get https://github.com/yuseinishiyama/dotfiles.git
 
 # Main procedure
 "$(ghq root)"/"$(ghq list | grep yuseinishiyama/dotfiles)"/bin/run import

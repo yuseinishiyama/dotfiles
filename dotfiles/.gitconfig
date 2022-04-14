@@ -61,7 +61,7 @@
 
 [ghq]
         root = ~/.go/src
-        root = ~/.ghq
+        root = ~/ghq
 
 [include]
         path = .gitconfig.local
