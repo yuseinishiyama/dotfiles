@@ -4,11 +4,11 @@ SCRIPT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 defaults write com.apple.finder CreateDesktop -bool FALSE
 
-defaults write -g NSNavPanelExpandedStateForSaveMode -boolean true
+defaults write -g NSNavPanelExpandedStateForSaveMode -bool true
 
-defaults write -g PMPrintingExpandedStateForPrint -boolean true
+defaults write -g PMPrintingExpandedStateForPrint -bool true
 
-# The directory needs to be created upfront
+mkdir -p ~/Pictures/Screenshots
 defaults write com.apple.screencapture location ~/Pictures/Screenshots
 
 defaults write com.apple.dock autohide -bool true
@@ -17,6 +17,8 @@ defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 
 defaults write com.apple.finder AppleShowAllFiles -bool true
 
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
 defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$SCRIPT_PATH/iterm"
 
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
@@ -24,6 +26,12 @@ defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 defaults write -g InitialKeyRepeat -int 15
 
 defaults write -g KeyRepeat -int 2
+
+defaults -currentHost write com.apple.Spotlight MenuItemHidden -bool true
+
+# Hot Corners
+defaults write com.apple.dock wvous-bl-corner -int 5 # Start Screen Saver
+defaults write com.apple.dock wvous-bl-modifier -int 0 # No modifier key
 
 killall Finder
 
