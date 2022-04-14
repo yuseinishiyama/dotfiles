@@ -77,11 +77,6 @@ brew "ruby-build"
 brew "rbenv"
 brew "ruby"
 
-# Scala
-brew "sbt"
-cask "adoptopenjdk8"
-cask "intellij-idea-ce"
-
 # Go
 brew "go"
 
