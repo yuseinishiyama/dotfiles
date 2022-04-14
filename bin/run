@@ -32,6 +32,9 @@ do
         export)
             export_settings
             ;;
+        link)
+            update_links
+            ;;
         -h)
             help
             exit 0
