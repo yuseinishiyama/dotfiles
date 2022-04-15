@@ -20,7 +20,7 @@ install_brew
 
 # Re-clone into designated place
 brew install ghq
-ghq get https://github.com/yuseinishiyama/dotfiles.git
+ghq get git@github.com:yuseinishiyama/dotfiles.git
 
 # Main procedure
 "$(ghq root)"/"$(ghq list | grep yuseinishiyama/dotfiles)"/bin/run import
