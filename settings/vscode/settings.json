@@ -12,7 +12,6 @@
     },
     "gitlens.historyExplorer.enabled": true,
     "gitlens.views.fileHistory.enabled": true,
-    "terminal.integrated.fontFamily": "Source Code Pro for Powerline",
     "editor.renderControlCharacters": true,
     "files.trimTrailingWhitespace": true,
     "markdown-pdf.displayHeaderFooter": false,
