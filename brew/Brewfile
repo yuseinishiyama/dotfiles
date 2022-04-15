@@ -1,3 +1,5 @@
+tap "homebrew/cask-drivers"
+
 # General commands
 brew "autossh"
 brew "cloc"
@@ -43,6 +45,7 @@ cask "istat-menus"
 cask "iterm2"
 cask "karabiner-elements"
 cask "kindle"
+cask "logitech-options"
 cask "ngrok"
 cask "nordvpn"
 cask "postman"
