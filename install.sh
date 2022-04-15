@@ -5,6 +5,10 @@ if ! xcode-select -p > /dev/null 2>&1; then
   exit 1
 fi
 
+if [ "$(uname -m)" = "arm64" ]; then
+  softwareupdate --install-rosetta --agree-to-license
+fi
+
 git clone https://github.com/yuseinishiyama/dotfiles.git --depth=1
 
 source dotfiles/lib/brew
