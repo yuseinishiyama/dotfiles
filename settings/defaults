@@ -33,6 +33,8 @@ defaults -currentHost write com.apple.Spotlight MenuItemHidden -bool true
 defaults write com.apple.dock wvous-br-corner -int 5 # Start Screen Saver
 defaults write com.apple.dock wvous-br-modifier -int 0 # No modifier key
 
+defaults write com.apple.menuextra.clock IsAnalog -bool true
+
 killall Finder
 
 killall Dock
