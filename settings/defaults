@@ -35,6 +35,8 @@ defaults write com.apple.dock wvous-br-modifier -int 0 # No modifier key
 
 defaults write com.apple.menuextra.clock IsAnalog -bool true
 
+defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
+
 killall Finder
 
 killall Dock
