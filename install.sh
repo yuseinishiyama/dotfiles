@@ -1,5 +1,12 @@
 #!/bin/bash
 
+if [ "$SPIN" ]; then
+  echo "Setting up for spin"
+  ln -sf ~/dotfiles/dotfiles/.gitconfig ~/.gitconfig
+  printf "[user]\n\temail = yusei.nishiyama@shopify.com" > ~/.gitconfig.local
+  exit 0
+fi
+
 if ! xcode-select -p > /dev/null 2>&1; then
   echo "Xcode CLI tools are not avaiable. Run \`xcode-select --install\` to install them"
   exit 1
