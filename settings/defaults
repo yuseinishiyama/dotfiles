@@ -37,6 +37,9 @@ defaults write com.apple.menuextra.clock IsAnalog -bool true
 
 defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
 
+# Text to Speech
+defaults write com.apple.speech.synthesis.general.prefs SpokenUIUseSpeakingHotKeyFlag -bool true
+
 killall Finder
 
 killall Dock
