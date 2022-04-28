@@ -71,7 +71,6 @@ brew "python"
 
 # Ruby
 brew "ruby-build"
-brew "rbenv"
 brew "ruby"
 
 # Go
