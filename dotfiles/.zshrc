@@ -1,7 +1,7 @@
 export EDITOR='code -w'
 
-[ -f /opt/homebrew/bin/brew ] && eval "$(/opt/homebrew/bin/brew shellenv)" # M1
-[ -f /usr/local/bin/brew ] && eval "$(/usr/local/bin/brew shellenv)" # Intel
+[[ -x /opt/homebrew/bin/brew ]] && eval $(/opt/homebrew/bin/brew shellenv) # M1
+[[ -x /usr/local/bin/brew ]] && eval "$(/usr/local/bin/brew shellenv)" # Intel
 
 # plugins
 fpath+=$HOMEBREW_PREFIX/share/zsh-completions
