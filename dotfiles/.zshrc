@@ -50,6 +50,9 @@ autoload -U edit-command-line
 zle -N edit-command-line
 bindkey '^x^e' edit-command-line
 
+autoload -Uz compinit
+compinit -i
+
 # tmux
 function ssh-then-tmux() {
   title=$2
