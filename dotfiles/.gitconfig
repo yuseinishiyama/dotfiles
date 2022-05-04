@@ -1,7 +1,7 @@
 [user]
-	name = Yusei Nishiyama
-	email = me@yuseinishiyama.com
-	username = yuseinishiyama
+        name = Yusei Nishiyama
+        email = me@yuseinishiyama.com
+        username = yuseinishiyama
 
 [alias]
         a  = add
