@@ -149,6 +149,14 @@ ks() {
         peco --prompt "NAMESPACE>" | xargs kubectl config set-context --current --namespace
 }
 
+switch-audio-source() {
+  SwitchAudioSource -at output | peco | xargs -I {} SwitchAudioSource -s "{}"
+  if [ $? -eq 0 ]; then
+    say -r 250 audio source changed
+  fi
+}
+alias ss='switch-audio-source'
+
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
 function iterm2_print_user_vars() {
   iterm2_set_user_var kubecontext $(kubectl config current-context):$(kubectl config view --minify --output 'jsonpath={..namespace}')
