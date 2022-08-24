@@ -84,7 +84,7 @@
     },
     "editor.guides.bracketPairs": true,
     "python.testing.pytestEnabled": true,
-    "window.zoomLevel": 1,
     "terminal.integrated.scrollback": 100000,
-    "editor.bracketPairColorization.enabled": true
+    "editor.bracketPairColorization.enabled": true,
+    "window.zoomLevel": 1
 }
