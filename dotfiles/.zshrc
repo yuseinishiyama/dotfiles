@@ -152,7 +152,7 @@ ks() {
 switch-audio-source() {
   SwitchAudioSource -at output | peco | xargs -I {} SwitchAudioSource -s "{}"
   if [ $? -eq 0 ]; then
-    say -r 250 audio source changed
+    say -r 190 audio source changed
   fi
 }
 alias ss='switch-audio-source'
