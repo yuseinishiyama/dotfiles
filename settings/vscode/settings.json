@@ -76,7 +76,7 @@
         "vscode-kubernetes.minikube-path.mac": "/Users/yuseinishiyama/.vs-kubernetes/tools/minikube/darwin-amd64/minikube"
     },
     "github.copilot.enable": {
-        "*": false,
+        "*": true,
         "yaml": false,
         "plaintext": false,
         "markdown": false
@@ -94,5 +94,8 @@
         "editor.tabSize": 2,
         "editor.insertSpaces": true,
         "editor.semanticHighlighting.enabled": true
-    }
+    },
+    "cSpell.enableFiletypes": [
+        "ruby"
+    ]
 }
