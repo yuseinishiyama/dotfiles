@@ -32,7 +32,6 @@
   "go.useLanguageServer": true,
   "editor.minimap.enabled": false,
   "breadcrumbs.enabled": true,
-  "workbench.activityBar.visible": true,
   "workbench.statusBar.visible": true,
   "python.languageServer": "Default",
   "python.formatting.provider": "autopep8",
