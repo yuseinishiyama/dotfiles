@@ -56,8 +56,6 @@ cask "rectangle"
 cask "yubico-yubikey-manager"
 cask "visual-studio-code"
 
-mas "MindNode 5", id: 1289197285
-
 # Zsh
 brew "zsh"
 brew "zsh-completions"
