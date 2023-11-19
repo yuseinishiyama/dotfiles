@@ -7,11 +7,9 @@ brew "gh"
 brew "ghq"
 brew "hub"
 brew "hugo"
-brew "imagemagick"
 brew "jq"
 brew "mas"
 brew "node"
-brew "pdsh"
 brew "peco"
 brew "pv"
 brew "shellcheck"
@@ -68,10 +66,5 @@ brew "go"
 # Rust
 brew "rustup"
 
-# AWS
-brew "awscli"
-cask "session-manager-plugin"
-
 # Kubernetes
 brew "kubernetes-cli"
-brew "helm"
