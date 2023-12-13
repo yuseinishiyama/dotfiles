@@ -1,4 +1,5 @@
 #!/bin/bash
+set -eo pipefail
 
 if [ "$SPIN" ]; then
   echo "Setting up for spin"
