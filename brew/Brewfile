@@ -1,5 +1,3 @@
-tap "homebrew/cask-drivers"
-
 # General commands
 brew "autossh"
 brew "cloc"
@@ -34,7 +32,7 @@ cask "deckset"
 cask "dozer"
 cask "https://raw.githubusercontent.com/Homebrew/homebrew-cask/c586cb7d81f922fcb602f091dcc902715ffdeef7/Casks/focus.rb"
 cask "google-chrome"
-cask "google-drive-file-stream"
+cask "google-drive"
 cask "grammarly-desktop"
 cask "istat-menus"
 cask "iterm2"
