@@ -40,6 +40,8 @@ defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
 # Text to Speech
 defaults write com.apple.speech.synthesis.general.prefs SpokenUIUseSpeakingHotKeyFlag -bool true
 
+defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -int 1
+
 killall Finder
 
 killall Dock
