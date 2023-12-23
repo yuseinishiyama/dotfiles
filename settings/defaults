@@ -17,7 +17,7 @@ defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 
 defaults write com.apple.finder AppleShowAllFiles -bool true
 
-defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+defaults write -g AppleShowAllExtensions -bool true
 
 defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$SCRIPT_PATH/iterm"
 
