@@ -40,6 +40,12 @@ defaults write com.apple.speech.synthesis.general.prefs SpokenUIUseSpeakingHotKe
 
 defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -int 1
 
+# Compact menu clock
+defaults write com.apple.menuextra.clock ShowDayOfWeek -int 0
+defaults write com.apple.menuextra.clock ShowDate -int 2
+defaults write com.apple.menuextra.clock ShowAMPM -int 0
+defaults write NSGlobalDomain AppleICUForce24HourTime -int 1
+
 killall Finder
 
 killall Dock
