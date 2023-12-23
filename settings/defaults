@@ -33,8 +33,6 @@ defaults write com.apple.dock wvous-br-modifier -int 0 # No modifier key
 defaults write com.apple.dock wvous-bl-corner -int 5 # Start Screen Saver
 defaults write com.apple.dock wvous-bl-modifier -int 0 # No modifier key
 
-defaults write com.apple.menuextra.clock IsAnalog -bool true
-
 defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
 
 # Text to Speech

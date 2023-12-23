@@ -34,7 +34,6 @@ cask "https://raw.githubusercontent.com/Homebrew/homebrew-cask/c586cb7d81f922fcb
 cask "google-chrome"
 cask "google-drive"
 cask "grammarly-desktop"
-cask "istat-menus"
 cask "iterm2"
 cask "karabiner-elements"
 cask "logitech-options"
