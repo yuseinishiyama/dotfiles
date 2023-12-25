@@ -13,4 +13,4 @@ aliases:
     pv: pr view -w
     pc: pr create -w
     pco: pr checkout
-
+version: "1"
