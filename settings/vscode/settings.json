@@ -103,5 +103,6 @@
   },
   "cSpell.enableFiletypes": [
     "ruby"
-  ]
+  ],
+  "remote.SSH.connectTimeout": 150
 }
