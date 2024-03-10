@@ -104,5 +104,6 @@
   "cSpell.enableFiletypes": [
     "ruby"
   ],
-  "remote.SSH.connectTimeout": 150
+  "remote.SSH.connectTimeout": 150,
+  "explorer.sortOrderLexicographicOptions": "unicode"
 }
