@@ -1,0 +1,6 @@
+youtube.com##ytd-browse[page-subtype="home"]
+www.youtube.com###related
+youtube.com##.html5-endscreen-content
+youtube.com##.html5-endscreen
+youtube.com##.ytp-ce-element
+youtube.com##.ytp-pause-overlay
