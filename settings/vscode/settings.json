@@ -105,5 +105,6 @@
     "ruby"
   ],
   "remote.SSH.connectTimeout": 150,
-  "explorer.sortOrderLexicographicOptions": "unicode"
+  "explorer.sortOrderLexicographicOptions": "unicode",
+  "github.copilot.editor.enableAutoCompletions": true
 }
