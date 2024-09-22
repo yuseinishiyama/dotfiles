@@ -85,3 +85,5 @@
 
 [pull]
 	rebase = true
+[http]
+	postBuffer = 52428800
