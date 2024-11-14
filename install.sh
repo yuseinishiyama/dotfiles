@@ -32,6 +32,9 @@ ghq get git@github.com:yuseinishiyama/dotfiles.git
 # Main procedure
 "$(ghq root)"/"$(ghq list | grep yuseinishiyama/dotfiles)"/bin/run import
 
+# Install iTerm2 shell integration
+curl -L https://iterm2.com/shell_integration/install_shell_integration.sh | bash
+
 # Clean up
 rm -rf dotfiles
 echo 'dotfile is installed successfully. Restart the terminal'
