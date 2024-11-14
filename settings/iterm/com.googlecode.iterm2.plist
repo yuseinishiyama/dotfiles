@@ -36,6 +36,8 @@
 	<false/>
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
+	<key>HotkeyTermAnimationDuration</key>
+	<real>0.0</real>
 	<key>IRMemory</key>
 	<integer>4</integer>
 	<key>New Bookmarks</key>
