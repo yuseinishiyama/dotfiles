@@ -38,11 +38,12 @@ PATH=$PATH:$HOME/ghq/github.com/yuseinishiyama/dotfiles/bin
 # aliases
 alias b='bundle exec'
 alias cgr='cd `git rev-parse --show-toplevel`' # change to git root
+alias e='code -n'
 alias g='git'
 alias la='ls -a'
+alias ls='ls --color=auto'
 alias pbunbreak="pbpaste | tr '\n' ' ' | pbcopy"
 alias s='source $HOME/.zshrc'
-alias ls='ls --color=auto'
 
 # edit command in editor
 autoload -U edit-command-line
@@ -127,17 +128,6 @@ precmd() {
   fi
   zsh_notify_cmd=
 }
-
-# vscode
-function vscode-remote() {
-  if [[ -z "$1" ]]; then
-    echo "usage: $0 remote-host"
-    return 1
-  fi
-  code --folder-uri "vscode-remote://ssh-remote+$1/"
-}
-alias e='code -n'
-alias er='vscode-remote'
 
 # kubernetes
 alias k=kubectl
