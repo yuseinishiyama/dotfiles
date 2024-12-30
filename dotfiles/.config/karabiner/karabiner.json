@@ -108,6 +108,14 @@
                         "vendor_id": 44580
                     },
                     "ignore": false
+                },
+                {
+                    "identifiers": {
+                        "is_pointing_device": true,
+                        "product_id": 64097,
+                        "vendor_id": 9639
+                    },
+                    "ignore": false
                 }
             ],
             "name": "Default profile",
