@@ -106,5 +106,6 @@
   ],
   "remote.SSH.connectTimeout": 150,
   "explorer.sortOrderLexicographicOptions": "unicode",
-  "github.copilot.editor.enableAutoCompletions": true
+  "github.copilot.editor.enableAutoCompletions": true,
+  "chat.editing.alwaysSaveWithGeneratedChanges": true
 }
