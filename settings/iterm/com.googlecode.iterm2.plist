@@ -923,7 +923,7 @@
 		</dict>
 		<dict>
 			<key>ASCII Anti Aliased</key>
-			<false/>
+			<true/>
 			<key>Allow Title Reporting</key>
 			<false/>
 			<key>Ambiguous Double Width</key>
