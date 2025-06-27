@@ -107,5 +107,8 @@
   "remote.SSH.connectTimeout": 150,
   "explorer.sortOrderLexicographicOptions": "unicode",
   "github.copilot.editor.enableAutoCompletions": true,
-  "chat.editing.alwaysSaveWithGeneratedChanges": true
+  "chat.editing.alwaysSaveWithGeneratedChanges": true,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
