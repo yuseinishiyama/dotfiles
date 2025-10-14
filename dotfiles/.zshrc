@@ -150,11 +150,6 @@ ks() {
         peco --prompt "NAMESPACE>" | xargs kubectl config set-context --current --namespace
 }
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
-function iterm2_print_user_vars() {
-  iterm2_set_user_var kubecontext $(kubectl config current-context):$(kubectl config view --minify --output 'jsonpath={..namespace}')
-}
-
 # local settings
 _ZSH_LOCAL_SETTING="$HOME/.zshrc.local"
 if [ -f $_ZSH_LOCAL_SETTING ]; then
