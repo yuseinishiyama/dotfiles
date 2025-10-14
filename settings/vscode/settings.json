@@ -35,15 +35,11 @@
   "workbench.statusBar.visible": true,
   "python.languageServer": "Default",
   "python.formatting.provider": "autopep8",
-  "python.formatting.autopep8Args": [
-    "--indent-size=2"
-  ],
+  "python.formatting.autopep8Args": ["--indent-size=2"],
   "go.languageServerExperimentalFeatures": {
     "diagnostics": true
   },
-  "editor.rulers": [
-    120
-  ],
+  "editor.rulers": [120],
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
   "editor.cursorBlinking": "smooth",
@@ -60,9 +56,7 @@
   "editor.wordWrap": "on",
   "[python]": {
     "editor.tabSize": 2,
-    "gitlens.codeLens.symbolScopes": [
-      "!Module"
-    ],
+    "gitlens.codeLens.symbolScopes": ["!Module"],
     "editor.formatOnType": true
   },
   "[terraform]": {
@@ -97,18 +91,15 @@
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
-    "editor.rulers": [
-      120
-    ]
+    "editor.rulers": [120]
   },
-  "cSpell.enableFiletypes": [
-    "ruby"
-  ],
+  "cSpell.enableFiletypes": ["ruby"],
   "remote.SSH.connectTimeout": 150,
   "explorer.sortOrderLexicographicOptions": "unicode",
   "github.copilot.editor.enableAutoCompletions": true,
   "chat.editing.alwaysSaveWithGeneratedChanges": true,
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "git.openRepositoryInParentFolders": "always"
 }
