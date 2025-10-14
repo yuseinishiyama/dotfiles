@@ -48,13 +48,10 @@ PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 PATH=$PATH:$HOME/ghq/github.com/yuseinishiyama/dotfiles/bin
 
 # aliases
-alias b='bundle exec'
-alias cgr='cd `git rev-parse --show-toplevel`' # change to git root
 alias e='code -n'
 alias g='git'
 alias la='ls -a'
 alias ls='ls --color=auto'
-alias pbunbreak="pbpaste | tr '\n' ' ' | pbcopy"
 alias s='source $HOME/.zshrc'
 
 # edit command in editor
@@ -64,16 +61,6 @@ bindkey '^x^e' edit-command-line
 
 autoload -Uz compinit
 compinit -i
-
-# tmux
-function ssh-then-tmux() {
-  title=$2
-  if [[ -z $title ]] ; then
-    title='default'
-  fi
-  ssh -t "$1" "tmux -CC new -A -s yusei-${title}"
-}
-alias tsh='ssh-then-tmux'
 
 # python
 if which pyenv > /dev/null; then
@@ -139,15 +126,6 @@ precmd() {
     fi
   fi
   zsh_notify_cmd=
-}
-
-# kubernetes
-alias k=kubectl
-ks() {
-    kubectl config get-contexts -o name | peco --prompt "CONTEXT>" | \
-        xargs kubectl config use-context
-    kubectl get namespace --no-headers -o custom-columns=":metadata.name" | \
-        peco --prompt "NAMESPACE>" | xargs kubectl config set-context --current --namespace
 }
 
 # local settings
