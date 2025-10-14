@@ -7,3 +7,4 @@ automatic_backups
 .config/
 !.config/gh/config.yml
 !.config/karabiner/
+!.config/ghostty/
