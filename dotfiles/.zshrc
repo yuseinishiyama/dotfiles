@@ -7,7 +7,19 @@ fpath+=$HOMEBREW_PREFIX/share/zsh-completions
 source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # interface
-PROMPT='%B%(?.%F{green}.%F{red})>%b%f '
+autoload -Uz vcs_info
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+setopt prompt_subst
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' stagedstr '%F{green}●%f'
+zstyle ':vcs_info:git:*' unstagedstr '%F{red}●%f'
+zstyle ':vcs_info:git:*' formats '%F{yellow}(%b %c%u)%f '
+
+PROMPT='
+%F{blue}%~%f ${vcs_info_msg_0_}
+%B%(?.%F{green}.%F{red})>%b%f '
 export LANG=en_US.UTF-8
 export TERM=xterm-256color
 export CLICOLOR=1
