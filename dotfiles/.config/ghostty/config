@@ -1,2 +1,2 @@
-keybind = global:alt+cmd+space=toggle_quick_terminal
-quick-terminal-animation-duration = 0.0
+keybind = global:alt+cmd+space=toggle_visibility
+maximize = true
