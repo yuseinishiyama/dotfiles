@@ -30,7 +30,7 @@ brew install ghq
 ghq get git@github.com:yuseinishiyama/dotfiles.git
 
 # Main procedure
-"$(ghq root)"/"$(ghq list | grep yuseinishiyama/dotfiles)"/bin/run import
+"$(ghq root)"/"$(ghq list | grep yuseinishiyama/dotfiles)"/bin/dot import
 
 # Install iTerm2 shell integration
 curl -L https://iterm2.com/shell_integration/install_shell_integration.sh | bash
