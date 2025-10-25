@@ -7,13 +7,14 @@ source "$LIBRARY_PATH"/link
 source "$LIBRARY_PATH"/settings
 
 CMDNAME=$(basename "$0")
-USAGE="Usage: $CMDNAME [ import | export ]"
+USAGE="Usage: $CMDNAME [ import | export | link ]"
 help() {
     echo "$USAGE"
     echo ""
     echo "Options:"
     echo "  import:   Import settings"
     echo "  export:   Export settings"
+    echo "  link:     Create symbolic links"
 }
 
 if [ $# -eq 0 ]; then
@@ -27,10 +28,9 @@ do
         import)
             update_brew
             update_links
-            import_settings
+            update_defaults
             ;;
         export)
-            export_settings
             ;;
         link)
             update_links
