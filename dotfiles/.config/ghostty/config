@@ -1,2 +1,3 @@
 keybind = global:alt+cmd+space=toggle_visibility
 maximize = true
+keybind = shift+enter=text:\x1b\r
