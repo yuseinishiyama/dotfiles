@@ -54,6 +54,11 @@ alias la='ls -a'
 alias ls='ls --color=auto'
 alias s='source $HOME/.zshrc'
 
+# auto-start tmux
+if [[ -z "$TMUX" && ("$TERM_PROGRAM" == "ghostty" || -n "$SSH_CONNECTION") ]]; then
+  tmux new -A -s main
+fi
+
 # edit command in editor
 autoload -U edit-command-line
 zle -N edit-command-line
