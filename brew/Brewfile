@@ -2,6 +2,7 @@
 brew "autossh"
 brew "cloc"
 brew "gh"
+brew "git-delta"
 brew "ghq"
 brew "hub"
 brew "hugo"

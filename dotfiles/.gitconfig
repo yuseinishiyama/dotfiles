@@ -55,14 +55,17 @@
 
 [core]
         autocrlf = false
-        editor = code --wait
+        editor = nano
+        pager = delta
         excludesfile = ~/.gitignore.global
 
-[diff]
-        tool = default-difftool
+[interactive]
+        diffFilter = delta --color-only
 
-[difftool "default-difftool"]
-        cmd = code --wait --diff $LOCAL $REMOTE
+[delta]
+        navigate = true
+        side-by-side = true
+        line-numbers = true
 
 [ghq]
         root = ~/.go/src
@@ -70,12 +73,6 @@
 
 [include]
         path = .gitconfig.local
-
-[merge]
-        tool = vscode
-
-[mergetool "vscode"]
-        cmd = code --wait $MERGED
 
 [fetch]
 	prune = true
