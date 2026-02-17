@@ -85,11 +85,10 @@ function select-branch() {
 }
 alias -g B='$(select-branch)'
 
-## git repositories
-function select-repo() {
-  ghq list -p | peco
+function select-dir() {
+  { find ~/Documents -mindepth 1 -maxdepth 1 -type d; ghq list -p } | peco
 }
-alias -g R='$(select-repo)'
+alias -g R='$(select-dir)'
 
 ## git dirty files
 function git-dirty-files() {
