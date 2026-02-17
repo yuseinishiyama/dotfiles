@@ -1,4 +1,4 @@
-export EDITOR='code -w'
+export EDITOR='nano'
 
 eval $(/opt/homebrew/bin/brew shellenv)
 
@@ -44,11 +44,9 @@ export GOPATH="$HOME/.go"
 PATH=$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH #prioritize coreutils
 PATH=$PATH:$GOPATH/bin
 PATH=$PATH:$HOME/Library/Haskell/bin
-PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 PATH=$PATH:$HOME/ghq/github.com/yuseinishiyama/dotfiles/bin
 
 # aliases
-alias e='code -n'
 alias g='git'
 alias la='ls -a'
 alias ls='ls --color=auto'
