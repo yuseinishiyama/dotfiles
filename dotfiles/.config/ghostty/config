@@ -10,3 +10,5 @@ keybind = cmd+shift+d=text:\x02"
 keybind = cmd+w=text:\x02x
 keybind = cmd+left_bracket=text:\x02P
 keybind = cmd+right_bracket=text:\x02o
+keybind = super+[=unbind
+keybind = super+]=unbind
