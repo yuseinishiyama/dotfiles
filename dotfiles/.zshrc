@@ -76,34 +76,25 @@ if which rbenv > /dev/null; then
     eval "$(rbenv init -)"
 fi
 
-# peco
+# fzf
+source <(fzf --zsh)
 
 ## git branches
 function select-branch() {
-  git branch --format '%(refname:lstrip=2)' | peco
+  git branch --format '%(refname:lstrip=2)' | fzf
 }
 alias -g B='$(select-branch)'
 
 function select-dir() {
-  { find ~/Documents -mindepth 1 -maxdepth 1 -type d; ghq list -p } | peco
+  { find ~/Documents -mindepth 1 -maxdepth 1 -type d; ghq list -p } | fzf
 }
 alias -g R='$(select-dir)'
 
-## git dirty files
+## git dirty files (multi-select with Tab)
 function git-dirty-files() {
-  #git status --short | peco | awk -vFPAT='([^ ]+)|("[^"]+")' '{print $2}'
-  git status --short | peco | awk '{print $2}'
+  git status --short | fzf -m | awk '{print $2}'
 }
 alias -g F='$(git-dirty-files)'
-
-## history
-function select-history() {
-  # Remove duplicated lines while keeping the order
-  BUFFER=$(history -n 1 | tac | awk '!seen[$0]++' | peco)
-  CURSOR=$#BUFFER
-}
-zle -N select-history
-bindkey '^x^h' select-history
 
 # notify when command finishes
 ## https://gist.github.com/syui/7112389/raw/growl.zsh
