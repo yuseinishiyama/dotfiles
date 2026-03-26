@@ -81,18 +81,18 @@ source <(fzf --zsh)
 
 ## git branches
 function select-branch() {
-  git branch --format '%(refname:lstrip=2)' | fzf
+  git branch --format '%(refname:lstrip=2)' | fzf --preview 'git log --oneline -10 {}'
 }
 alias -g B='$(select-branch)'
 
 function select-dir() {
-  { find ~/Documents -mindepth 1 -maxdepth 1 -type d; ghq list -p } | fzf
+  { find ~/Documents -mindepth 1 -maxdepth 1 -type d; ghq list -p } | fzf --preview 'ls {}'
 }
 alias -g R='$(select-dir)'
 
 ## git dirty files (multi-select with Tab)
 function git-dirty-files() {
-  git status --short | fzf -m | awk '{print $2}'
+  git status --short | fzf -m --preview 'git diff --color=always {2}' | awk '{print $2}'
 }
 alias -g F='$(git-dirty-files)'
 
