@@ -21,7 +21,6 @@ PROMPT='
 %F{blue}%~%f ${vcs_info_msg_0_}
 %B%(?.%F{green}.%F{red})>%b%f '
 export LANG=en_US.UTF-8
-export TERM=xterm-256color
 export CLICOLOR=1
 export LSCOLORS='dxfxcxdxbxegedabagacad'
 export LS_COLORS='di=33:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43'
