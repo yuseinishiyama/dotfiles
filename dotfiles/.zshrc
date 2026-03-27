@@ -61,14 +61,14 @@ autoload -Uz compinit
 compinit -i
 
 # python
-if which pyenv > /dev/null; then
+if command -v pyenv > /dev/null; then
 	export PYENV_ROOT="${HOME}/.pyenv"
 	export PATH=${PYENV_ROOT}/shims:${PATH}
 	eval "$(pyenv init -)";
 fi
 
 # ruby
-if which rbenv > /dev/null; then
+if command -v rbenv > /dev/null; then
     eval "$(rbenv init -)"
 fi
 
