@@ -39,7 +39,6 @@ setopt histignorealldups
 export GOPATH="$HOME/.go"
 PATH=$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH #prioritize coreutils
 PATH=$PATH:$GOPATH/bin
-PATH=$PATH:$HOME/Library/Haskell/bin
 PATH=$PATH:$HOME/ghq/github.com/yuseinishiyama/dotfiles/bin
 
 # aliases
