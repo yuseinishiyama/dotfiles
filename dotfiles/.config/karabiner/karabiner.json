@@ -21,7 +21,7 @@
                                 "from": { "pointing_button": "button4" },
                                 "to": [
                                     {
-                                        "key_code": "open_bracket",
+                                        "key_code": "close_bracket",
                                         "modifiers": ["left_shift", "left_command"]
                                     }
                                 ],
@@ -31,7 +31,7 @@
                                 "from": { "pointing_button": "button5" },
                                 "to": [
                                     {
-                                        "key_code": "close_bracket",
+                                        "key_code": "open_bracket",
                                         "modifiers": ["left_shift", "left_command"]
                                     }
                                 ],
