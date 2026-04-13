@@ -73,6 +73,7 @@
 
 [include]
         path = .gitconfig.local
+        path = /Users/yuseinishiyama/.config/dev/gitconfig
 
 [fetch]
         prune = true
