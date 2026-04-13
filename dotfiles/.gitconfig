@@ -75,12 +75,12 @@
         path = .gitconfig.local
 
 [fetch]
-	prune = true
+        prune = true
 
 [push]
         default = current
 
 [pull]
-	rebase = true
+        rebase = true
 [http]
-	postBuffer = 52428800
+        postBuffer = 52428800
