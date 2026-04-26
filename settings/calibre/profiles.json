@@ -1,0 +1,11 @@
+{
+  "user:": {
+    "default": {
+      "__timestamp__": "2026-04-26T01:15:48.449163+00:00",
+      "background_image": "",
+      "current_color_scheme": "white",
+      "read_mode": "flow",
+      "user_stylesheet": "body {\n    max-inline-size: 65ch !important;\n    margin-inline: auto !important;\n    font-size: clamp(20px, 1.4vw, 24px) !important;\n    font-family: \"New York\", Charter, Georgia, \"Hiragino Mincho ProN\", \"Yu Mincho\", serif !important;\n    line-height: 1.7 !important;\n    -webkit-font-smoothing: antialiased;\n    text-wrap: pretty;\n    hyphens: auto;\n}\n\nh1, h2, h3, h4 {\n    font-family: system-ui, \"Hiragino Sans\", \"Yu Gothic\", sans-serif;\n    line-height: 1.25 !important;\n    margin-block: 2.5rem 1rem !important;\n}\n\np, ul, ol, blockquote, pre {\n    margin-block: 0 1.25em !important;\n}\n\na { color: inherit; text-underline-offset: 3px; }\n\nimg {\n    max-inline-size: 100% !important;\n    block-size: auto !important;\n    display: block;\n    margin-block: 2rem;\n    margin-inline: auto;\n}\n\nblockquote {\n    border-inline-start: 2px solid;\n    padding-inline-start: 1rem;\n    font-style: italic;\n}\n"
+    }
+  }
+}
