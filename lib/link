@@ -3,7 +3,14 @@
 SCRIPT_PATH="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 DOT_FILES_PATH=$SCRIPT_PATH/../dotfiles
 SETTINGS_PATH=$SCRIPT_PATH/../settings
-VSCODE_SETTINGS_PATH=~/Library/Application\ Support/Code/User/settings.json
+SETTING_SOURCES=(
+    "$SETTINGS_PATH"/vscode/settings.json
+    "$SETTINGS_PATH"/calibre/profiles.json
+)
+SETTING_TARGETS=(
+    ~/Library/Application\ Support/Code/User/settings.json
+    ~/Library/Preferences/calibre/viewer/profiles.json
+)
 
 DOT_FILE_NAMES=()
 for file in $DOT_FILES_PATH/.*
@@ -39,23 +46,29 @@ unlink_dotfiles() {
     done
 }
 
-link_vscode_settings() {
-    ln -s -v "$SETTINGS_PATH"/vscode/settings.json "$VSCODE_SETTINGS_PATH"
+link_settings() {
+    for i in "${!SETTING_SOURCES[@]}"
+    do
+        ln -s -v "${SETTING_SOURCES[$i]}" "${SETTING_TARGETS[$i]}"
+    done
 }
 
-unlink_vscode_settings() {
-    if [ -e "$VSCODE_SETTINGS_PATH" ]; then
-        rm -rf -v "$VSCODE_SETTINGS_PATH"
-    fi
+unlink_settings() {
+    for target in "${SETTING_TARGETS[@]}"
+    do
+        if [ -e "$target" ]; then
+            rm -rf -v "$target"
+        fi
+    done
 }
 
 update_links() {
     echo "Removing symlinks..."
     unlink_dotfiles
-    unlink_vscode_settings
+    unlink_settings
 
     echo "Creating symlinks..."
     link_dotfiles
-    link_vscode_settings
+    link_settings
 }
 export -f update_links
