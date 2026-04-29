@@ -10,7 +10,11 @@ keybind = cmd+shift+d=text:\x02"
 keybind = cmd+w=text:\x02x
 keybind = cmd+t=text:\x02c
 keybind = cmd+p=text:\x02w
+# cmd+[/] -> tmux prev/next window. The unbinds are required: Ghostty's
+# defaults bind cmd+[/] (codepoint triggers) to goto_split:previous/next,
+# and those defaults intercept the keypress before the physical-key
+# bindings below get a chance to fire.
 keybind = cmd+left_bracket=text:\x02p
 keybind = cmd+right_bracket=text:\x02n
-keybind = super+[=unbind
-keybind = super+]=unbind
+keybind = cmd+[=unbind
+keybind = cmd+]=unbind
