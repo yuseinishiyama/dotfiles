@@ -18,3 +18,9 @@ keybind = cmd+left_bracket=text:\x02p
 keybind = cmd+right_bracket=text:\x02n
 keybind = cmd+[=unbind
 keybind = cmd+]=unbind
+
+# cmd+shift+[/] -> tmux prev/next pane.
+keybind = cmd+shift+left_bracket=text:\x02[
+keybind = cmd+shift+right_bracket=text:\x02]
+keybind = cmd+shift+[=unbind
+keybind = cmd+shift+]=unbind
