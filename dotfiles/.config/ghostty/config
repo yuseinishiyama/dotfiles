@@ -1,9 +1,6 @@
 keybind = global:alt+cmd+space=toggle_visibility
 maximize = true
 
-# Claude Code multi-line input
-keybind = shift+enter=text:\x1b\r
-
 # Remap Ghostty shortcuts to tmux (\x02 = Ctrl+B, tmux prefix)
 keybind = cmd+d=text:\x02%
 keybind = cmd+shift+d=text:\x02"
