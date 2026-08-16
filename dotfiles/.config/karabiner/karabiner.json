@@ -12,7 +12,8 @@
                                 "to": [
                                     {
                                         "key_code": "w",
-                                        "modifiers": ["left_command"]
+                                        "modifiers": ["left_command"],
+                                        "repeat": false
                                     }
                                 ],
                                 "type": "basic"
