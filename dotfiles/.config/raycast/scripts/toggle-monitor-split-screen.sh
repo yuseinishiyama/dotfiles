@@ -15,10 +15,10 @@ set -e
 
 BD_CLI="/Applications/BetterDisplay.app/Contents/MacOS/BetterDisplay"
 MONITOR="ULTRAFINE"
-MODE_LIST=$("$BD_CLI" get -nameLike="$MONITOR" -displayModeList)
-NATIVE_RESOLUTION=$(awk '/Default Native/ { print $3; exit }' <<< "$MODE_LIST")
+CONNECTION_MODE=$("$BD_CLI" get -nameLike="$MONITOR" -connectionMode)
+SIGNAL_RESOLUTION=$(awk '{ print $3 }' <<< "$CONNECTION_MODE")
 
-case "$NATIVE_RESOLUTION" in
+case "$SIGNAL_RESOLUTION" in
     2560x2160)
         MODE=1
         LABEL="off"
@@ -28,7 +28,7 @@ case "$NATIVE_RESOLUTION" in
         LABEL="on"
         ;;
     *)
-        echo "Unexpected native resolution: $NATIVE_RESOLUTION"
+        echo "Unexpected signal resolution: $SIGNAL_RESOLUTION"
         exit 1
         ;;
 esac
