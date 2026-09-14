@@ -1,0 +1,16 @@
+*
+
+!.gitignore
+
+!gh/
+!gh/config.yml
+
+!karabiner/
+!karabiner/karabiner.json
+
+!ghostty/
+!ghostty/config
+
+!raycast/
+!raycast/scripts/
+!raycast/scripts/*.sh
